@@ -158,7 +158,10 @@ for (const paper of papers) {
       </section>
       <section class="section">
         <div class="shell paper-layout">
-          <article class="prose">${marked.parse(analysisBody)}</article>
+          <article class="prose" data-paragraph-comments data-owner="${escapeHtml(owner)}" data-repo="${escapeHtml(repo)}" data-paper="${escapeHtml(paper.slug)}" data-title="${escapeHtml(paper.titleZh)}">
+            <div class="paragraph-comment-guide"><span aria-hidden="true">+</span><div>悬停在自然段上可直接提问；如果想精确到某一句，请先选中文字，再点击段落右侧的 +。</div></div>
+            ${marked.parse(analysisBody)}
+          </article>
           <aside class="side-panel">
             <h2>主题</h2>
             <ul>${topics}</ul>
@@ -177,8 +180,8 @@ for (const paper of papers) {
       </section>
       <section class="section">
         <div class="shell question-box">
-          <h2>对这篇论文有问题或意见？</h2>
-          <p>写下问题后，会打开一个已经预填论文信息和页面地址的 GitHub Issue。你确认后再提交。</p>
+          <h2>对整篇论文有综合意见？</h2>
+          <p>这里适合不针对某个自然段的整体问题。段落级问题可以直接点击正文右侧的 +。</p>
           <form data-issue-form data-owner="${escapeHtml(owner)}" data-repo="${escapeHtml(repo)}" data-paper="${escapeHtml(paper.slug)}" data-title="${escapeHtml(paper.titleZh)}">
             <textarea aria-label="问题或建议" placeholder="例如：这里的液态金属为什么会随光强变化？控制回路的阈值在哪里？"></textarea>
             <button class="button" type="submit">在 GitHub Issue 中继续</button>

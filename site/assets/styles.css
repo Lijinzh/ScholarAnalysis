@@ -88,6 +88,24 @@ h1 { margin: 0 0 22px; font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 12ch; }
 .prose table { display: block; width: 100%; margin: 30px 0; overflow-x: auto; border-collapse: collapse; font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: .94rem; }
 .prose th, .prose td { min-width: 130px; padding: 13px 15px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
 .prose th { background: var(--wash); color: var(--ink); }
+.paragraph-comment-guide { display: flex; align-items: center; gap: 12px; margin: 0 0 32px; padding: 13px 16px; border: 1px solid #bad7cc; border-radius: 14px; background: #edf7f3; color: #365c50; font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: .9rem; }
+.paragraph-comment-guide span { display: inline-grid; place-items: center; flex: 0 0 auto; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 1.25rem; font-weight: 500; }
+.commentable-block { position: relative; scroll-margin-top: 96px; }
+.commentable-block:target { border-radius: 8px; background: linear-gradient(90deg, #fff3cd, transparent); box-shadow: 0 0 0 8px #fff3cd; }
+.paragraph-comment-trigger { position: absolute; top: .15em; right: -48px; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid #9fcbbd; border-radius: 50%; background: #fff; color: var(--accent); box-shadow: 0 8px 20px rgba(18,50,40,.12); font: 500 1.35rem/1 Inter, sans-serif; cursor: pointer; opacity: 0; transform: translateX(-6px) scale(.92); transition: opacity .16s ease, transform .16s ease, color .16s ease, background .16s ease; }
+.commentable-block:hover .paragraph-comment-trigger, .paragraph-comment-trigger:focus-visible, .paragraph-comment-trigger[aria-expanded="true"] { opacity: 1; transform: translateX(0) scale(1); }
+.paragraph-comment-trigger:hover, .paragraph-comment-trigger[aria-expanded="true"] { color: #fff; background: var(--accent); }
+.paragraph-comment-trigger:focus-visible { outline: 3px solid rgba(13,122,95,.24); outline-offset: 3px; }
+.paragraph-comment-form { margin: 14px 0 30px; padding: 20px; border: 1px solid #afd2c5; border-radius: 16px; background: #f4faf7; box-shadow: 0 14px 34px rgba(18,50,40,.08); font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; }
+.paragraph-comment-label { color: var(--accent-dark); font-size: .86rem; font-weight: 750; }
+.prose .paragraph-comment-context { max-height: 150px; margin: 12px 0; padding: 12px 15px; overflow: auto; border-left: 3px solid var(--accent); background: #fff; color: #3d554d; font-family: "Noto Serif SC", "Songti SC", SimSun, serif; font-size: .92rem; }
+.prose .paragraph-comment-hint { margin: 0 0 12px; color: var(--muted); font-size: .82rem; }
+.paragraph-comment-textarea { display: block; width: 100%; min-height: 104px; resize: vertical; padding: 13px 14px; border: 1px solid #a8c8bc; border-radius: 11px; background: #fff; color: var(--ink); font: inherit; }
+.paragraph-comment-textarea:focus { border-color: var(--accent); outline: 3px solid rgba(13,122,95,.12); }
+.paragraph-comment-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 12px; }
+.paragraph-comment-submit { min-height: 40px; }
+.paragraph-comment-cancel { min-height: 40px; padding: 0 12px; border: 0; background: transparent; color: var(--muted); font: inherit; cursor: pointer; }
+.paragraph-comment-cancel:hover { color: var(--ink); }
 .rights-note { margin: 18px 0; padding: 12px 14px; border-radius: 12px; background: var(--wash); color: var(--muted); font-size: .86rem; }
 .side-panel { position: sticky; top: 96px; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: 0 12px 32px rgba(18,50,40,.06); }
 .side-panel h2 { font-size: 1rem; margin: 0 0 14px; letter-spacing: 0; }
@@ -134,6 +152,9 @@ h1 { margin: 0 0 22px; font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 12ch; }
   .side-panel { position: static; }
   .paper-card { grid-template-columns: 1fr; gap: 12px; }
   .paper-meta { white-space: normal; }
+  .commentable-block { padding-right: 42px; }
+  .paragraph-comment-trigger { top: -.1em; right: 0; opacity: .78; transform: none; }
+  .paragraph-comment-form { padding: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

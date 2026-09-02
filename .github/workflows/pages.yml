@@ -26,6 +26,8 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
+      - name: Install FFmpeg for media validation
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: pnpm install --frozen-lockfile
       - run: pnpm verify
       - uses: actions/configure-pages@v5
