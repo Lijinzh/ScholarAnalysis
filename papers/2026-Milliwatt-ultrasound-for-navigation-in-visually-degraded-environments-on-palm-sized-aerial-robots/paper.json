@@ -1,0 +1,37 @@
+{
+  "slug": "2026-Milliwatt-ultrasound-for-navigation-in-visually-degraded-environments-on-palm-sized-aerial-robots",
+  "title": "Milliwatt ultrasound for navigation in visually degraded environments on palm-sized aerial robots",
+  "titleZh": "面向掌上型飞行机器人的毫瓦级超声波恶劣视觉环境导航",
+  "authors": [
+    "Manoj Velmurugan",
+    "Phillip Brush",
+    "Colin Balfour",
+    "Richard J. Przybyla",
+    "Nitin J. Sanket"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-03-25",
+  "doi": "10.1126/scirobotics.adz9609",
+  "status": "中文解析与补充视频已发布；其余受限原件仅本地归档",
+  "featured": true,
+  "summary": "Saranga 不是密集声呐阵列，而是以两颗前向 ICU-30201 构成稀疏双声呐基线，并结合物理隔声、32 帧长时域回波和神经网络去噪，在雾、雪、黑暗及透明障碍环境中完成低功耗避障。",
+  "topics": ["超声波声呐", "ICU-30201", "微型无人机", "传感器串扰", "恶劣视觉环境", "3D 定位"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adz9609",
+  "rightsNote": "用户已明确确认 Supplementary Movie S1 与 Movie S2 允许本站公开再分发，因此网页提供在线播放和原视频下载。Science Robotics 正文、补充 PDF 与 Data S1 仍未发现可供本站再分发的 CC 许可，只保存在 Git 忽略的 inbox。arXiv 版本采用仅授予 arXiv 的 non-exclusive distribution license，本站只链接。ICU-30201 手册标注 ©2025 InvenSense, All rights reserved，且未给出公开再分发许可，因此 PDF 同样只作本地归档。",
+  "downloads": [],
+  "videos": [
+    {
+      "title": "Movie S1：恶劣视觉环境与多类障碍飞行实验",
+      "src": "media/adz9609_movie_s1.mp4",
+      "caption": "约 164 秒。展示论文表 1 对应的雪、细障碍、低照度、透明障碍、雾、3D 避障，以及稀疏、中等和密集森林环境实验。",
+      "download": true
+    },
+    {
+      "title": "Movie S2：低照度、雾和雪中的 3D 避障",
+      "src": "media/adz9609_movie_s2.mp4",
+      "caption": "约 100 秒。展示飞行器在黑色障碍和细杆场景中，于低照度、雾和雪条件下进行三维障碍定位与规避。",
+      "download": true
+    }
+  ]
+}
