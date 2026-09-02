@@ -1,7 +1,7 @@
 {
   "title": "Scholar Analysis",
   "titleZh": "论文拆解与复现笔记",
-  "description": "面向工程实现的中文论文图解、材料归档与公开讨论。",
+  "description": "面向工程实现的中文论文图解、材料归档、授权视频演示与公开讨论。",
   "githubOwner": "Lijinzh",
   "repository": "ScholarAnalysis",
   "defaultLanguage": "zh-CN"

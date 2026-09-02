@@ -91,7 +91,7 @@ const home = layout({
       <div class="shell hero-grid">
         <div>
           <h1>把论文读成可以动手验证的工程知识</h1>
-          <p>${escapeHtml(config.description)} 每篇论文都有独立材料目录、中文技术拆解、经授权的材料入口和 GitHub Issue 讨论入口。</p>
+          <p>${escapeHtml(config.description)} 每篇论文都有独立材料目录、中文技术拆解、经授权的材料和视频入口，以及 GitHub Issue 讨论入口。</p>
           <a class="button" href="#papers">浏览论文</a>
         </div>
         <figure class="hero-visual">

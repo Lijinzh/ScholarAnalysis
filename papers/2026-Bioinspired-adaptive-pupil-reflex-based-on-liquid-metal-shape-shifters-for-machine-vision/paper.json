@@ -21,12 +21,27 @@
   "venue": "Science Robotics",
   "publishedAt": "2026-02-11",
   "doi": "10.1126/scirobotics.adx0715",
-  "status": "分析已完成；原文与视频不公开再分发",
+  "status": "分析与补充视频已发布；论文原文不公开",
   "featured": true,
   "summary": "以 In2O3/Y6 半球形人工视网膜感光，以 EGaIn 液态金属逻辑模块编码脉冲，再驱动八瓣式液态金属人工瞳孔收缩，形成闭环强光适应。",
   "topics": ["液态金属", "仿生视觉", "人工瞳孔", "光电突触", "机器视觉"],
   "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adx0715",
-  "rightsNote": "用户已确认不拥有论文全文和补充视频的完整公开再分发权限，因此公开网页只发布原创分析与原创示意图；原文请通过 DOI 访问。",
+  "rightsNote": "用户确认补充视频可以公开再分发，本站提供在线播放与下载；论文全文没有公开再分发权限，因此只提供 DOI 官方入口。",
   "downloads": [],
-  "videos": []
+  "videos": [
+    {
+      "title": "Movie S1：液态金属逻辑模块的脉冲切换",
+      "src": "media/movie-s1-liquid-metal-logic.mp4",
+      "poster": "figures/movie-s1-liquid-metal-logic-poster.webp",
+      "caption": "37.5 秒。展示 EGaIn 在阴极、阳极和门极共同作用下周期性接触与断开；较高驱动条件对应更快切换频率。",
+      "download": true
+    },
+    {
+      "title": "Movie S2：强光触发的自适应人工瞳孔反射",
+      "src": "media/movie-s2-adaptive-pupil-reflex.mp4",
+      "poster": "figures/movie-s2-adaptive-pupil-reflex-poster.webp",
+      "caption": "31.67 秒。650 nm、约 36.2 mW/cm² 强光开启后，八个 EGaIn 单元向中心展开并缩小通光孔径；关灯后逐步恢复。",
+      "download": true
+    }
+  ]
 }
