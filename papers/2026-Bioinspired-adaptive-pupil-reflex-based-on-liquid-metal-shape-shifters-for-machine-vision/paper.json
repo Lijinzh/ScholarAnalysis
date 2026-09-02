@@ -21,12 +21,12 @@
   "venue": "Science Robotics",
   "publishedAt": "2026-02-11",
   "doi": "10.1126/scirobotics.adx0715",
-  "status": "分析与补充视频已发布；论文原文不公开",
+  "status": "分析与补充视频已发布；论文、补充 PDF 与 Data S1 不公开",
   "featured": true,
   "summary": "以 In2O3/Y6 半球形人工视网膜感光，以 EGaIn 液态金属逻辑模块编码脉冲，再驱动八瓣式液态金属人工瞳孔收缩，形成闭环强光适应。",
   "topics": ["液态金属", "仿生视觉", "人工瞳孔", "光电突触", "机器视觉"],
   "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adx0715",
-  "rightsNote": "用户确认补充视频可以公开再分发，本站提供在线播放与下载；论文全文没有公开再分发权限，因此只提供 DOI 官方入口。",
+  "rightsNote": "用户确认补充视频可以公开再分发，本站提供在线播放与下载；论文全文、Supplementary Materials PDF 与 Data File S1 均未发现允许公开再分发的明确许可，因此本站仅提供期刊官方入口。",
   "downloads": [],
   "videos": [
     {
