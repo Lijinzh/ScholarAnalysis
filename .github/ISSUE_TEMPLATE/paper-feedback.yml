@@ -1,0 +1,25 @@
+name: 论文提问、勘误或补充建议
+description: 针对某篇论文的技术问题、勘误、复现建议或材料补充
+title: "[Paper] "
+labels:
+  - paper-feedback
+body:
+  - type: input
+    id: paper
+    attributes:
+      label: 论文 slug
+      placeholder: 2026-liang-adx0715
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 问题或建议
+      description: 请尽量指出对应章节、图号、材料、工艺或网页位置。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 相关证据或附件说明
+      description: 可填写 DOI、补充材料编号、时间戳、截图说明或复现现象。

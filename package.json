@@ -1,0 +1,15 @@
+{
+  "name": "scholar-analysis",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "new-paper": "node tools/new-paper.mjs",
+    "build": "node tools/build-site.mjs",
+    "verify": "node tools/verify.mjs",
+    "dev": "node tools/serve.mjs"
+  },
+  "devDependencies": {
+    "marked": "^18.0.11"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "2026-Bioinspired-adaptive-pupil-reflex-based-on-liquid-metal-shape-shifters-for-machine-vision",
+  "title": "Bioinspired adaptive pupil reflex based on liquid-metal shape-shifters for machine vision",
+  "titleZh": "基于液态金属变形器的仿生自适应瞳孔反射机器视觉",
+  "authors": [
+    "Kun Liang",
+    "Rui Wang",
+    "Gavin Lyda",
+    "Anran Zhang",
+    "Wanrong Xie",
+    "Yihang Wang",
+    "Sicheng Xing",
+    "Yizhang Wu",
+    "Zhibo Zhang",
+    "Yihan Liu",
+    "Michael D. Dickey",
+    "Bowen Zhu",
+    "Wubin Bai"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-02-11",
+  "doi": "10.1126/scirobotics.adx0715",
+  "status": "分析已完成；原文与视频不公开再分发",
+  "featured": true,
+  "summary": "以 In2O3/Y6 半球形人工视网膜感光，以 EGaIn 液态金属逻辑模块编码脉冲，再驱动八瓣式液态金属人工瞳孔收缩，形成闭环强光适应。",
+  "topics": ["液态金属", "仿生视觉", "人工瞳孔", "光电突触", "机器视觉"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adx0715",
+  "rightsNote": "用户已确认不拥有论文全文和补充视频的完整公开再分发权限，因此公开网页只发布原创分析与原创示意图；原文请通过 DOI 访问。",
+  "downloads": [],
+  "videos": []
+}

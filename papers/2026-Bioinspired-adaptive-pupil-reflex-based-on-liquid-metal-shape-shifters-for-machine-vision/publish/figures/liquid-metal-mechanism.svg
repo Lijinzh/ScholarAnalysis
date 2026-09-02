@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">EGaIn 液态金属的电化学变形机制</title>
+  <desc id="desc">无驱动时液态金属因高界面张力收缩，施加电势后表面氧化、界面张力下降并沿通道铺展。</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbfaf5"/><stop offset="1" stop-color="#edf7f3"/></linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8f0f2"/><stop offset=".45" stop-color="#7d9ca6"/><stop offset="1" stop-color="#2a4f58"/></linearGradient>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10z" fill="#186e5c"/></marker>
+  </defs>
+  <rect width="1200" height="650" rx="34" fill="url(#bg2)"/>
+  <text x="70" y="72" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#152d28">EGaIn 的形变来自电化学界面效应，不是光致相变</text>
+
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="70" y="135" width="455" height="385" rx="28" fill="#fff" stroke="#d7dedb" stroke-width="2"/>
+    <text x="297" y="184" text-anchor="middle" font-size="26" font-weight="700" fill="#233b36">无驱动 / 氧化层被 NaOH 去除</text>
+    <rect x="115" y="315" width="365" height="90" rx="28" fill="#d9f0ec" stroke="#85bcb0" stroke-width="3"/>
+    <text x="135" y="387" font-size="16" fill="#42776c">NaOH 电解液</text>
+    <circle cx="297" cy="323" r="90" fill="url(#metal)" stroke="#fff" stroke-width="5"/>
+    <path d="M225 268c38-36 89-39 132-4" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="10" stroke-linecap="round"/>
+    <text x="297" y="452" text-anchor="middle" font-size="19" fill="#4d615c">高界面张力 → 倾向收缩成球</text>
+
+    <rect x="675" y="135" width="455" height="385" rx="28" fill="#fff" stroke="#5aa991" stroke-width="3"/>
+    <text x="902" y="184" text-anchor="middle" font-size="26" font-weight="700" fill="#233b36">施加正电势 / 表面氧化</text>
+    <rect x="720" y="315" width="365" height="90" rx="28" fill="#d9f0ec" stroke="#85bcb0" stroke-width="3"/>
+    <path d="M745 354c88-73 219-71 316 0-94 40-224 40-316 0z" fill="url(#metal)" stroke="#d6aa54" stroke-width="7"/>
+    <g fill="#e0a63c"><circle cx="775" cy="327" r="6"/><circle cx="814" cy="307" r="6"/><circle cx="855" cy="294" r="6"/><circle cx="900" cy="288" r="6"/><circle cx="948" cy="294" r="6"/><circle cx="994" cy="307" r="6"/><circle cx="1033" cy="327" r="6"/></g>
+    <g stroke="#186e5c" stroke-width="4" marker-end="url(#a2)"><path d="M895 377H776"/><path d="M910 377h119"/></g>
+    <text x="902" y="452" text-anchor="middle" font-size="19" fill="#4d615c">有效界面张力下降 + Marangoni 流 → 铺展</text>
+  </g>
+
+  <path d="M548 325h80" stroke="#186e5c" stroke-width="6" marker-end="url(#a2)"/>
+  <text x="588" y="302" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#186e5c">电压</text>
+
+  <rect x="160" y="557" width="880" height="56" rx="20" fill="#163e36"/>
+  <text x="600" y="593" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="20" fill="#fff">光 → 光电流 → 控制电压 → 表面氧化/还原 → EGaIn 伸展或回缩</text>
+</svg>

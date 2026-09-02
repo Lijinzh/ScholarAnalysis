@@ -1,0 +1,19 @@
+node_modules/
+dist/
+tmp/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# 原始论文材料只保留在本地投递箱；公开文件必须经过 publish/ 人工确认。
+papers/*/inbox/**
+!papers/*/inbox/**/
+!papers/*/inbox/**/README.md
+
+# 模板投递箱只保留说明文件。
+templates/paper/inbox/**
+!templates/paper/inbox/**/
+!templates/paper/inbox/**/README.md
