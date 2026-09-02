@@ -68,7 +68,8 @@ h1 { margin: 0 0 22px; font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 12ch; }
   text-decoration: none;
 }
 .paper-card:hover h3 { color: var(--accent); }
-.paper-card h3 { margin: 0 0 10px; font-size: clamp(1.35rem, 2.4vw, 2rem); transition: color .2s; }
+.paper-card h3 { margin: 0 0 6px; font-size: clamp(1.35rem, 2.4vw, 2rem); transition: color .2s; }
+.paper-title-en { margin: 0 0 12px; color: #3f544c; font-family: Inter, system-ui, sans-serif; font-size: clamp(.9rem, 1.4vw, 1.04rem); font-weight: 620; line-height: 1.42; letter-spacing: -.012em; }
 .paper-card p { margin: 0; color: var(--muted); max-width: 72ch; }
 .paper-meta { color: var(--muted); white-space: nowrap; font-size: .92rem; }
 

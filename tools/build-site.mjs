@@ -76,6 +76,7 @@ const cards = papers.map((paper) => `
   <a class="paper-card" href="${url(`papers/${paper.slug}/`)}">
     <div>
       <h3>${escapeHtml(paper.titleZh)}</h3>
+      <div class="paper-title-en" lang="en">${escapeHtml(paper.title)}</div>
       <p>${escapeHtml(paper.summary)}</p>
     </div>
     <div class="paper-meta">${escapeHtml(paper.year)} · ${escapeHtml(paper.venue)}</div>
