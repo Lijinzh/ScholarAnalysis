@@ -1,0 +1,29 @@
+{
+  "slug": "2026-Cross-robot-behavior-adaptation-through-intention-alignment",
+  "title": "Cross-robot behavior adaptation through intention alignment",
+  "titleZh": "通过意图对齐实现跨机器人行为适应",
+  "authors": [
+    "Xi Chen",
+    "Yuan Gao",
+    "Hangxin Liu",
+    "Fangkai Yang",
+    "Ali Ghadirzadeh",
+    "Jun Yang",
+    "Bin Liang",
+    "Chongjie Zhang",
+    "Tin Lun Lam",
+    "Song-Chun Zhu"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-03-18",
+  "doi": "10.1126/scirobotics.adv2250",
+  "status": "中文分析已补充 256 维意图映射、人工标注、候选生成与模型部署详解；三段补充视频已核验，机构权限材料仅本地保存",
+  "featured": false,
+  "summary": "IAIL 为每台机器人独立训练动作生成器与运动编码器，通过人工语言标注把不同具身的轨迹映射到共享的 256 维意图空间；推理时先提出可执行候选，再按示范或文本意图排序选择，不满足阈值时主动保持不动。",
+  "topics": ["模仿学习", "多机器人系统", "跨具身迁移", "意图对齐", "语言-动作表征"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adv2250",
+  "rightsNote": "期刊页显示访问由 National University of Defense Technology 提供，并使用 Science Journals Default License、提供 Request permissions，未显示 Creative Commons 开放许可；因此正文、补充 PDF、Movies S1-S3 与 Data S1-S2 均不在本站再分发，只提供官方入口。论文另行公开的 Zenodo 评估脚本按其独立许可判断。",
+  "downloads": [],
+  "videos": []
+}

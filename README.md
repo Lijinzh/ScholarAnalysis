@@ -2,11 +2,14 @@
 
 一个面向长期维护的论文解析与 GitHub Pages 发布项目。每篇重要论文都有独立目录，原论文、补充材料、视频、数据、分析稿和公开网页资源彼此分区。
 
-## 当前论文投递目录
+## 论文材料目录
 
-请把这篇液态金属自适应瞳孔论文的材料拖入：
+每篇论文都有独立的 `papers/<slug>/inbox/` 本地投递箱。当前包括：
 
-`papers/2026-Bioinspired-adaptive-pupil-reflex-based-on-liquid-metal-shape-shifters-for-machine-vision/inbox/`
+- `papers/2026-Bioinspired-adaptive-pupil-reflex-based-on-liquid-metal-shape-shifters-for-machine-vision/inbox/`
+- `papers/2026-Cross-robot-behavior-adaptation-through-intention-alignment/inbox/`
+
+各投递箱的分区一致：
 
 - `01-main-paper/`：论文正文 PDF
 - `02-supplementary/`：补充 PDF、附录、说明文档

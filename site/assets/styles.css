@@ -84,6 +84,8 @@ h1 { margin: 0 0 22px; font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 12ch; }
 .prose h3 { margin-top: 2em; font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; }
 .prose blockquote { margin: 28px 0; padding: 18px 22px; border-left: 4px solid var(--accent); background: var(--wash); }
 .prose code { padding: .12em .38em; border-radius: 5px; background: #edf2ef; font-family: Consolas, monospace; }
+.prose pre { max-width: 100%; margin: 24px 0; overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: #edf2ef; }
+.prose pre code { display: block; width: max-content; min-width: 100%; box-sizing: border-box; padding: 16px 18px; border-radius: 0; background: transparent; line-height: 1.65; }
 .prose img { display: block; width: 100%; margin: 34px 0; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: var(--shadow); }
 .prose table { display: block; width: 100%; margin: 30px 0; overflow-x: auto; border-collapse: collapse; font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: .94rem; }
 .prose th, .prose td { min-width: 130px; padding: 13px 15px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
