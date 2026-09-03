@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "scholar-analysis-feedback",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-02",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "vars": {
+    "GITHUB_OWNER": "Lijinzh",
+    "GITHUB_REPO": "ScholarAnalysis",
+    "GITHUB_LABEL": "paper-feedback",
+    "ALLOWED_ORIGINS": "https://lijinzh.github.io,http://127.0.0.1:4173",
+    "ALLOWED_PAGE_HOSTS": "lijinzh.github.io,127.0.0.1,localhost",
+    "TURNSTILE_HOSTNAMES": "lijinzh.github.io"
+  },
+  "ratelimits": [
+    {
+      "name": "FEEDBACK_RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": { "limit": 6, "period": 60 }
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": { "enabled": true }
+  }
+}

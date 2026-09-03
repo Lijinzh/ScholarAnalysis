@@ -1,10 +1,5 @@
-function openPrefilledIssue({ owner, repo, title, body }) {
-  const url = new URL(`https://github.com/${owner}/${repo}/issues/new`);
-  url.searchParams.set('title', title);
-  url.searchParams.set('body', body);
-  url.searchParams.set('labels', 'paper-feedback');
-  window.open(url, '_blank', 'noopener,noreferrer');
-}
+const feedbackEndpoint = document.body.dataset.feedbackEndpoint?.trim() || '';
+const turnstileSiteKey = document.body.dataset.turnstileSiteKey?.trim() || '';
 
 function normalizedText(value = '') {
   return value.replace(/\s+/g, ' ').trim();
@@ -19,13 +14,126 @@ function shortHash(value) {
   return (hash >>> 0).toString(36);
 }
 
-function quoteMarkdown(value, limit = 900) {
-  const text = value.length > limit ? `${value.slice(0, limit)}…` : value;
-  return text.split('\n').map((line) => `> ${line}`).join('\n');
+function createSubmissionId() {
+  if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+  return `feedback-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+function setFeedbackStatus(status, message, state = '') {
+  if (!status) return;
+  status.textContent = message;
+  if (state) status.dataset.state = state;
+  else delete status.dataset.state;
+}
+
+async function waitForTurnstile() {
+  if (!turnstileSiteKey) return undefined;
+  const startedAt = Date.now();
+  while (!globalThis.turnstile) {
+    if (Date.now() - startedAt > 12000) throw new Error('安全验证组件加载失败，请稍后重试。');
+    await new Promise((resolve) => setTimeout(resolve, 100));
+  }
+  return globalThis.turnstile;
+}
+
+async function getTurnstileProof(form) {
+  const turnstile = await waitForTurnstile();
+  if (!turnstile) return { token: '', cleanup() {} };
+
+  const container = document.createElement('div');
+  container.className = 'feedback-turnstile';
+  form.append(container);
+
+  let widgetId;
+  let timer;
+  const token = await new Promise((resolve, reject) => {
+    timer = setTimeout(() => reject(new Error('安全验证超时，请重试。')), 30000);
+    widgetId = turnstile.render(container, {
+      sitekey: turnstileSiteKey,
+      action: 'paper-feedback',
+      execution: 'execute',
+      appearance: 'interaction-only',
+      callback(value) {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      'error-callback'() {
+        clearTimeout(timer);
+        reject(new Error('安全验证失败，请重试。'));
+      },
+      'expired-callback'() {
+        clearTimeout(timer);
+        reject(new Error('安全验证已过期，请重新提交。'));
+      },
+    });
+    turnstile.execute(widgetId);
+  });
+
+  return {
+    token,
+    cleanup() {
+      clearTimeout(timer);
+      if (widgetId !== undefined) turnstile.remove(widgetId);
+      else container.remove();
+    },
+  };
+}
+
+async function submitFeedback({ form, button, status, payload }) {
+  if (!feedbackEndpoint) {
+    setFeedbackStatus(status, '自动提交服务尚未完成线上配置，本次内容没有保存。', 'error');
+    return false;
+  }
+
+  const honeypot = form.querySelector('[name="website"]');
+  if (honeypot?.value) {
+    setFeedbackStatus(status, '问题已保存。', 'success');
+    return true;
+  }
+
+  const originalLabel = button.textContent;
+  button.disabled = true;
+  button.textContent = '正在自动保存…';
+  setFeedbackStatus(status, '正在验证并写入 GitHub Issue…');
+
+  let proof = { token: '', cleanup() {} };
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 25000);
+
+  try {
+    proof = await getTurnstileProof(form);
+    const response = await fetch(feedbackEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...payload,
+        turnstileToken: proof.token,
+        clientSubmissionId: createSubmissionId(),
+      }),
+      signal: controller.signal,
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.message || '自动保存失败，请稍后重试。');
+
+    const issueText = result.number ? ` GitHub Issue #${result.number}` : ' GitHub Issue';
+    setFeedbackStatus(status, `已自动保存为${issueText}，无需离开当前页面。`, 'success');
+    return true;
+  } catch (error) {
+    const message = error.name === 'AbortError'
+      ? '自动保存超时，当前页面没有跳转。请稍后重试。'
+      : error.message;
+    setFeedbackStatus(status, message, 'error');
+    return false;
+  } finally {
+    clearTimeout(timeout);
+    proof.cleanup();
+    button.disabled = false;
+    button.textContent = originalLabel;
+  }
 }
 
 for (const form of document.querySelectorAll('[data-issue-form]')) {
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const textarea = form.querySelector('textarea');
     const question = textarea?.value.trim();
@@ -34,31 +142,25 @@ for (const form of document.querySelectorAll('[data-issue-form]')) {
       return;
     }
 
-    const owner = form.dataset.owner;
-    const repo = form.dataset.repo;
-    const slug = form.dataset.paper;
-    const paperTitle = form.dataset.title;
-    const title = `[Paper: ${slug}] ${question.slice(0, 60)}`;
-    const body = [
-      '## 论文',
-      paperTitle,
-      '',
-      `- slug: \`${slug}\``,
-      `- 页面: ${window.location.href}`,
-      '',
-      '## 整篇论文的问题或建议',
-      question,
-    ].join('\n');
-
-    openPrefilledIssue({ owner, repo, title, body });
+    const saved = await submitFeedback({
+      form,
+      button: form.querySelector('button[type="submit"]'),
+      status: form.querySelector('.feedback-status'),
+      payload: {
+        kind: 'paper',
+        slug: form.dataset.paper,
+        paperTitle: form.dataset.title,
+        pageUrl: window.location.href,
+        question,
+      },
+    });
+    if (saved) textarea.value = '';
   });
 }
 
 const article = document.querySelector('[data-paragraph-comments]');
 
 if (article) {
-  const owner = article.dataset.owner;
-  const repo = article.dataset.repo;
   const slug = article.dataset.paper;
   const paperTitle = article.dataset.title;
   const paragraphs = [...article.querySelectorAll(':scope > p, :scope > blockquote > p')]
@@ -120,7 +222,7 @@ if (article) {
       const hint = document.createElement('p');
       hint.className = 'paragraph-comment-hint';
       hint.textContent = selectedText
-        ? 'Issue 会同时记录选中句子、完整段落和页面锚点。'
+        ? '后台会同时记录选中句子、完整段落和页面锚点。'
         : '想精确到某一句时，可以先选中文字，再点击段落右侧的 +。';
 
       const textarea = document.createElement('textarea');
@@ -129,21 +231,34 @@ if (article) {
       textarea.placeholder = '这段哪里没理解？有什么疑问、补充或反对意见？';
       textarea.required = true;
 
+      const honeypot = document.createElement('input');
+      honeypot.type = 'text';
+      honeypot.name = 'website';
+      honeypot.tabIndex = -1;
+      honeypot.autocomplete = 'off';
+      honeypot.className = 'feedback-honeypot';
+      honeypot.setAttribute('aria-hidden', 'true');
+
       const actions = document.createElement('div');
       actions.className = 'paragraph-comment-actions';
 
       const submit = document.createElement('button');
       submit.type = 'submit';
       submit.className = 'button paragraph-comment-submit';
-      submit.textContent = '在 GitHub Issue 中继续';
+      submit.textContent = '自动保存问题';
 
       const cancel = document.createElement('button');
       cancel.type = 'button';
       cancel.className = 'paragraph-comment-cancel';
       cancel.textContent = '取消';
 
-      actions.append(submit, cancel);
-      panel.append(contextLabel, context, hint, textarea, actions);
+      const status = document.createElement('div');
+      status.className = 'feedback-status';
+      status.setAttribute('role', 'status');
+      status.setAttribute('aria-live', 'polite');
+
+      actions.append(submit, cancel, status);
+      panel.append(contextLabel, context, hint, textarea, honeypot, actions);
       paragraph.insertAdjacentElement('afterend', panel);
       activePanel = panel;
       trigger.setAttribute('aria-expanded', 'true');
@@ -157,7 +272,7 @@ if (article) {
         trigger.focus();
       });
 
-      panel.addEventListener('submit', (event) => {
+      panel.addEventListener('submit', async (event) => {
         event.preventDefault();
         const question = textarea.value.trim();
         if (!question) {
@@ -166,24 +281,24 @@ if (article) {
         }
 
         const anchorUrl = `${window.location.origin}${window.location.pathname}#${paragraphId}`;
-        const issueTitle = `[Paragraph ${paragraphNumber}: ${slug}] ${question.slice(0, 52)}`;
-        const body = [
-          '## 论文',
-          paperTitle,
-          '',
-          `- slug: \`${slug}\``,
-          `- 段落: 第 ${paragraphNumber} 段`,
-          `- 精确链接: ${anchorUrl}`,
-          '',
-          selectedText ? '## 选中的句子' : '## 针对内容',
-          quoteMarkdown(quotedText, 500),
-          '',
-          ...(selectedText ? ['## 所在完整段落', quoteMarkdown(paragraphText), ''] : []),
-          '## 问题或建议',
-          question,
-        ].join('\n');
-
-        openPrefilledIssue({ owner, repo, title: issueTitle, body });
+        const saved = await submitFeedback({
+          form: panel,
+          button: submit,
+          status,
+          payload: {
+            kind: 'paragraph',
+            slug,
+            paperTitle,
+            pageUrl: anchorUrl,
+            paragraphNumber,
+            paragraphId,
+            selectedText,
+            quotedText,
+            paragraphText,
+            question,
+          },
+        });
+        if (saved) textarea.value = '';
       });
     });
   });

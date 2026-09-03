@@ -6,7 +6,7 @@
   "scripts": {
     "new-paper": "node tools/new-paper.mjs",
     "build": "node tools/build-site.mjs",
-    "verify": "node tools/verify.mjs",
+    "verify": "node --test tests/feedback-worker.test.mjs && node tools/verify.mjs",
     "dev": "node tools/serve.mjs"
   },
   "devDependencies": {

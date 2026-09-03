@@ -4,6 +4,7 @@ tmp/
 .env
 .env.*
 !.env.example
+services/feedback-worker/.dev.vars
 .DS_Store
 Thumbs.db
 Desktop.ini

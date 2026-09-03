@@ -57,7 +57,9 @@ papers/<slug>/
 
 ## 5. GitHub Issue 联动
 
-每篇论文页提供提问框。浏览器会把论文 slug、页面地址和问题内容预填到 GitHub Issue；最终提交仍由用户在 GitHub 页面确认。
+每篇论文页提供整篇和段落级提问框。网页把论文 slug、页面地址、段落锚点、选中句子和问题内容提交给独立的反馈 API；API 在服务端使用受保护的 GitHub 凭据自动创建带 `paper-feedback` 标签的 Issue。提交成功后用户留在原页面，不需要跳转到 GitHub，也不需要再次点击 Create。
+
+GitHub Pages 是静态站点，禁止把任何 Issue 写入 Token、GitHub App 私钥或 Turnstile secret 放入前端代码、构建产物或仓库变量。服务端密钥必须保存为 Worker secret；公开表单必须执行服务端 Turnstile 校验、来源校验、字段长度限制和速率限制。
 
 处理流程：
 
@@ -66,6 +68,8 @@ papers/<slug>/
 3. 构建并验证本地网页。
 4. 提交、推送并验证 GitHub Pages。
 5. 在 Issue 中留下更新链接后关闭 Issue。
+
+用户需要集中处理问题时，可以直接在 Codex/ChatGPT 任务中要求“读取 ScholarAnalysis 的 `paper-feedback` Issues”。处理代理通过 GitHub API/CLI 读取上下文、更新正文、发布网页并关闭 Issue；网页提交阶段不负责跳转到 AI 软件或自动触发模型运行。
 
 ## 6. 发布门槛
 

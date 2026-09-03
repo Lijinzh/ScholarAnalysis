@@ -13,6 +13,8 @@ const repo = repoFromEnv || config.repository;
 const owner = process.env.GITHUB_REPOSITORY?.split('/')[0] || config.githubOwner;
 const base = process.env.SITE_BASE_PATH ?? (repo.endsWith('.github.io') ? '' : `/${repo}`);
 const siteOrigin = process.env.SITE_ORIGIN || `https://${owner.toLowerCase()}.github.io`;
+const feedbackApiUrl = process.env.FEEDBACK_API_URL || config.feedbackApiUrl || '';
+const turnstileSiteKey = process.env.TURNSTILE_SITE_KEY || config.turnstileSiteKey || '';
 
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -52,9 +54,10 @@ const layout = ({ title, description, body, canonical, extraHead = '' }) => `<!d
   <link rel="canonical" href="${escapeHtml(canonical)}">
   <link rel="stylesheet" href="${url('assets/styles.css')}">
   <title>${escapeHtml(title)}</title>
+  ${turnstileSiteKey ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>' : ''}
   ${extraHead}
 </head>
-<body>
+<body data-feedback-endpoint="${escapeHtml(feedbackApiUrl)}" data-turnstile-site-key="${escapeHtml(turnstileSiteKey)}">
   <header class="site-header">
     <div class="shell nav">
       <a class="brand" href="${url('')}">Scholar<span>Analysis</span></a>
@@ -169,7 +172,7 @@ for (const paper of papers) {
       <section class="section">
         <div class="shell paper-layout">
           <article class="prose" data-paragraph-comments data-owner="${escapeHtml(owner)}" data-repo="${escapeHtml(repo)}" data-paper="${escapeHtml(paper.slug)}" data-title="${escapeHtml(paper.titleZh)}">
-            <div class="paragraph-comment-guide"><span aria-hidden="true">+</span><div>悬停在自然段上可直接提问；如果想精确到某一句，请先选中文字，再点击段落右侧的 +。</div></div>
+            <div class="paragraph-comment-guide"><span aria-hidden="true">+</span><div>悬停在自然段上可直接提问；提交后会在后台自动保存为 GitHub Issue，不会跳离当前页面。想精确到某一句时，请先选中文字。</div></div>
             ${marked.parse(analysisBody)}
           </article>
           <aside class="side-panel">
@@ -191,10 +194,12 @@ for (const paper of papers) {
       <section class="section">
         <div class="shell question-box">
           <h2>对整篇论文有综合意见？</h2>
-          <p>这里适合不针对某个自然段的整体问题。段落级问题可以直接点击正文右侧的 +。</p>
+          <p>这里适合不针对某个自然段的整体问题。提交后会自动保存，无需前往 GitHub 再点 Create。</p>
           <form data-issue-form data-owner="${escapeHtml(owner)}" data-repo="${escapeHtml(repo)}" data-paper="${escapeHtml(paper.slug)}" data-title="${escapeHtml(paper.titleZh)}">
             <textarea aria-label="问题或建议" placeholder="例如：这里的液态金属为什么会随光强变化？控制回路的阈值在哪里？"></textarea>
-            <button class="button" type="submit">在 GitHub Issue 中继续</button>
+            <input class="feedback-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="button" type="submit">自动保存问题</button>
+            <div class="feedback-status" role="status" aria-live="polite"></div>
           </form>
         </div>
       </section>
@@ -203,5 +208,5 @@ for (const paper of papers) {
   await writeFile(path.join(paperOutput, 'index.html'), page, 'utf8');
 }
 
-await writeFile(path.join(distRoot, 'build-meta.json'), JSON.stringify({ owner, repo, base, paperCount: papers.length }, null, 2), 'utf8');
+await writeFile(path.join(distRoot, 'build-meta.json'), JSON.stringify({ owner, repo, base, paperCount: papers.length, feedbackApiConfigured: Boolean(feedbackApiUrl), turnstileConfigured: Boolean(turnstileSiteKey) }, null, 2), 'utf8');
 console.log(`Built ${papers.length} paper page(s) at ${distRoot} with base ${base || '/'}`);
