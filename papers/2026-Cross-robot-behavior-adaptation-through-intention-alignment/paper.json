@@ -18,7 +18,7 @@
   "venue": "Science Robotics",
   "publishedAt": "2026-03-18",
   "doi": "10.1126/scirobotics.adv2250",
-  "status": "中文分析已补充 256 维意图映射、人工标注、候选生成与模型部署详解；三段补充视频已核验，机构权限材料仅本地保存",
+  "status": "图文解析已发布；三段补充视频已核验并提供独立官方入口，机构权限原文件仅本地保存",
   "featured": false,
   "cardImage": "figures/card-cross-robot-intention.webp",
   "cardImageAlt": "三种不同具身机器人通过共享意图空间对齐各自动作的科研概念图",
@@ -28,5 +28,34 @@
   "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adv2250",
   "rightsNote": "期刊页显示访问由 National University of Defense Technology 提供，并使用 Science Journals Default License、提供 Request permissions，未显示 Creative Commons 开放许可；因此正文、补充 PDF、Movies S1-S3 与 Data S1-S2 均不在本站再分发，只提供官方入口。论文另行公开的 Zenodo 评估脚本按其独立许可判断。",
   "downloads": [],
-  "videos": []
+  "videos": [],
+  "restrictedVideos": [
+    {
+      "title": "Movie S1｜跨机器人团队任务与三种适应案例",
+      "duration": "02:55",
+      "resolution": "960×544",
+      "poster": "figures/card-cross-robot-intention.webp",
+      "posterAlt": "不同具身机器人通过共享意图空间协作的 GPT-Image 科研示意图",
+      "summary": "展示五步团队任务，以及物品缺失、同类替代和机器人缺席时的角色重分配与实际执行。",
+      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.adv2250/suppl_file/scirobotics.adv2250_movies_s1_to_s3.zip"
+    },
+    {
+      "title": "Movie S2｜IAIL 的候选生成、意图提取与动作关联",
+      "duration": "01:59",
+      "resolution": "1920×1080",
+      "poster": "figures/intention-vector-mapping-gpt-image-2.webp",
+      "posterAlt": "状态、动作和文本共同映射到 256 维意图空间的 GPT-Image 科研示意图",
+      "summary": "逐步解释 context-aware motion generation、motion intention extraction 和基于意图相似度的动作关联。",
+      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.adv2250/suppl_file/scirobotics.adv2250_movies_s1_to_s3.zip"
+    },
+    {
+      "title": "Movie S3｜LLM 任务分解接入共享意图空间",
+      "duration": "01:34",
+      "resolution": "1280×720",
+      "poster": "figures/intention-vector-mapping-gpt-image-2.webp",
+      "posterAlt": "语言指令与机器人候选动作在共享意图空间中比较的 GPT-Image 科研示意图",
+      "summary": "展示 ChatGPT-4.0 把复合文本任务拆成监控、拾取、交接和配送步骤，再由学习团队逐项执行。",
+      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.adv2250/suppl_file/scirobotics.adv2250_movies_s1_to_s3.zip"
+    }
+  ]
 }

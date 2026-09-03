@@ -6,6 +6,11 @@
 
 传统模仿学习往往默认演示者和学习者具有相似身体、相似传感器、相似动作空间，并且处在相似环境里。若 Tello 无人机演示“去 M3 观察用户”，固定机械臂无法复制飞行动作；但轮式机器人仍可能用完全不同的底盘轨迹完成同一目标。论文把需要复制的对象从**低层动作**提升为**高层意图**，从而允许不同形态的机器人用各自的动作完成相同任务。
 
+<figure class="analysis-figure">
+  <img src="files/figures/card-cross-robot-intention.webp" alt="无人机、机械臂和轮式机器人把不同形态的动作映射到同一个共享意图空间，再选择各自可执行动作的科研概念图">
+  <figcaption><span class="figure-source">GPT-Image 生成式科研示意图，不是论文原图</span><strong>图 1｜跨具身适应的核心直觉。</strong> 系统对齐的是“观察、拾取、交接、配送”等任务意图，而不是要求不同机器人复制相同的关节轨迹。</figcaption>
+</figure>
+
 整条链路可以概括为：
 
 1. 每台机器人离线收集自己的任务轨迹，并训练一个状态条件动作生成器。
@@ -57,6 +62,11 @@ e_text = normalize(fξ(l)) ∈ R²⁵⁶
 ```
 
 这些数本身不是概率，也不对应可直接阅读的标签。它们构成一个可比较的语义坐标：完成相似目标的动作靠近，目标不同的动作远离。
+
+<figure class="analysis-figure">
+  <img src="files/figures/intention-vector-mapping-gpt-image-2.webp" alt="机器人状态与候选动作经过运动编码器、文本经过语言编码器，共同映射为 256 维意图向量并以余弦相似度比较的流程图">
+  <figcaption><span class="figure-source">GPT-Image 生成式科研示意图，不是论文原图</span><strong>图 2｜256 维共享意图空间的映射与比较。</strong> 数值状态机器人使用多层感知机，图像状态机器人使用视觉骨干与 FiLM 调制；两条状态路径按机器人输入形式选择，并非每台机器人同时经过两条网络。文本与动作表示归一化后以余弦距离比较。</figcaption>
+</figure>
 
 ### 向量状态机器人的映射路径
 
@@ -274,11 +284,26 @@ IAIL 选择模块化路线，是用更多候选采样换取更清晰的能力边
 
 这里的 92% 不是“30 个场景中成功 92%”。论文把六个物理上不可完成的场景从任务成功率分母中排除，单独用最佳适应指标评价是否正确拒绝。30 个场景共出现七次失败：一次选了无关物品，六次在本可完成时错误保持不动；作者认为主要原因是意图抽取错误或传感噪声使距离超过阈值。
 
+<figure class="analysis-figure">
+  <img src="files/figures/real-world-adaptation-results-source-data.webp" alt="横向条形图比较可完成任务成功率、最佳适应、同类替代、正确拒绝和能力范围等六项真实机器人实验指标">
+  <figcaption><span class="figure-source source-data">来源数据可视化</span><strong>图 3｜真实机器人实验的六个关键指标。</strong> 根据论文 Table 1 的均值重绘。各指标分母并不相同，尤其 92% 只统计 24 个物理上可完成的场景，不能直接当作全部 30 个场景的统一成功率。</figcaption>
+</figure>
+
 ### 共享意图空间
 
 作者从七台机器人、多个任务中取 120 条未参与训练的轨迹，检查同类任务是否聚类、不同身体是否能对齐。全局语义分离比为 3.764，具身对齐比为 3.046。补充材料还报告 10 近邻纯度：Monitoring、Handover 和 Delivery 为 1.000 ± 0.000，Picking 为 0.972 ± 0.012。
 
+<figure class="analysis-figure">
+  <img src="files/figures/latent-task-distance-source-data.webp" alt="条形图展示八类任务在共享意图空间中的同任务类内距离与跨机器人对齐误差">
+  <figcaption><span class="figure-source source-data">来源数据可视化</span><strong>图 4｜任务级聚类与跨机器人对齐。</strong> 根据论文 Table 4 的均值重绘。D1、D2 的两类距离最低；复杂的监控、拾取与交接任务距离更大，但仍能在统一空间中比较。</figcaption>
+</figure>
+
 意图空间不仅区分“拾取”和“配送”，还保留具体物品层级。以杯子为例，同一个具体杯子的类内距离约 0.110 ± 0.044，把四种杯子合并为“杯子类”后距离增至 0.499 ± 0.034。这解释了系统为什么在原物品存在时优先复现原物品，而不存在时仍能退化到同类替代。
+
+<figure class="analysis-figure">
+  <img src="files/figures/object-level-intention-distance-source-data.webp" alt="两组柱状图比较木块、杯子、胶枪、胶带和颜料在同一具体物体与同类别不同物体条件下的意图距离">
+  <figcaption><span class="figure-source source-data">来源数据可视化</span><strong>图 5｜意图空间保留物体级细粒度。</strong> 根据论文 Table 5 的均值重绘。多数对象中，“同一具体物体”的距离明显小于“同类别不同物体”，所以系统既能偏好原物品，也能在缺失时接受同类替代。</figcaption>
+</figure>
 
 ### 与两个基线的比较
 

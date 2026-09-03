@@ -139,7 +139,7 @@ for (const paper of papers) {
     ? `<ul>${paper.downloads.map((item) => `<li><a href="${url(`papers/${paper.slug}/files/${item.src}`)}" download>${escapeHtml(item.title)}</a></li>`).join('')}</ul>`
     : '<p>原文无完整公开再分发许可，本站不提供下载；请使用期刊官方入口。</p>';
 
-  const videos = paper.videos.length
+  const hostedVideos = paper.videos.length
     ? `<div class="media-grid">${paper.videos.map((item) => `
       <figure class="media-item">
         <video controls playsinline preload="metadata" ${item.poster ? `poster="${url(`papers/${paper.slug}/files/${item.poster}`)}"` : ''}>
@@ -148,7 +148,23 @@ for (const paper of papers) {
         </video>
         <figcaption class="media-caption"><strong>${escapeHtml(item.title)}</strong>${escapeHtml(item.caption || '')}${item.download !== false ? ` · <a href="${url(`papers/${paper.slug}/files/${item.src}`)}" download>下载原视频</a>` : ''}</figcaption>
       </figure>`).join('')}</div>`
-    : '<div class="empty-state">论文补充视频没有完整公开再分发许可，因此本站不托管或播放。后续获得授权或官方可嵌入地址后，可直接接入 HTML5 播放器。</div>';
+    : '';
+
+  const restrictedVideos = paper.restrictedVideos?.length
+    ? `<div class="restricted-media-notice">这些视频已逐段核验，但出版社未提供允许本站再分发的独立开放许可。因此下面展示内容索引和官方入口，不复制视频文件，也不伪装成站内播放器。</div>
+      <div class="restricted-media-grid">${paper.restrictedVideos.map((item) => `
+        <article class="restricted-video-card">
+          ${item.poster ? `<div class="restricted-video-poster"><img src="${url(`papers/${paper.slug}/files/${item.poster}`)}" alt="${escapeHtml(item.posterAlt || '')}"><span>科研示意图 · 非视频画面</span></div>` : ''}
+          <div class="restricted-video-body">
+            <div class="restricted-video-meta"><span>${escapeHtml(item.duration || '')}</span><span>${escapeHtml(item.resolution || '')}</span><span>机构权限材料</span></div>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${escapeHtml(item.summary || '')}</p>
+            <a class="button secondary" href="${escapeHtml(item.officialUrl)}">前往 Science 官方视频包</a>
+          </div>
+        </article>`).join('')}</div>`
+    : '';
+
+  const videos = hostedVideos || restrictedVideos || '<div class="empty-state">论文补充视频没有完整公开再分发许可，因此本站不托管或播放。后续获得授权或官方可嵌入地址后，可直接接入 HTML5 播放器。</div>';
 
   const topics = paper.topics.map((topic) => `<li>${escapeHtml(topic)}</li>`).join('');
   const analysisBody = paper.analysis.replace(/^#\s+.*(?:\r?\n)+/, '');
