@@ -31,7 +31,7 @@ pnpm dev
 新建下一篇论文：
 
 ```powershell
-pnpm new-paper -- 2026-Full-paper-title
+pnpm new-paper 2026-Full-paper-title
 ```
 
 完整规范见 [docs/PROJECT_STANDARD.md](docs/PROJECT_STANDARD.md)，视频要求见 [docs/VIDEO_PLAYBACK.md](docs/VIDEO_PLAYBACK.md)。
