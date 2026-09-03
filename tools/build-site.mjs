@@ -72,15 +72,24 @@ const layout = ({ title, description, body, canonical, extraHead = '' }) => `<!d
 </body>
 </html>`;
 
-const cards = papers.map((paper) => `
-  <a class="paper-card" href="${url(`papers/${paper.slug}/`)}">
-    <div>
+const cards = papers.map((paper) => {
+  const cardImage = paper.cardImage ? `
+    <figure class="paper-card-visual">
+      <img src="${url(`papers/${paper.slug}/files/${paper.cardImage}`)}" alt="${escapeHtml(paper.cardImageAlt || `${paper.titleZh}科研示意图`)}" loading="lazy" decoding="async">
+      <figcaption>${escapeHtml(paper.cardImageCaption || '生成式科研示意图，不是论文原图')}</figcaption>
+    </figure>` : '';
+
+  return `
+  <a class="paper-card${paper.cardImage ? ' has-image' : ''}" href="${url(`papers/${paper.slug}/`)}">
+    ${cardImage}
+    <div class="paper-card-copy">
       <h3>${escapeHtml(paper.titleZh)}</h3>
       <div class="paper-title-en" lang="en">${escapeHtml(paper.title)}</div>
       <p>${escapeHtml(paper.summary)}</p>
     </div>
     <div class="paper-meta">${escapeHtml(paper.year)} · ${escapeHtml(paper.venue)}</div>
-  </a>`).join('');
+  </a>`;
+}).join('');
 
 const home = layout({
   title: `${config.titleZh} · ${config.title}`,
