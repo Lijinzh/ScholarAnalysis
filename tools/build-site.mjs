@@ -139,15 +139,25 @@ for (const paper of papers) {
     ? `<ul>${paper.downloads.map((item) => `<li><a href="${url(`papers/${paper.slug}/files/${item.src}`)}" download>${escapeHtml(item.title)}</a></li>`).join('')}</ul>`
     : '<p>原文无完整公开再分发许可，本站不提供下载；请使用期刊官方入口。</p>';
 
-  const hostedVideos = paper.videos.length
-    ? `<div class="media-grid">${paper.videos.map((item) => `
+  const hostedVideoItems = paper.videos.map((item) => `
       <figure class="media-item">
         <video controls playsinline preload="metadata" ${item.poster ? `poster="${url(`papers/${paper.slug}/files/${item.poster}`)}"` : ''}>
           <source src="${url(`papers/${paper.slug}/files/${item.src}`)}" type="video/mp4">
           你的浏览器不支持 HTML5 视频。<a href="${url(`papers/${paper.slug}/files/${item.src}`)}">下载视频</a>
         </video>
         <figcaption class="media-caption"><strong>${escapeHtml(item.title)}</strong>${escapeHtml(item.caption || '')}${item.download !== false ? ` · <a href="${url(`papers/${paper.slug}/files/${item.src}`)}" download>下载原视频</a>` : ''}</figcaption>
-      </figure>`).join('')}</div>`
+      </figure>`).join('');
+
+  const externalVideoItems = (paper.externalVideos || []).map((item) => `
+      <figure class="media-item external-media-item">
+        <div class="external-video-frame">
+          <iframe src="${escapeHtml(item.embedUrl)}" title="${escapeHtml(item.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <figcaption class="media-caption"><strong>${escapeHtml(item.title)}</strong>${escapeHtml(item.caption || '')}${item.watchUrl ? ` · <a href="${escapeHtml(item.watchUrl)}">在原平台观看</a>` : ''}</figcaption>
+      </figure>`).join('');
+
+  const playableVideos = hostedVideoItems || externalVideoItems
+    ? `<div class="media-grid">${hostedVideoItems}${externalVideoItems}</div>`
     : '';
 
   const restrictedVideos = paper.restrictedVideos?.length
@@ -164,7 +174,7 @@ for (const paper of papers) {
         </article>`).join('')}</div>`
     : '';
 
-  const videos = hostedVideos || restrictedVideos || '<div class="empty-state">论文补充视频没有完整公开再分发许可，因此本站不托管或播放。后续获得授权或官方可嵌入地址后，可直接接入 HTML5 播放器。</div>';
+  const videos = playableVideos || restrictedVideos || '<div class="empty-state">论文补充视频没有完整公开再分发许可，因此本站不托管或播放。后续获得授权或官方可嵌入地址后，可直接接入 HTML5 播放器。</div>';
 
   const topics = paper.topics.map((topic) => `<li>${escapeHtml(topic)}</li>`).join('');
   const analysisBody = paper.analysis.replace(/^#\s+.*(?:\r?\n)+/, '');
@@ -203,7 +213,7 @@ for (const paper of papers) {
       </section>
       <section class="section" id="videos">
         <div class="shell">
-          <div class="section-head"><h2>补充视频</h2></div>
+          <div class="section-head"><h2>${escapeHtml(paper.videoSectionTitle || '补充视频')}</h2></div>
           ${videos}
         </div>
       </section>

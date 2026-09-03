@@ -1,0 +1,36 @@
+{
+  "slug": "2026-Modular-reconfigurable-robots-toward-on-demand-multifunctional-applications",
+  "title": "Modular reconfigurable robots: Toward on-demand multifunctional applications",
+  "titleZh": "模块化可重构机器人：迈向按需多功能应用",
+  "authors": [
+    "Guanqi Liang",
+    "Auke Jan Ijspeert",
+    "Mark Yim",
+    "Tin Lun Lam"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-02-25",
+  "doi": "10.1126/scirobotics.adz1999",
+  "status": "图文解析与作者团队官方实验视频嵌入已完成；论文正文仅本地归档",
+  "featured": true,
+  "cardImage": "figures/applications-panorama-gpt-image-2.webp",
+  "cardImageAlt": "同一组模块化机器人分别重组成蛇形和四足移动体、机械臂与多点夹具、以及跨越缺口的桥梁",
+  "cardImageCaption": "GPT-Image 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "这篇综述不再从模块机构类型出发，而是从移动、操作、建造三类真实任务倒推连接器、供能、通信、规划与跨构型控制需求，并用 L1-L5 路线图区分实验室自重构与真正按需多功能系统。",
+  "topics": ["模块化机器人", "自重构", "自组装", "多机器人系统", "形态控制", "智能建造"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adz1999",
+  "rightsNote": "用户下载的 Science Robotics PDF 带机构访问标记，正文声明 Copyright © 2026 The Authors, some rights reserved; exclusive licensee AAAS，并提供 Permissions 入口，未给出允许本站再分发的明确 Creative Commons 许可。正文及其中由 Springer Nature、SAGE、IEEE、AIAA 等分别授权的第三方图片只保存在 Git 忽略的 inbox，本站不复制。该 Review 未发现随文 Supplementary Movie 清单；网页嵌入作者团队 Robotics & AI Lab - CUHK Shenzhen 在 YouTube 公开发布的 SnailBot 实验视频，不下载、不重新托管，并明确它是论文直接引用的代表性研究视频而非本论文补充材料。",
+  "downloads": [],
+  "videos": [],
+  "videoSectionTitle": "代表性实验视频",
+  "externalVideos": [
+    {
+      "title": "作者团队官方视频｜Snail-inspired robotic swarms",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/aNw92VlH3rA",
+      "watchUrl": "https://www.youtube.com/watch?v=aNw92VlH3rA",
+      "caption": "由 Robotics & AI Lab - CUHK Shenzhen 发布，对应综述引用文献 3。视频展示混合连接器如何在自由移动与强力附着之间切换，以及模块群在非结构化户外环境中的协作。它是代表性被引研究视频，不是 adz1999 的 Supplementary Movie；本站仅调用官方播放器。"
+    }
+  ],
+  "restrictedVideos": []
+}
