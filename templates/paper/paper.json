@@ -9,10 +9,14 @@
   "doi": "",
   "status": "materials-pending",
   "featured": false,
+  "cardImage": "",
+  "cardImageAlt": "",
+  "cardImageCaption": "",
   "summary": "",
   "topics": [],
   "officialUrl": "",
   "rightsNote": "公开前确认版权、隐私和再分发权限。",
   "downloads": [],
-  "videos": []
+  "videos": [],
+  "restrictedVideos": []
 }

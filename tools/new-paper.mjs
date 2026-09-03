@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const slug = process.argv[2];
 if (!slug || !/^[A-Za-z0-9][A-Za-z0-9-]+$/.test(slug)) {
-  console.error('Usage: pnpm new-paper -- 2026-Full-or-recognizable-paper-title');
+  console.error('Usage: pnpm new-paper 2026-Full-or-recognizable-paper-title');
   process.exit(1);
 }
 

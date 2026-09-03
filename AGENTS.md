@@ -51,3 +51,83 @@
 1. 对论文 `10.1126/scirobotics.adz9609`，用户已明确确认 Supplementary Movie S1 与 Movie S2 允许公开分发。
 2. 这两段视频必须从用户下载的 `scirobotics.adz9609_movies_s1_and_s2.zip` 中解压，放入该论文目录的 `publish/media/`，并在对应网页提供 HTML5 在线播放和原视频下载。
 3. `paper.json` 的 `videos`、`status` 与 `rightsNote` 必须同步记录该授权边界：视频可以公开，论文正文、补充 PDF、Data S1 和 ICU-30201 数据手册仍分别按各自证据判断，不因视频授权而自动变为可公开材料。
+
+## 稳定项目架构
+
+1. 每篇论文必须使用一个稳定目录，名称采用 `年份-可辨识的英文论文题目`，并保证目录名与 `paper.json.slug` 完全一致。不要用日期流水号、仅作者名或无法辨识论文的缩写作为目录名。
+2. 新论文统一使用 `pnpm new-paper <slug>` 从 `templates/paper/` 创建，不手工复制旧论文目录。标准结构如下：
+
+   ```text
+   papers/<slug>/
+   ├─ paper.json
+   ├─ README.md
+   ├─ analysis/
+   │  └─ analysis.zh.md
+   ├─ inbox/                    # Git 忽略，本地原始材料和生成源
+   │  ├─ 01-main-paper/
+   │  ├─ 02-supplementary/
+   │  ├─ 03-videos/
+   │  ├─ 04-data/
+   │  ├─ 05-notes/
+   │  └─ 06-local-only/
+   │     └─ generated-source/   # GPT-Image 无损原图、提示词和生成记录
+   └─ publish/                  # 会复制到 GitHub Pages，进入前必须审核
+      ├─ documents/
+      ├─ media/
+      ├─ data/
+      └─ figures/
+   ```
+3. `dist/` 是 `tools/build-site.mjs` 生成的临时产物，不直接编辑、不提交。公共页面只读取 `paper.json`、`analysis/`、`publish/` 和 `site/assets/`；`inbox/` 永远不得被构建器复制。
+4. `paper.json` 是单篇论文的发布清单：
+   - `cardImage`、`cardImageAlt`、`cardImageCaption` 管理论文汇总卡片；
+   - `downloads` 只登记 `publish/` 中允许公开的文件；
+   - `videos` 只登记允许本站托管播放的 MP4，可配置 `poster`、`caption` 和 `download`；
+   - `restrictedVideos` 用于许可不明确的视频，只展示内容说明、科研示意海报和期刊官方入口；
+   - `status` 与 `rightsNote` 必须与上述清单同步，不能出现“文字说受限、文件却已进入 publish”或相反的状态。
+5. 共用功能必须在 `tools/build-site.mjs`、`site/assets/`、`templates/paper/` 或服务端统一实现。不得为某一篇论文复制一套私有页面脚本，否则后续反馈、移动端和安全修复无法自动覆盖全部论文。
+
+## 新论文标准工作流
+
+1. 运行 `pnpm new-paper <slug>` 创建目录，把原论文、补充材料、视频、数据和笔记分别放入 `inbox/`。
+2. 逐文件完成许可判断，在 `paper.json` 写明证据和边界；未确认前不把原文件移入 `publish/`。
+3. 编写 `analysis/analysis.zh.md`，按“研究问题 → 器件/系统 → 信号与算法 → 输出与反馈 → 实验结果 → 局限与复现”组织，并把用户问答直接整合到相关正文段落。
+4. 需要科研概念图时先执行 GPT-Image CLI dry-run，再生成无损源到 `inbox/06-local-only/generated-source/`，人工检查后把优化的 WebP/AVIF 发布副本放入 `publish/figures/`。
+5. 获准公开视频时，转换或无损重封装为 H.264/AAC MP4、启用 fast-start，放入 `publish/media/` 并登记到 `paper.json.videos`；未获准时使用 `restrictedVideos`。
+6. 运行 `pnpm verify`，确认测试、构建、链接、媒体存在性、编码和 95 MiB 限制全部通过后才允许提交。
+
+## 段落意见与 GitHub Issue 稳定架构
+
+1. 所有论文页面都由同一构建模板自动获得两种入口：每个自然段右侧的 `+`，以及页面末尾的整篇论文意见框。提交必须留在原页面，并原地显示创建的 Issue 编号。
+2. GitHub Pages 前端只读取公开构建变量 `FEEDBACK_API_URL` 和 `TURNSTILE_SITE_KEY`。GitHub 写入凭据与 Turnstile secret 只能保存为 Cloudflare Worker secrets：`GITHUB_TOKEN`、`TURNSTILE_SECRET`。
+3. 稳定服务端为 `services/feedback-worker/`。`POST /api/feedback` 必须保留以下安全性质：
+   - 只接受受信任 Origin 和页面 hostname；
+   - 服务端验证 Turnstile `success`、`action=paper-feedback`、生产 hostname 和一次性 token；
+   - 限制 32 KiB 请求体、字段长度、token 长度、10 秒验证超时和每 IP 每分钟 6 次；
+   - GitHub PAT 仅授权 `Lijinzh/ScholarAnalysis` 的 Issues read/write，不授予代码、工作流或仓库管理权限；
+   - Issue 包含论文 slug、页面链接、段落编号、锚点、选句/段落、问题正文和 `paper-feedback` 标签。
+4. 修改反馈链路时必须运行 `node --test tests/feedback-worker.test.mjs`，覆盖正确创建、错误来源、错误 action/hostname、缺失或重复 token、超限、GitHub 失败和限流。不得为了本地调试在生产配置中开启 `ALLOW_UNVERIFIED`。
+5. 线上验收至少对一篇新增/修改论文分别提交一条段落意见和一条整篇意见，确认 URL 不变、Issue 上下文正确、标签正确；测试 Issue 添加验收说明后关闭。所有论文共享模板，但新增特殊页面结构时仍需单独回归段落按钮。
+
+## 提交、发布与线上验收
+
+1. 提交前先检查 `git status --short` 和完整差异。并发出现的未知改动默认属于用户或其他任务，不覆盖、不回退；先判断是否属于本次发布以及是否满足版权边界。
+2. 发布门槛至少包括：
+   - `pnpm verify`；
+   - Worker 修改时执行 Wrangler dry-run；
+   - `git diff --check`；
+   - PAT、API key、Bearer token 和 `.dev.vars` 泄漏扫描；
+   - 桌面端和 390×844 移动端实际页面检查；
+   - 每张公开图片的清晰度、图注、alt、来源类型和正文邻接关系检查；
+   - 每段公开视频实际点击播放，确认 `readyState`、时长和时间轴前进；
+   - 页面控制台没有站点自身的未处理错误。
+3. 提交到 `main` 后正常推送，禁止强推。等待 GitHub Pages 工作流成功，再核对本地 HEAD、GitHub `main`、Pages 工作流 `headSha` 三者完全一致。
+4. 绿色 CI 不能代替线上验收。必须访问真实 `https://lijinzh.github.io/ScholarAnalysis/` 页面检查构建配置、段落意见、媒体加载和移动端表现。
+5. 测试 Issue 必须留下验收说明并关闭；真实用户 Issue 不得作为测试数据关闭。最终报告应列出提交 SHA、Pages 工作流链接、线上页面链接、验证项目和仍保留在本地 `inbox/` 的受限材料。
+
+## 已验证的稳定经验
+
+1. 论文汇总页、三篇论文详情页、段落级意见、整篇意见和 HTML5 视频均应由公共生成器驱动；当前三篇论文已经验证能自动创建带上下文的 GitHub Issue，且不跳转到 GitHub 创建页。
+2. Cloudflare Turnstile 使用 Managed widget；公开 widget 可允许 `lijinzh.github.io`、`localhost` 和 `127.0.0.1` 便于开发，但生产 Worker 的 `TURNSTILE_HOSTNAMES` 只接受 `lijinzh.github.io`。
+3. 静态 Pages 绝不能持有 GitHub Issue 写入 Token。已经成功验证的模式是“Pages 公开配置 → Turnstile → Cloudflare Worker → fine-grained PAT → GitHub Issue”。
+4. 补充视频使用仓库直出 MP4 时，应避免 Git LFS，单文件保持低于 95 MiB，并在 GitHub Pages 实际播放；仅检查文件存在或 `ffprobe` 通过不足以证明网页可播放。
+5. 手写 SVG、方块流程图和生成式图片的用途必须分开：统计曲线、表格与 UI 装饰可以代码生成；主体科研概念图必须使用 GPT-Image 2。废弃的手绘主体图保留在 `inbox/06-local-only/`，不得留在 `publish/` 等待误提交。
