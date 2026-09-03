@@ -18,7 +18,7 @@
   "venue": "Science Robotics",
   "publishedAt": "2026-03-18",
   "doi": "10.1126/scirobotics.adv2250",
-  "status": "图文解析已发布；三段补充视频已核验并提供独立官方入口，机构权限原文件仅本地保存",
+  "status": "图文解析与 Movie S1-S3 在线播放已发布；论文正文和其他补充材料仍按各自许可边界处理",
   "featured": false,
   "cardImage": "figures/card-cross-robot-intention.webp",
   "cardImageAlt": "三种不同具身机器人通过共享意图空间对齐各自动作的科研概念图",
@@ -26,36 +26,29 @@
   "summary": "IAIL 为每台机器人独立训练动作生成器与运动编码器，通过人工语言标注把不同具身的轨迹映射到共享的 256 维意图空间；推理时先提出可执行候选，再按示范或文本意图排序选择，不满足阈值时主动保持不动。",
   "topics": ["模仿学习", "多机器人系统", "跨具身迁移", "意图对齐", "语言-动作表征"],
   "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adv2250",
-  "rightsNote": "期刊页显示访问由 National University of Defense Technology 提供，并使用 Science Journals Default License、提供 Request permissions，未显示 Creative Commons 开放许可；因此正文、补充 PDF、Movies S1-S3 与 Data S1-S2 均不在本站再分发，只提供官方入口。论文另行公开的 Zenodo 评估脚本按其独立许可判断。",
+  "rightsNote": "期刊页显示正文访问由 National University of Defense Technology 提供，并使用 Science Journals Default License、提供 Request permissions，未显示 Creative Commons 开放许可。用户于 2026-09-03 明确确认 Movies S1-S3 可以公开分发，因此本站托管并播放这三段视频；该确认不扩展到论文正文、补充 PDF 或 Data S1-S2。论文另行公开的 Zenodo 评估脚本按其独立许可判断。",
   "downloads": [],
-  "videos": [],
-  "restrictedVideos": [
+  "videos": [
     {
       "title": "Movie S1｜跨机器人团队任务与三种适应案例",
-      "duration": "02:55",
-      "resolution": "960×544",
-      "poster": "figures/card-cross-robot-intention.webp",
-      "posterAlt": "不同具身机器人通过共享意图空间协作的 GPT-Image 科研示意图",
-      "summary": "展示五步团队任务，以及物品缺失、同类替代和机器人缺席时的角色重分配与实际执行。",
-      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.adv2250/suppl_file/scirobotics.adv2250_movies_s1_to_s3.zip"
+      "src": "media/movie-s1.mp4",
+      "poster": "figures/movie-s1-poster.webp",
+      "caption": "约 2 分 55 秒，960×544。展示五步团队任务，以及物品缺失、同类替代和机器人缺席时的角色重分配与实际执行。用户已确认可公开分发。",
+      "download": true
     },
     {
       "title": "Movie S2｜IAIL 的候选生成、意图提取与动作关联",
-      "duration": "01:59",
-      "resolution": "1920×1080",
-      "poster": "figures/intention-vector-mapping-gpt-image-2.webp",
-      "posterAlt": "状态、动作和文本共同映射到 256 维意图空间的 GPT-Image 科研示意图",
-      "summary": "逐步解释 context-aware motion generation、motion intention extraction 和基于意图相似度的动作关联。",
-      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.adv2250/suppl_file/scirobotics.adv2250_movies_s1_to_s3.zip"
+      "src": "media/movie-s2.mp4",
+      "poster": "figures/movie-s2-poster.webp",
+      "caption": "约 1 分 59 秒，1920×1080。逐步解释候选生成、运动意图提取和基于意图相似度的动作关联。用户已确认可公开分发。",
+      "download": true
     },
     {
       "title": "Movie S3｜LLM 任务分解接入共享意图空间",
-      "duration": "01:34",
-      "resolution": "1280×720",
-      "poster": "figures/intention-vector-mapping-gpt-image-2.webp",
-      "posterAlt": "语言指令与机器人候选动作在共享意图空间中比较的 GPT-Image 科研示意图",
-      "summary": "展示 ChatGPT-4.0 把复合文本任务拆成监控、拾取、交接和配送步骤，再由学习团队逐项执行。",
-      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.adv2250/suppl_file/scirobotics.adv2250_movies_s1_to_s3.zip"
+      "src": "media/movie-s3.mp4",
+      "poster": "figures/movie-s3-poster.webp",
+      "caption": "约 1 分 34 秒，1280×720。展示 ChatGPT-4.0 把复合文本任务拆成监控、拾取、交接和配送步骤，再由学习团队逐项执行。用户已确认可公开分发。",
+      "download": true
     }
   ]
 }

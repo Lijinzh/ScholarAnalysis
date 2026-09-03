@@ -321,7 +321,7 @@ IAIL 选择模块化路线，是用更多候选采样换取更清晰的能力边
 - **Movie S2（约 1 分 59 秒，1920×1080）**：论文 Fig. 2 的动画版。视频按顺序拆解 context-aware motion generation、motion intention extraction 和 motion association based on intention similarity，并用拾取杯子的例子展示候选动作如何进入共享嵌入空间、再匹配到最合适的机器人动作。
 - **Movie S3（约 1 分 34 秒，1280×720）**：补充 Fig. S4 的动画版。视频展示把文本任务交给 ChatGPT-4.0 分解为监控、拾取、交接和配送指令，再由语言编码器映射到共享意图空间，并在五机器人学习团队中逐步执行。
 
-三段文件均为 H.264 视频、AAC 音频和 `yuv420p` 像素格式，编码本身适合网页播放；但当前文章通过学校机构权限访问，页面使用出版社默认许可而不是 Creative Commons 许可，因此本站仍不托管或在线播放这些视频，只在本地 `inbox/` 中保存原始 ZIP 与解压副本，并提供下方官方入口。
+三段文件均为 H.264 视频、AAC 音频和 `yuv420p` 像素格式。用户已于 2026 年 9 月 3 日明确确认 Movie S1-S3 可以公开分发，因此本站在下方提供 HTML5 在线播放与原视频下载；发布副本经过无损重新封装并加入 `faststart`，视频和音频内容没有重新编码。该确认只覆盖这三段视频，不改变论文正文、补充 PDF 或数据文件的许可状态。
 
 ## LLM 在这篇论文里处于什么位置？
 
@@ -369,7 +369,7 @@ IAIL 的语言编码器和运动编码器共享意图空间，因此推理时可
 
 ## 当前材料与权限状态
 
-本地 `inbox/` 已保存论文正文 PDF、Supplementary Materials PDF、Movies S1-S3 原始 ZIP，以及解压后的三段 MP4，均不会进入 Git 或公开网页。期刊页显示当前访问由 **National University of Defense Technology** 提供，同时使用 **Science Journals Default License** 并提供 `Request permissions`，没有显示 Creative Commons 开放许可；因此不能仅凭页面上的 `Full access` 判断为 OA。
+本地 `inbox/` 已保存论文正文 PDF、Supplementary Materials PDF、Movies S1-S3 原始 ZIP，以及解压后的三段 MP4。期刊页显示当前正文访问由 **National University of Defense Technology** 提供，同时使用 **Science Journals Default License** 并提供 `Request permissions`，没有显示 Creative Commons 开放许可；因此不能仅凭页面上的 `Full access` 判断正文为 OA。用户已另外明确确认 Movie S1-S3 可以公开分发，所以仅这三段视频的网页优化副本进入 `publish/media/`，并提供在线播放与下载。
 
 官方材料入口：
 
@@ -380,4 +380,4 @@ IAIL 的语言编码器和运动编码器共享意图空间，因此推理时可
 - [Data files S1-S2 ZIP](https://www.science.org/doi/suppl/10.1126/scirobotics.adv2250/suppl_file/scirobotics.adv2250_data_files_s1_and_s2.zip)
 - [公开评估脚本 Zenodo 记录](https://zenodo.org/records/18618978)
 
-视频 ZIP 已于刷新页面后正常下载，并完成解压、时长、分辨率和编码核验。Data files S1-S2 ZIP 的官方入口已经确认，但当前仍未保存到本地；网页继续保留官方入口，并明确区分“能访问”与“允许再分发”。
+视频 ZIP 已于刷新页面后正常下载，并完成解压、时长、分辨率、编码和网页播放核验。Data files S1-S2 ZIP 的官方入口已经确认，但当前仍未保存到本地；网页继续保留官方入口，并明确区分“能访问”与“允许再分发”。
