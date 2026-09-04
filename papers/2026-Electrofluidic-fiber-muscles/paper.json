@@ -14,7 +14,7 @@
   "venue": "Science Robotics",
   "publishedAt": "2026-03-25",
   "doi": "10.1126/scirobotics.ady6438",
-  "status": "中文图文解析、CC BY 4.0 作者原图、预印本与实验视频已发布；Science 正文及补充视频只保留官方入口",
+  "status": "中文图文解析、CC BY 4.0 作者原图与预印本、Science 补充 Movie S1–S11 及开放数据实验视频已发布；Science 正文与补充 PDF 只保留官方入口",
   "featured": true,
   "cardImage": "figures/efm-system-anatomy.webp",
   "cardImageAlt": "电流体纤维肌肉科研示意图：中央纤维泵在直流高压下把绝缘液体推向一侧 McKibben 执行器，使其收缩并拉动负载，另一侧同步伸长",
@@ -29,7 +29,7 @@
     "可穿戴机器人"
   ],
   "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.ady6438",
-  "rightsNote": "Science 页面把正式论文标记为非开放获取，且补充 PDF 与 Movie S1-S11 未见独立开放再分发许可，因此本站不托管其副本。作者在 Zenodo 发布的预印本（10.5281/zenodo.17902764）与数据集（10.5281/zenodo.18678491）均明确采用 CC BY 4.0；本站发布的作者 Fig. 1、Fig. 6 裁切版、预印本 PDF 和两段实验视频均来自这些 Zenodo 记录并保留署名与来源。GPT-Image 2 图仅为原创科研解释图。",
+  "rightsNote": "Science 页面把正式论文标记为非开放获取，补充 PDF 也未见独立开放再分发许可，因此本站不托管这两类文件。用户于 2026-09-04 明确确认本论文 Science Supplementary Movie S1-S11 可以公开分发，本站据此仅公开这 11 段视频；该确认不扩展到论文正文或补充 PDF。作者在 Zenodo 发布的预印本（10.5281/zenodo.17902764）与数据集（10.5281/zenodo.18678491）均明确采用 CC BY 4.0；本站发布的作者 Fig. 1、Fig. 6 裁切版、预印本 PDF 和两段数据集实验视频均来自这些 Zenodo 记录并保留署名与来源。GPT-Image 2 图仅为原创科研解释图。",
   "downloads": [
     {
       "title": "作者预印本 PDF（CC BY 4.0）",
@@ -37,8 +37,85 @@
       "description": "作者在 Zenodo 公开的 63 页预印本；原记录 DOI：10.5281/zenodo.17902764。"
     }
   ],
-  "videoSectionTitle": "开放许可实验视频",
+  "videoSectionTitle": "补充实验视频 S1–S11 与开放数据视频",
   "videos": [
+    {
+      "title": "Movie S1｜开放液路与封闭液路",
+      "src": "media/ady6438_movie_s1.mp4",
+      "poster": "figures/ady6438-movie-s1-poster.webp",
+      "caption": "Science Supplementary Movie S1：演示开放式与封闭式电流体液压回路的搭建和工作差异。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S2｜偏置压力与气蚀阈值",
+      "src": "media/ady6438_movie_s2.mp4",
+      "poster": "figures/ady6438-movie-s2-poster.webp",
+      "caption": "Science Supplementary Movie S2：逐步提高入口压力并观察气蚀相关行为，直观说明偏置压力为何是封闭回路稳定运行的关键。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S3｜拮抗肌肉对综合表征",
+      "src": "media/ady6438_movie_s3.mp4",
+      "poster": "figures/ady6438-movie-s3-poster.webp",
+      "caption": "Science Supplementary Movie S3：同步展示电压、电流、流量、压力、收缩与伸长，连接泵的电输入、液压状态和肌肉位移。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S4｜动态收缩与回程响应",
+      "src": "media/ady6438_movie_s4.mp4",
+      "poster": "figures/ady6438-movie-s4-poster.webp",
+      "caption": "Science Supplementary Movie S4：在周期电压驱动下记录负载、收缩位移与动态响应，展示泵送和压力回程构成的动作循环。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S5｜高速杠杆机构装配",
+      "src": "media/ady6438_movie_s5.mp4",
+      "poster": "figures/ady6438-movie-s5-poster.webp",
+      "caption": "Science Supplementary Movie S5：展示多根纤维泵、肌肉束与杠杆机构的装配关系，为高速演示提供结构背景。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S6｜高速杠杆与物体弹射",
+      "src": "media/ady6438_movie_s6.mp4",
+      "poster": "figures/ady6438-movie-s6-poster.webp",
+      "caption": "Science Supplementary Movie S6：多泵并联驱动杠杆快速摆动，并用不同轻质物体展示爆发动作。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S7｜纤维肌束制作",
+      "src": "media/ady6438_movie_s7.mp4",
+      "poster": "figures/ady6438-movie-s7-poster.webp",
+      "caption": "Science Supplementary Movie S7：展示多根细长执行器汇集、编排并形成肌束的制作过程。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S8｜肌束举升超过 4 kg",
+      "src": "media/ady6438_movie_s8.mp4",
+      "poster": "figures/ady6438-movie-s8-poster.webp",
+      "caption": "Science Supplementary Movie S8：并排展示肌束在高负载下的收缩，以及编织结构的局部形变。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S9｜编织肌肉制作",
+      "src": "media/ady6438_movie_s9.mp4",
+      "poster": "figures/ady6438-movie-s9-poster.webp",
+      "caption": "Science Supplementary Movie S9：展示多根纤维执行器在端部夹具间排列并编织成可穿戴肌肉结构。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S10｜模型手臂大范围运动",
+      "src": "media/ady6438_movie_s10.mp4",
+      "poster": "figures/ady6438-movie-s10-poster.webp",
+      "caption": "Science Supplementary Movie S10：拮抗编织肌肉驱动模型肘关节，并展示外力作用下的顺应性与大范围运动。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S11｜无系留编织肌肉演示",
+      "src": "media/ady6438_movie_s11.mp4",
+      "poster": "figures/ady6438-movie-s11-poster.webp",
+      "caption": "Science Supplementary Movie S11：展示集成供能与控制后的无系留编织肌肉系统驱动模型手臂。视频经无损 fast-start 重封装；用户于 2026-09-04 明确确认可公开分发。",
+      "download": true
+    },
     {
       "title": "高速杠杆臂：8 kV、125 kPa 偏置压力",
       "src": "media/lever-arm-8kv-bias125kpa.mp4",
