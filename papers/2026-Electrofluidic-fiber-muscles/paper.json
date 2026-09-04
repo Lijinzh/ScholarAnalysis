@@ -1,0 +1,59 @@
+{
+  "slug": "2026-Electrofluidic-fiber-muscles",
+  "title": "Electrofluidic Fiber Muscles",
+  "titleZh": "电流体纤维肌肉：把泵、液压与执行器织进柔性肌肉",
+  "authors": [
+    "Ozgun Kilic Afsar",
+    "Gabriele Pupillo",
+    "Gennaro Vitucci",
+    "Wedyan Babatain",
+    "Hiroshi Ishii",
+    "Vito Cacucciolo"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-03-25",
+  "doi": "10.1126/scirobotics.ady6438",
+  "status": "中文图文解析、CC BY 4.0 作者原图、预印本与实验视频已发布；Science 正文及补充视频只保留官方入口",
+  "featured": true,
+  "cardImage": "figures/efm-system-anatomy.webp",
+  "cardImageAlt": "电流体纤维肌肉科研示意图：中央纤维泵在直流高压下把绝缘液体推向一侧 McKibben 执行器，使其收缩并拉动负载，另一侧同步伸长",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片。",
+  "summary": "毫米级电流体纤维泵与成对薄型 McKibben 执行器形成封闭液压肌肉：偏置压力抑制气蚀，模块化并联与编织把速度、力量和可穿戴形态统一到同一种纤维架构中。",
+  "topics": [
+    "软体机器人",
+    "人工肌肉",
+    "电流体泵",
+    "McKibben 执行器",
+    "偏置压力",
+    "可穿戴机器人"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.ady6438",
+  "rightsNote": "Science 页面把正式论文标记为非开放获取，且补充 PDF 与 Movie S1-S11 未见独立开放再分发许可，因此本站不托管其副本。作者在 Zenodo 发布的预印本（10.5281/zenodo.17902764）与数据集（10.5281/zenodo.18678491）均明确采用 CC BY 4.0；本站发布的作者 Fig. 1、Fig. 6 裁切版、预印本 PDF 和两段实验视频均来自这些 Zenodo 记录并保留署名与来源。GPT-Image 2 图仅为原创科研解释图。",
+  "downloads": [
+    {
+      "title": "作者预印本 PDF（CC BY 4.0）",
+      "src": "documents/electrofluidic-fiber-muscles-preprint-cc-by-4.0.pdf",
+      "description": "作者在 Zenodo 公开的 63 页预印本；原记录 DOI：10.5281/zenodo.17902764。"
+    }
+  ],
+  "videoSectionTitle": "开放许可实验视频",
+  "videos": [
+    {
+      "title": "高速杠杆臂：8 kV、125 kPa 偏置压力",
+      "src": "media/lever-arm-8kv-bias125kpa.mp4",
+      "poster": "figures/lever-arm-poster.webp",
+      "caption": "作者 Zenodo 数据集中的 LA_V8_pbias125.mp4，经 H.264 网页兼容转码并启用 fast-start。视频展示四个并联纤维泵驱动杠杆臂并弹起小球。来源：Electrofluidic Fiber Muscles / Database，CC BY 4.0。",
+      "download": true
+    },
+    {
+      "title": "编织肌肉驱动模型手臂：8 kV、120 kPa 偏置压力",
+      "src": "media/woven-arm-8kv-bias120kpa.mp4",
+      "poster": "figures/woven-arm-poster.webp",
+      "caption": "作者 Zenodo 数据集中的 WM_m350_V8_pbias120.mp4，以 H.264 流重封装并启用 fast-start。视频展示 350 g 预载下编织肌肉驱动模型手臂。来源：Electrofluidic Fiber Muscles / Database，CC BY 4.0。",
+      "download": true
+    }
+  ],
+  "externalVideos": [],
+  "restrictedVideos": []
+}
