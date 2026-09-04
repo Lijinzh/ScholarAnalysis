@@ -27,8 +27,8 @@
 公开页面没有明确允许复制论文 Fig. 1 或补充 Fig. S1 的 CC 许可，因此本站不展示原图。下面的原创图只解释单通道的物理因果，不复刻作者版图或实验照片。
 
 <figure class="analysis-figure">
-  <img src="files/figures/receptor-to-spike-gpt-image-2.webp" alt="柔性触觉层受压后产生摩擦电势，驱动晶体管电流和泄漏积分发放电路，最终形成随接触强度变化的脉冲列">
-  <figcaption><span class="figure-source">GPT-Image 生成式科研示意图，不是论文原图或实验照片</span><strong>图 1｜从接触到脉冲的单通道因果链。</strong> 图中器件外观与电路符号用于解释原理，不是作者硬件的逐元件复刻。真实系统由 SE-TENG、晶体管和离散器件 LIF 电路组成。</figcaption>
+  <img src="files/figures/receptor-to-spike-gpt-image-2-v2.webp" alt="四阶段科研示意图：柔性触觉层受压产生摩擦电势，电势控制晶体管并驱动泄漏积分发放电路，轻中强触碰产生不同首脉冲时间和脉冲密度">
+  <figcaption><span class="figure-source">GPT-Image 2 生成式科研示意图，不是论文原图或实验照片</span><strong>图 1｜从接触到脉冲的单通道因果链。</strong> 2026-09-04 使用项目 GPT-Image CLI 重新生成。图中器件外观与电路符号用于解释原理，不是作者硬件的逐元件复刻；右侧三行强调触碰增强时首脉冲提前、后续脉冲趋于密集。</figcaption>
 </figure>
 
 ## 信号如何产生：SE-TENG、晶体管和 LIF 电路各做什么？
@@ -51,8 +51,8 @@
 但训练前，作者把每个 8.192 秒样本的 16000 个时间点按每 10 点取 1 点降采样。软件 SNN 实际看到的是约 **5.12 ms** 的离散时间步，而不是 1.2 ms。
 
 <figure class="analysis-figure">
-  <img src="files/figures/acquisition-timescale-source-data.svg" alt="共享十二点五兆赫时钟、六十四通道零点五一二毫秒轮询、约一点二毫秒硬件脉冲和约五点一二毫秒 SNN 输入步长的关系">
-  <figcaption><span class="figure-source source-data">来源数据可视化</span><strong>图 2｜硬件脉冲分辨率与软件网络步长是两层指标。</strong> 数值来自补充材料的采集系统和预处理方法。论文仍明显快于约 137 ms 的传统帧间隔基准，但“毫秒级编码”不能简化成整个分类器以 1.2 ms 完成一次判断。</figcaption>
+  <img src="files/figures/acquisition-timescale-gpt-image-2.webp" alt="四阶段时间尺度科研示意图：共享时钟同步采集器与多路器，扫描手形触觉阵列，硬件脉冲覆盖多个采样点，最后形成较粗的软件 SNN 时间步">
+  <figcaption><span class="figure-source">GPT-Image 2 生成式科研示意图，不是论文原图或实验照片</span><strong>图 2｜从共享时钟到软件时间步的四层时间尺度。</strong> 图内只表达同步、轮询、脉冲采样和软件离散化的层级，不承载精确数值。论文补充材料给出的对应数字是 12.5 MHz 共享时钟、0.512 ms 全通道轮询、约 1.2 ms 硬件脉冲和约 5.12 ms SNN 输入步长；“毫秒级编码”不能简化成分类器在 1.2 ms 内完成判断。</figcaption>
 </figure>
 
 ## 为什么首脉冲比整帧更有信息？
@@ -68,9 +68,11 @@
 不过论文没有把后续脉冲完全丢掉。训练输入是完整的二值脉冲列，输出类别也由输出神经元在给定时刻前的累计脉冲数决定。作者还报告归一化总脉冲数与分类时间显著相关。因此更准确的说法是：**首脉冲主导早期动态信息，后续脉冲继续补充证据。**
 
 <figure class="analysis-figure">
-  <img src="files/figures/apple-first-spike-timeline-source-data.svg" alt="抓取苹果时从首次通道放电到零点三二秒百分之五十二、零点三五秒百分之八十五和零点四三秒百分之百分类准确率的时间线">
-  <figcaption><span class="figure-source source-data">来源数据可视化</span><strong>图 3｜苹果示例中的早期分类。</strong> 0.32 秒时只有 15 条传入神经激活，约占最终参与通道的 57%，测试准确率已到 52%；0.43 秒达到 100% 时，抓握刚进入保持阶段。这个单类示例不能替代 22 类总体准确率。</figcaption>
+  <img src="files/figures/first-spike-code-gpt-image-2.webp" alt="左侧三张低频压力帧与右侧八通道脉冲栅格对比，橙色圆点标出各通道依次出现的首脉冲和相对延迟">
+  <figcaption><span class="figure-source">GPT-Image 2 生成式科研示意图，不是论文原图或实验照片</span><strong>图 3｜整帧采样与首脉冲时序编码的差别。</strong> 左侧表示少量离散帧只能看到接触区域的几个静态阶段；右侧用 8 条示意通道突出首脉冲顺序与相对延迟。图中的脉冲位置用于解释编码概念，不是论文实验数据的复刻。</figcaption>
 </figure>
+
+以论文的苹果示例为参照，0.32 秒时只有 15 条传入神经激活，约占最终参与通道的 57%，测试准确率已到 52%；0.43 秒达到 100% 时，抓握刚进入保持阶段。这个单类示例不能替代 22 类总体准确率，但说明早期时序证据会随着新通道接触而快速累积。
 
 ## 软件 SNN 怎么训练？
 
@@ -92,8 +94,8 @@
 ## 关键结果：准确率很高，但要看测试边界
 
 <figure class="analysis-figure">
-  <img src="files/figures/classification-results-source-data.svg" alt="四类表面百分之九十九、十六类表面百分之九十、二十二类物体百分之九十一，以及百分之十九通道随机失效时仍为百分之八十的测试结果柱状图">
-  <figcaption><span class="figure-source source-data">来源数据可视化</span><strong>图 4｜论文报告的测试准确率与损伤鲁棒性。</strong> 4 类和 16 类表面任务分别达到 99% 与 90%；四名受试者合并的 22 类物体任务为 91%。随机让 19% 人工传入神经失效时仍保持约 80%，说明空间冗余有效，但不等于对漂移、断线、材料老化和整块区域损伤都同样鲁棒。</figcaption>
+  <img src="files/figures/classification-robustness-gpt-image-2.webp" alt="四窗口科研示意图：从少量表面、更多曲率与硬度组合到手套抓取多种物体，并展示部分触觉通道随机失效后分类器仍输出正确类别">
+  <figcaption><span class="figure-source">GPT-Image 2 生成式科研示意图，不是论文原图或实验照片</span><strong>图 4｜任务复杂度增加与随机通道失效鲁棒性。</strong> 图中的手套、物体和网络节点是概念表达，不是作者实验装置或结果截图；它不在图内伪造百分比。论文报告的测试结果为：4 类表面 99%、16 类表面 90%、四名受试者合并的 22 类物体 91%，随机让 19% 人工传入神经失效时仍约为 80%。这说明空间冗余有效，但不等于对漂移、断线、材料老化和整块区域损伤都同样鲁棒。</figcaption>
 </figure>
 
 论文还报告：
