@@ -1,0 +1,49 @@
+{
+  "slug": "2026-Object-centric-task-representation-and-transfer-using-diffused-orientation-fields",
+  "title": "Object-centric task representation and transfer using diffused orientation fields",
+  "titleZh": "基于扩散方向场的物体中心任务表示与迁移",
+  "authors": [
+    "Cem Bilaloglu",
+    "Tobias Löw",
+    "Sylvain Calinon"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-04-22",
+  "doi": "10.1126/scirobotics.aea1762",
+  "status": "中文图文解析与三张 GPT-Image 2 科研示意图已完成；Science 原件仅本地归档，作者 Zenodo 数据与 GitHub 代码按独立开放许可链接",
+  "featured": true,
+  "cardImage": "figures/diffof-workflow.webp",
+  "cardImageAlt": "深度相机采集弯曲物体点云，经关键点条件表面扩散和工作空间扩散生成局部坐标场，机器人据此贴合表面运动的科研概念图",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "DiffOF 用少量语义关键点在原始点云上扩散出连续局部坐标系，再以 Walk on Spheres 把坐标系延伸到自由空间，使切片、削皮和覆盖等局部动作无需重新训练即可适应不同曲率、拓扑与姿态。",
+  "topics": ["机器人操作", "技能迁移", "微分几何", "点云", "扩散方程", "接触丰富任务"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aea1762",
+  "rightsNote": "Science 页面显示 Full Access，但 PDF 与网页元数据声明 Copyright © 2026 The Authors, some rights reserved; exclusive licensee AAAS，并提供 Permissions 入口，未显示允许本站再分发论文正文、论文图、补充 PDF、Movie S1 或 Data S1 的 Creative Commons 许可。因此论文 PDF、补充 PDF 和 Data S1 仅保存在 Git 忽略的 inbox/，公开页不托管这些原件；Movie S1 在刷新论文页并从官方按钮重试一次后仍未形成完整本地文件，本站仅提供官方入口。作者 Zenodo 数据集 10.5281/zenodo.19133638 明确为 CC BY 4.0，但总量 24.5 GB，本站不复制，只链接并注明许可。作者 GitHub 仓库 idiap/diffused_fields_robotics 明确为 MIT。三张公开图由 GPT-Image 2 原创生成，明确标注不是论文原图或实验照片。上述许可边界互不扩张。",
+  "downloads": [],
+  "videos": [],
+  "externalVideos": [],
+  "restrictedVideoNotice": "论文正文包含一个官方概览视频，Supplementary Materials 另列 Movie S1。两者均未发现允许本站重新托管的独立开放许可，因此下面仅给出内容说明、生成式科研示意海报与官方入口，不复制视频文件，也不伪装成站内播放器。",
+  "restrictedVideos": [
+    {
+      "title": "Movie 1｜方法与跨曲面任务迁移概览",
+      "summary": "Science 正文播放器概览点云与关键点如何生成方向场，以及切片、削皮、覆盖、遥操作、规划和强化学习如何复用同一几何中间表示。未发现独立再分发许可。",
+      "duration": "正文 Movie 1",
+      "resolution": "Science 官方播放器",
+      "poster": "figures/diffof-workflow.webp",
+      "posterAlt": "点云、关键点、扩散方向场与机器人表面跟随组成的 GPT-Image 2 科研示意图",
+      "posterLabel": "GPT-Image 2 生成式科研示意图 · 非视频画面",
+      "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aea1762#M1"
+    },
+    {
+      "title": "Movie S1｜多物体机器人削皮与长序列动作",
+      "summary": "补充材料说明该视频展示多种对象上的机器人削皮实验，以及多次连续、双向削皮如何减少物体重定位和末端回程。未发现独立再分发许可，且本次官方按钮下载未得到完整文件。",
+      "duration": "Supplementary Movie S1",
+      "resolution": "官方 ZIP · 40.56 MB",
+      "poster": "figures/shape-invariant-actions.webp",
+      "posterAlt": "切片、削皮和覆盖动作在不同曲率物体上保持局部模式一致的 GPT-Image 2 科研示意图",
+      "posterLabel": "GPT-Image 2 生成式科研示意图 · 非视频画面",
+      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aea1762/suppl_file/scirobotics.aea1762_movie_s1.zip"
+    }
+  ]
+}
