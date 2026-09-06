@@ -1,0 +1,62 @@
+{
+  "slug": "2026-Agile-perceptive-multiskill-locomotion-for-quadrupedal-robots-in-the-wild",
+  "title": "Agile perceptive multiskill locomotion for quadrupedal robots in the wild",
+  "titleZh": "面向野外四足机器人的敏捷感知多技能运动",
+  "authors": [
+    "Jun-Gill Kang",
+    "Jaehyun Park",
+    "Tae-Gyu Song",
+    "Joon-Ha Kim",
+    "Seungwoo Hong",
+    "Hae-Won Park"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-07-15",
+  "doi": "10.1126/scirobotics.adz7397",
+  "status": "图文解析、GPT-Image 传感器图、CC BY 开放数据可视化及 Movie 1、Movies S1-S4 站内播放已完成；论文正文与其他 Science 原件不公开",
+  "featured": false,
+  "cardImage": "figures/sensor-hardware-gpt-image-2.webp",
+  "cardImageAlt": "全尺寸四足机器人在林地越障，机头的深度相机、二维激光雷达、冲击护栏和弹簧隔振结构以爆炸视图展示",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "APT-RL 先用简化二维动力学在 8 分钟内生成 18 万条带力矩运动轨迹，再把共享潜空间、步态解码器、辅助动作与深度相机/二维激光雷达感知合成一套机载策略。真实 KAIST HOUND 能在城市和林地自动切换 trot 与 bound，但 6 m/s 是落阶前的瞬时峰值，系统仍缺少横向敏捷运动和长程语义导航。",
+  "topics": ["四足机器人", "强化学习", "轨迹优化", "多步态运动", "感知运动", "Sim-to-real"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adz7397",
+  "rightsNote": "Science 页面通过 National University of Defense Technology 显示 Full access，但权利元数据为 Science Journals Default License 并提供 Request permissions，未给出允许本站再分发正文、论文原图、补充 PDF、MDAR 或 Data S1 的 Creative Commons 许可；这些材料继续只保存在 Git 忽略的 inbox 或官方入口。用户于 2026-09-05 明确确认自己是视频权利人或已获得作者/出版社授权，授权范围覆盖论文页 Movie 1 与 Supplementary Movies S1-S4 的本站公开托管、HTML5 在线播放和原视频下载，因此仅这五段视频进入 publish/media。作者 Zenodo 数据与绘图代码记录 10.5281/zenodo.20645964 独立采用 CC BY 4.0，本站据其 Figure 4、6、8 CSV 制作并署名发布原创来源数据可视化。GPT-Image 2 传感器图是原创科研示意图；另外两项正式生成请求在已提交后断开，未自动重试，也未以占位图冒充完成素材。",
+  "downloads": [],
+  "videos": [
+    {
+      "title": "Movie 1｜方法与实验结果总览",
+      "src": "media/movie-1-summary.mp4",
+      "caption": "约 5 分 05 秒，852×480。概览 APT-RL 的轨迹优化预训练、强化学习与感知蒸馏流程，以及室内障碍、校园和森林中的实机部署。用户已确认授权覆盖本站公开托管、播放和下载。",
+      "download": true
+    },
+    {
+      "title": "Movie S1｜城市校园与森林中的长距离部署",
+      "src": "media/movie-s1-urban-and-forest.mp4",
+      "caption": "约 2 分 50 秒，1920×1080。展示 1.1 km 城市校园与 0.34 km 森林路线，以及机器人随地形和速度自动切换技能与步态。用户已确认授权覆盖本站公开托管、播放和下载。",
+      "download": true
+    },
+    {
+      "title": "Movie S2｜辅助动作与解码器力矩的分工",
+      "src": "media/movie-s2-auxiliary-action.mp4",
+      "caption": "约 1 分 03 秒，1920×1080。对应 Figure 5C-E，分析跨越圆木、腿部故障和原地转向时预训练解码器力矩与辅助动作的贡献。用户已确认授权覆盖本站公开托管、播放和下载。",
+      "download": true
+    },
+    {
+      "title": "Movie S3｜真实环境中的自动步态选择",
+      "src": "media/movie-s3-gait-selection.mp4",
+      "caption": "约 1 分 12 秒，1920×1080。对应 Figure 6，展示机器人依据障碍高度、状态与命令速度选择 trot 或 bound。用户已确认授权覆盖本站公开托管、播放和下载。",
+      "download": true
+    },
+    {
+      "title": "Movie S4｜APT-RL 向其他机器人形态扩展",
+      "src": "media/movie-s4-cross-robot-transfer.mp4",
+      "caption": "约 1 分 13 秒，1920×1080。展示 APT-RL 在 Go1、ANYmal 与 KAIST HOUND 双足模式上的初步扩展结果。用户已确认授权覆盖本站公开托管、播放和下载。",
+      "download": true
+    }
+  ],
+  "videoSectionTitle": "论文与补充视频",
+  "externalVideos": [],
+  "restrictedVideos": []
+}

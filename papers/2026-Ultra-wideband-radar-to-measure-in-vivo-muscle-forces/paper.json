@@ -1,0 +1,61 @@
+{
+  "slug": "2026-Ultra-wideband-radar-to-measure-in-vivo-muscle-forces",
+  "title": "Ultra-wideband radar to measure in vivo muscle forces",
+  "titleZh": "超宽带雷达无创测量在体肌肉力",
+  "authors": [
+    "Christopher S. Bird",
+    "Antonio P. L. Bo",
+    "Wei Lu",
+    "Taylor J. M. Dick"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-07-29",
+  "doi": "10.1126/scirobotics.aed5865",
+  "status": "中文图文解析、GPT-Image 2 原创科研示意图及 Dryad CC0 数据与可视化已发布；Science 正文和补充材料不公开托管",
+  "featured": true,
+  "cardImage": "figures/sensor-layout-gpt-image-2.webp",
+  "cardImageAlt": "超宽带雷达肌力测量科研示意图：大腿外侧放置两枚体表耦合 UWB 天线，并与超声、肌电、矢量网络分析仪和膝关节测力装置同步采集",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片。",
+  "summary": "两枚体表耦合天线在 0.1–2.9 GHz 扫描肌肉的反射与透射变化；个体内模型可在疲劳等长收缩和动态膝伸中高精度估计归一化肌力或关节力矩，但尚未证明跨受试者、跨日或真实步行场景的泛化。",
+  "topics": [
+    "超宽带雷达",
+    "肌肉力估计",
+    "生物力学",
+    "可穿戴传感",
+    "LSTM",
+    "康复机器人"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aed5865",
+  "rightsNote": "Science Robotics 页面虽然通过 National University of Defense Technology 机构入口显示 Full access，但同时标注 Science Journals Default License 并提供 Request permissions；Crossref 未给出开放许可，OpenAlex 标记为 closed，因此正式论文、补充 PDF、Data file S1 和 MDAR checklist 均不进入 publish。补充 PDF 与 MDAR checklist 仅保存在 Git 忽略的 inbox；正式 PDF 与 Science Data file S1 在刷新论文页并从原按钮重试一次后仍未落盘，已停止重试。作者 Dryad 数据集 10.5061/dryad.sbcc2frmh 明确标注 License: Public domain，并链接 CC0 1.0；本站只发布与本页复核直接相关的数据子集、代码和来源数据可视化。三张科研解释图由 GPT-Image 2 原创生成，不是论文原图或实验照片。",
+  "downloads": [
+    {
+      "title": "等长膝伸数据（Dryad CC0）",
+      "src": "data/DATA_Isometric_Knee.xlsx",
+      "description": "16 名参与者、10–50% MVC 条件下的 S11 幅值、相位、sEMG 与肌束长度变化。来源 DOI：10.5061/dryad.sbcc2frmh。"
+    },
+    {
+      "title": "等长踝背屈数据（Dryad CC0）",
+      "src": "data/DATA_Isometric_Ankle.xlsx",
+      "description": "6 名参与者、10–50% MVC 条件下的 S11 幅值、相位、sEMG 与肌束长度变化。来源 DOI：10.5061/dryad.sbcc2frmh。"
+    },
+    {
+      "title": "动态膝伸数据与模型输出（Dryad CC0）",
+      "src": "data/DATA_Dynamic_Knee.xlsx",
+      "description": "6 名参与者的关节/肌肉数据、204 路 UWB 输入、测试集力矩估计和频率效应系数。来源 DOI：10.5061/dryad.sbcc2frmh。"
+    },
+    {
+      "title": "LSTM 训练代码（Dryad CC0）",
+      "src": "data/CODE_Train_LSTM_Models.py",
+      "description": "作者公开的两层 LSTM 与 MLP 训练脚本。"
+    },
+    {
+      "title": "动态力矩 LME 代码（Dryad CC0）",
+      "src": "data/CODE_LME_Estimate_Torque.m",
+      "description": "作者公开的逐步筛选 UWB 频率特征并拟合线性混合效应模型的 MATLAB 脚本。"
+    }
+  ],
+  "videos": [],
+  "externalVideos": [],
+  "restrictedVideos": []
+}

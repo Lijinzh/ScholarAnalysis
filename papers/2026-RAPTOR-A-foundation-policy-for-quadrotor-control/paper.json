@@ -1,0 +1,84 @@
+{
+  "slug": "2026-RAPTOR-A-foundation-policy-for-quadrotor-control",
+  "title": "RAPTOR: A foundation policy for quadrotor control",
+  "titleZh": "RAPTOR：用于四旋翼控制的基础策略",
+  "authors": [
+    "Jonas Eschmann",
+    "Dario Albani",
+    "Giuseppe Loianno"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-05-13",
+  "doi": "10.1126/scirobotics.aec1481",
+  "status": "图文解析已完成；作者公开 YouTube 整合视频已按 Movie S1-S8 的内容主题分段嵌入站内，Science 原始正文、补充 PDF 与视频文件仍受限",
+  "featured": false,
+  "cardImage": "figures/platform-range-source-data.webp",
+  "cardImageAlt": "RAPTOR 在十架真实四旋翼与两个仿真平台上的质量和轴距覆盖范围散点图",
+  "cardImageCaption": "来源数据可视化：根据论文 Figure 4 报告的平台参数重绘",
+  "summary": "RAPTOR 将 1000 个专用强化学习教师蒸馏进一个 2084 参数、100 Hz 运行的 GRU 策略；它从历史观测和电机命令中在线形成隐式动力学表征，以同一组权重零样本控制 31.9 g 到 2.4 kg 的多种四旋翼。",
+  "topics": [
+    "四旋翼控制",
+    "强化学习",
+    "元模仿学习",
+    "在线系统辨识",
+    "Sim-to-Real",
+    "基础策略"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aec1481",
+  "rightsNote": "Science 页面显示由 National University of Defense Technology 提供 Full access，但同时采用 Science Journals Default License、提供 Request permissions，并写明 All rights reserved；未发现允许本站再分发正文、补充 PDF、论文原图或 Movies S1-S8 原始文件的 Creative Commons 许可，因此这些文件只保存在 Git 忽略的 inbox。arXiv v2 使用 non-exclusive distribution license，也不作为本站重新托管 PDF 的开放许可。作者在 arXiv 论文首页明确链接 ARPL UC Berkeley 公开 YouTube 整合视频；该视频允许网页嵌入，本站按 Movie S1-S8 的内容主题设置八个时间段播放器，但不下载、复制或声称这些片段就是 Science 原始补充文件。作者 GitHub 仓库 rl-tools/raptor 与 Zenodo 记录 10.5281/zenodo.17096679 独立标注 MIT，可提供原仓储入口，但该许可不扩展到 Science 材料。公开页仅发布原创分析、GPT-Image 生成式科研示意图、来源数据可视化和官方视频嵌入。",
+  "downloads": [],
+  "videos": [],
+  "videoSectionTitle": "作者公开视频：按 Movie S1-S8 主题分段播放",
+  "externalVideos": [
+    {
+      "title": "Movie S1｜动机与方法介绍",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hVzdWRFTX3k?start=0&end=180&rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=hVzdWRFTX3k&t=0s",
+      "caption": "作者公开整合视频 00:00–03:00：人类适应类比、RAPTOR 训练框架、跨平台部署与多机飞行。官方 YouTube 嵌入，不是 Science 原始补充视频文件的本站副本。"
+    },
+    {
+      "title": "Movie S2｜轨迹跟踪实验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hVzdWRFTX3k?start=180&end=278&rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=hVzdWRFTX3k&t=180s",
+      "caption": "作者公开整合视频 03:00–04:38：不同平台上的八字轨迹、敏捷轨迹和柔性机架跟踪。官方 YouTube 嵌入，不是 Science 原始补充视频文件的本站副本。"
+    },
+    {
+      "title": "Movie S3｜户外实验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hVzdWRFTX3k?start=392&end=458&rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=hVzdWRFTX3k&t=392s",
+      "caption": "作者公开整合视频 06:32–07:38：户外强风轨迹跟踪、悬停和最高 1.2 kg 载荷实验。官方 YouTube 嵌入，不是 Science 原始补充视频文件的本站副本。"
+    },
+    {
+      "title": "Movie S4｜击打扰动恢复",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hVzdWRFTX3k?start=458&end=510&rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=hVzdWRFTX3k&t=458s",
+      "caption": "作者公开整合视频 07:38–08:30：击打、超过 90° 倾斜、工具接触机体和桨叶后的恢复。官方 YouTube 嵌入，不是 Science 原始补充视频文件的本站副本。"
+    },
+    {
+      "title": "Movie S5｜风扰动实验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hVzdWRFTX3k?start=510&end=550&rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=hVzdWRFTX3k&t=510s",
+      "caption": "作者公开整合视频 08:30–09:10：强风扇扰动与大型四旋翼下洗气流中的稳定飞行。官方 YouTube 嵌入，不是 Science 原始补充视频文件的本站副本。"
+    },
+    {
+      "title": "Movie S6｜不同桨叶组合",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hVzdWRFTX3k?start=278&end=392&rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=hVzdWRFTX3k&t=278s",
+      "caption": "作者公开整合视频 04:38–06:32：双叶、三叶及四种不同桨叶的不对称组合与轨迹跟踪。官方 YouTube 嵌入，不是 Science 原始补充视频文件的本站副本。"
+    },
+    {
+      "title": "Movie S7｜敏捷恢复与快速上下文学习",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hVzdWRFTX3k?start=550&end=577&rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=hVzdWRFTX3k&t=550s",
+      "caption": "作者公开整合视频 09:10–09:37：约 5 m/s 高速状态下突然切换悬停目标后的敏捷恢复。官方 YouTube 嵌入，不是 Science 原始补充视频文件的本站副本。"
+    },
+    {
+      "title": "Movie S8｜偏航阶跃响应",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hVzdWRFTX3k?start=577&end=592&rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=hVzdWRFTX3k&t=577s",
+      "caption": "作者公开整合视频 09:37–09:52：偏航角设定值阶跃响应。官方 YouTube 嵌入，不是 Science 原始补充视频文件的本站副本。"
+    }
+  ],
+  "restrictedVideos": []
+}

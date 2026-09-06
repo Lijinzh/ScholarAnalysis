@@ -1,0 +1,120 @@
+{
+  "slug": "2026-Extreme-dynamic-symmetry-enables-omnidirectional-and-multifunctional-robots",
+  "title": "Extreme dynamic symmetry enables omnidirectional and multifunctional robots",
+  "titleZh": "极限动态对称性赋予机器人全向与多功能能力",
+  "authors": [
+    "Jiaxun Liu",
+    "Boxi Xia",
+    "Boyuan Chen"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-05-27",
+  "doi": "10.1126/scirobotics.aec1725",
+  "status": "中文图文解析、Movies S1-S10 权利人授权站内播放、作者项目授权媒体与 CC0 代码入口已完成",
+  "featured": true,
+  "cardImage": "figures/Argus.png",
+  "cardImageAlt": "黑色背景上的二十腿球形 Argus 机器人，每条径向伸缩腿末端带白色球形足节点",
+  "cardImageCaption": "已获授权材料：General Robotics Lab Argus 项目仓库，CC BY-NC-ND 4.0，原文件未改动",
+  "summary": "Argus 把对称性从外形提升到可实现的质心加速度：20 个径向线性执行器形成近球形加速度能力，并与足端分布式深度感知、强化学习控制结合，在地形穿越、抗扰、失效降级、低重力爬墙和全身物体交互中验证收益，也暴露传感器热退化与执行器规模成本。",
+  "topics": ["动态对称性", "动态各向同性", "球形机器人", "强化学习控制", "全向感知", "容错机器人", "全身操作"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aec1725",
+  "rightsNote": "Science Robotics 页面通过 National University of Defense Technology 显示 Full access，但同时采用 Science Journals Default License、显示 Request permissions，页脚为 © 2026 AAAS, All rights reserved；因此论文正文、补充 PDF、Data S1 与论文原图仍不进入 publish。Movies S1-S10 为单独例外：用户在本次 Codex 对话中明确声明自己是这些视频的权利人，并以权利人身份要求本项目公开托管和站内播放；本站据此发布网页兼容副本，仅将 HEVC/AAC 转为 H.264/AAC、启用 fast-start，未裁切视频内容，原始 ZIP 和源 MP4 保存在 Git 忽略的 inbox。arXiv 作者版本首页明确仅供个人使用、不得再分发，只保存在 inbox。Dryad 数据与代码记录 10.5061/dryad.3j9kd520k 独立采用 CC0-1.0，本站提供入口但不复制 355.7 MB 整包。General Robotics Lab 的 Argus GitHub 仓库独立采用 CC BY-NC-ND 4.0；本站原样转载 Argus.png 及四段项目 MP4，保留署名、非商业和禁止改编边界。专利和商业使用权另由 Duke University 管理。",
+  "downloads": [],
+  "videos": [
+    {
+      "title": "Supplementary Movie S1｜平地速度跟踪",
+      "src": "media/aec1725_movie_s1.mp4",
+      "caption": "Argus 在平地跟随方形与任意轨迹，展示全向速度控制。来源：Science Supplementary Movie S1；经权利人确认授权本站公开托管，转为 H.264/AAC 以兼容网页播放。",
+      "download": true
+    },
+    {
+      "title": "Supplementary Movie S2｜腿失效运动",
+      "src": "media/aec1725_movie_s2.mp4",
+      "caption": "随机禁用一、二、三条腿后，Argus 从不同初始朝向继续运动。来源：Science Supplementary Movie S2；经权利人确认授权本站公开托管。",
+      "download": true
+    },
+    {
+      "title": "Supplementary Movie S3｜受扰自稳定",
+      "src": "media/aec1725_movie_s3.mp4",
+      "caption": "比较启用与不启用主动控制时，Argus 抵抗外部扰动并恢复稳定的表现。来源：Science Supplementary Movie S3；经权利人确认授权本站公开托管。",
+      "download": true
+    },
+    {
+      "title": "Supplementary Movie S4｜负载行走",
+      "src": "media/aec1725_movie_s4.mp4",
+      "caption": "Argus 携带装有 2、4、6、8 和 10 磅配重的挂袋行走。来源：Science Supplementary Movie S4；经权利人确认授权本站公开托管。",
+      "download": true
+    },
+    {
+      "title": "Supplementary Movie S5｜离散障碍穿越",
+      "src": "media/aec1725_movie_s5.mp4",
+      "caption": "Argus 从不同初始朝向穿越离散障碍地形。来源：Science Supplementary Movie S5；经权利人确认授权本站公开托管。",
+      "download": true
+    },
+    {
+      "title": "Supplementary Movie S6｜杜克校园户外地形",
+      "src": "media/aec1725_movie_s6.mp4",
+      "caption": "Argus 在杜克大学校园的混凝土、草地和泥土地面运动，包含固定与跟拍视角。来源：Science Supplementary Movie S6；经权利人确认授权本站公开托管。",
+      "download": true
+    },
+    {
+      "title": "Supplementary Movie S7｜沙地与森林户外地形",
+      "src": "media/aec1725_movie_s7.mp4",
+      "caption": "跟拍视角展示 Argus 穿行沙地与森林小径。来源：Science Supplementary Movie S7；经权利人确认授权本站公开托管。",
+      "download": true
+    },
+    {
+      "title": "Supplementary Movie S8｜模拟月球重力攀墙",
+      "src": "media/aec1725_movie_s8.mp4",
+      "caption": "Argus 借助模拟月球重力的配重滑轮系统攀爬垂直墙面。来源：Science Supplementary Movie S8；经权利人确认授权本站公开托管。",
+      "download": true
+    },
+    {
+      "title": "Supplementary Movie S9｜自主目标跟踪",
+      "src": "media/aec1725_movie_s9.mp4",
+      "caption": "Argus 使用机载相机跟踪按固定与随机方向移动的立方体。来源：Science Supplementary Movie S9；经权利人确认授权本站公开托管。",
+      "download": true
+    },
+    {
+      "title": "Supplementary Movie S10｜自主目标推动",
+      "src": "media/aec1725_movie_s10.mp4",
+      "caption": "Argus 使用机载相机沿 0°、-30° 和 +30° 三个方向推动立方体。来源：Science Supplementary Movie S10；经权利人确认授权本站公开托管。",
+      "download": true
+    },
+    {
+      "title": "作者项目媒体｜多任务动态墙",
+      "src": "media/argus_video_wall.mp4",
+      "caption": "。3 秒多画面概览，来自 General Robotics Lab Argus 仓库；CC BY-NC-ND 4.0，原文件未改动。它不是 Science Supplementary Movie。",
+      "download": true
+    },
+    {
+      "title": "作者项目媒体｜平地全向滚动",
+      "src": "media/flat_ground_rolling.mp4",
+      "caption": "。约 15 秒，展示仿真中的平地速度控制；CC BY-NC-ND 4.0，原文件未改动。",
+      "download": true
+    },
+    {
+      "title": "作者项目媒体｜目标跟踪",
+      "src": "media/object_tracking_demo.mp4",
+      "caption": "。约 10 秒，展示点云感知驱动的目标跟踪演示；CC BY-NC-ND 4.0，原文件未改动。",
+      "download": true
+    },
+    {
+      "title": "作者项目媒体｜目标推动",
+      "src": "media/object_pushing_demo.mp4",
+      "caption": "。约 8 秒，展示感知与全身接触协同的推动演示；CC BY-NC-ND 4.0，原文件未改动。",
+      "download": true
+    }
+  ],
+  "videoSectionTitle": "补充视频、作者项目媒体与官方视频",
+  "externalVideos": [
+    {
+      "title": "作者团队官方完整视频｜Argus",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Nd-I4YNQEuY",
+      "watchUrl": "https://youtu.be/Nd-I4YNQEuY",
+      "caption": "。由 General Robotics Lab 项目页和仓库 README 直接链接；本站仅调用 YouTube 官方播放器，不重新托管该完整视频。"
+    }
+  ],
+  "restrictedVideos": []
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "2026-Bioinspired-multimodal-robotics",
+  "title": "Bioinspired multimodal robotics",
+  "titleZh": "仿生多模态机器人：从身体复用到自主模式切换的统一框架",
+  "authors": [
+    "Ziyu Ren",
+    "Youning Duo",
+    "Haoyuan Xu",
+    "Yihui Zhang",
+    "Xingjian Liu",
+    "Jamie Paik",
+    "Auke Ijspeert",
+    "Li Wen"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-07-22",
+  "doi": "10.1126/scirobotics.aea7639",
+  "status": "中文图文解析与来源数据比较图已发布；正式论文及论文原图受限，仅保存在本地 inbox；未发现独立补充材料或公开视频",
+  "featured": false,
+  "cardImage": "figures/multimodal-journey.webp",
+  "cardImageAlt": "仿生多模态机器人科研示意图：同一核心机身依次以轮腿跨越岩地、展开机翼飞越峡谷、变形为水下推进体，并在岸边执行取样操作",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片。",
+  "summary": "这篇综述把多模态机器人从“多装几个运动模块”推进为可度量的系统设计问题：用五项指标评估模式数量、增量代价、构件复用、切换成本和任务增益，并把软体形变、结构复用、多机器人协作与学习式规划控制放进同一框架。",
+  "topics": [
+    "仿生机器人",
+    "多模态运动",
+    "结构复用",
+    "软体机器人",
+    "多机器人系统",
+    "运动规划",
+    "强化学习"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aea7639",
+  "rightsNote": "Science 页面可通过国防科技大学机构权限全文阅读并下载，但这只证明访问权限。Crossref 未提供文章级开放许可，OpenAlex 将正式版本标记为非 OA；Science 页面同时提供默认期刊许可与 Request permissions。论文复合图的逐项署名还混合了公共领域、经许可改编、CC BY 4.0、CC BY-NC-ND 4.0 等不同来源，因此本站不托管正式 PDF、论文原图或页面截图。公开材料仅包括原创中文分析、GPT-Image 2 原创科研示意图和依据论文 Table 1 数值重新制作的来源数据可视化。未发现该文独立补充 PDF、数据或视频入口，也未检索到带明确开放许可的同题作者稿。",
+  "downloads": [],
+  "videos": [],
+  "externalVideos": [],
+  "restrictedVideos": []
+}

@@ -1,0 +1,12 @@
+Title: Precise Aggressive Aerial Maneuvers with Sensorimotor Policies
+Creator: Tianyue Wu
+Resource type: Dataset
+Zenodo record: https://zenodo.org/records/20046846
+DOI: https://doi.org/10.5281/zenodo.20046846
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+License URL: https://creativecommons.org/licenses/by/4.0/
+Source file: rl_precise_aggressive_maneuvers.zip
+File size: 39,670,790 bytes
+Source checksum: MD5 ed934733ebc81b72142d4343b4e8d58d
+Downloaded: 2026-09-04
+Local publication note: The ZIP is republished without modification. This attribution file was added by ScholarAnalysis to preserve the independent Zenodo license evidence. The Zenodo license does not extend to the Science Robotics article PDF, article figures, Science supplementary PDF, Data S1, or Movies S1-S5.

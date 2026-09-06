@@ -1,0 +1,159 @@
+{
+  "slug": "2026-Performant-robotic-manipulation-with-real-world-reinforcement-learning",
+  "title": "Performant robotic manipulation with real-world reinforcement learning",
+  "titleZh": "以真实世界强化学习实现高性能机器人操作",
+  "authors": [
+    "Kun Lei",
+    "Huanyu Li",
+    "Dongjie Yu",
+    "Zhenyu Wei",
+    "Lingxiao Guo",
+    "Zhennan Jiang",
+    "Ziyu Wang",
+    "Shiyu Liang",
+    "Huazhe Xu"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-07-22",
+  "doi": "10.1126/scirobotics.aed6267",
+  "status": "中文图文解析、四张公开图片与 Movies S1-S18 的作者官方站内播放器已完成；Science 正文、补充 PDF 和视频 ZIP 原文件仍不公开",
+  "featured": false,
+  "cardImage": "figures/success-progression-source-data.webp",
+  "cardImageAlt": "热力表比较八项真实机器人任务从二维扩散策略、三维扩散策略、迭代离线强化学习到在线强化学习的成功率变化",
+  "cardImageCaption": "来源数据可视化；依据论文 Table 1 原创重绘",
+  "summary": "RL-100 先用遥操作示范训练扩散策略，再以 OPE 门控的迭代离线强化学习扩充数据，最后用少量在线 PPO 消除残余失败，并把十步 DDIM 蒸馏为一步一致性策略。论文在八项真实机器人任务的预定义试验中合计报告 1000/1000 成功，但这一总数合并了 DDIM 与 CM 两套控制器；补充表的八任务采集总量也揭示正文仍沿用了加入 Box Folding 前的七任务统计。",
+  "topics": [
+    "真实世界强化学习",
+    "扩散策略",
+    "机器人操作",
+    "离线到在线强化学习",
+    "一致性蒸馏",
+    "三维点云",
+    "可靠性评估"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aed6267",
+  "rightsNote": "Science 页面由 National University of Defense Technology 机构权限提供 Full access，但页面没有 Creative Commons 标识，页脚写明 AAAS all rights reserved；OpenAlex 将正式版标为非 OA 且 license 为空，因此 Science 正文、论文图、补充 PDF 和 Movies S1-S18 ZIP 原文件均按受限材料处理。Science Supplementary Materials PDF 已保存到 Git 忽略的 inbox；547.06 MiB 视频 ZIP 首次点击无下载，刷新论文页并从原按钮重试一次后仍未产生下载事件，未继续重试。本站没有复制或重新托管该 ZIP，而是使用作者 RL-100 项目页已经公开提供的 YouTube 嵌入地址和作者站点 MP4 地址，为 S1-S18 的对应主题提供站内播放；项目页把若干正式复合影片拆成独立片段，因此这些播放器是作者官方公开版本或主题覆盖片段，不冒充 Science ZIP 内同名原文件。arXiv 2510.14830v4 使用 arXiv non-exclusive distribution license，不是允许本站再分发的 CC 许可，PDF 仅存 inbox。官方 GitHub 仓库 Lei-Kun/RL-100 整体以 Apache-2.0 发布，本站仅使用其中 media/overview.jpg 的 WebP 转码副本，并注明来源和许可。Hugging Face 数据集 leokk/RL-100-adroit-door-medium 的卡片许可为 other，README 又称正式数据许可仍待确定，因此本站只给官方入口，不镜像数据。",
+  "downloads": [],
+  "videos": [],
+  "videoSectionTitle": "Movies S1-S18｜作者官方视频站内播放",
+  "externalVideos": [
+    {
+      "title": "Movie S1｜八项真实机器人任务总览",
+      "embedUrl": "https://lei-kun.github.io/RL-100/RL100_files/our_tasks/teaser_video.mp4",
+      "watchUrl": "https://lei-kun.github.io/RL-100/RL100_files/our_tasks/teaser_video.mp4",
+      "caption": "作者 RL-100 项目页公开的 97.6 秒 H.264/AAC 总览视频，对应一倍速任务预览主题；远程嵌入播放，不复制到本站。"
+    },
+    {
+      "title": "Movie S2｜消融、适应与扰动恢复",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Iaq3moDov1g?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=Iaq3moDov1g",
+      "caption": "作者 RL-100 官方频道的 31:58 完整结果汇编，覆盖消融、零样本与少样本适应、物理扰动等主题。项目页将这些内容另行拆成多个短片，本播放器不是 Science ZIP 原文件的镜像。"
+    },
+    {
+      "title": "Movie S3｜执行效率比较",
+      "embedUrl": "https://lei-kun.github.io/RL-100/RL100_files/our_tasks/juicing_execution_effi.mp4",
+      "watchUrl": "https://lei-kun.github.io/RL-100/RL100_files/our_tasks/juicing_execution_effi.mp4",
+      "caption": "作者项目页公开的榨汁任务执行效率 H.264/AAC 片段。正式复合影片还比较折叠与旋拧；完整主题亦包含在 Movie S2 的作者官方结果汇编中。"
+    },
+    {
+      "title": "Movie S4｜人类与机器人比较",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/ssH_Dv7WUsY?playlist=tNVrfLVRf4w&rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=ssH_Dv7WUsY",
+      "caption": "作者官方频道的保龄与 Push-T 人机比较播放序列；可在播放器中继续播放下一段。"
+    },
+    {
+      "title": "Movie S5｜商场榨汁部署",
+      "embedUrl": "https://lei-kun.github.io/RL-100/RL100_files/our_tasks/outdoor.mp4",
+      "watchUrl": "https://lei-kun.github.io/RL-100/RL100_files/our_tasks/outdoor.mp4",
+      "caption": "作者项目页公开的约 95 秒 H.264/AAC 商场部署视频，远程嵌入播放。"
+    },
+    {
+      "title": "Movie S6｜Dynamic Push-T 连续成功试验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/a_eFXZuSs5o?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=a_eFXZuSs5o",
+      "caption": "作者官方频道公开的一倍速 Push-T 连续试验视频。"
+    },
+    {
+      "title": "Movie S7｜Agile Bowling 连续成功试验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/70HxJB-TUUs?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=70HxJB-TUUs",
+      "caption": "作者官方频道公开的一倍速保龄连续试验视频。"
+    },
+    {
+      "title": "Movie S8｜Pouring 连续成功试验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/JmfJ66eaAgQ?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=JmfJ66eaAgQ",
+      "caption": "作者官方频道公开的一倍速倾倒连续试验视频。"
+    },
+    {
+      "title": "Movie S9｜Dynamic Unscrewing 连续成功试验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/CdUjFdP-ILI?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=CdUjFdP-ILI",
+      "caption": "作者官方频道公开的一倍速动态旋拧连续试验视频。"
+    },
+    {
+      "title": "Movie S10｜Soft-towel Folding 连续成功试验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/UoTSGcc8Un0?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=UoTSGcc8Un0",
+      "caption": "作者官方频道公开的一倍速软毛巾折叠连续试验视频。"
+    },
+    {
+      "title": "Movie S11｜Orange Juicing Placing 连续成功试验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/N56oKIdOKjA?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=N56oKIdOKjA",
+      "caption": "作者官方频道公开的一倍速榨汁放置连续试验视频。"
+    },
+    {
+      "title": "Movie S12｜Orange Juicing Removal 连续成功试验",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/qt7DhzOjz9k?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=qt7DhzOjz9k",
+      "caption": "作者官方频道公开的一倍速榨汁移除连续试验视频。"
+    },
+    {
+      "title": "Movie S13｜Orange Juicing 极端分布外主题",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/-vO_qvwqV60?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=-vO_qvwqV60",
+      "caption": "作者项目页公开的榨汁综合试验视频。作者页没有单列与 Science Movie S13 完全同名的公开文件，因此此处作为相同任务主题的官方可嵌入版本，不声称与 ZIP 原文件逐帧一致。"
+    },
+    {
+      "title": "Movie S14｜Pouring 极端分布外主题",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Iy4SCC2ZykA?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=Iy4SCC2ZykA",
+      "caption": "作者项目页公开的液体材料变化倾倒视频。作者页没有单列与 Science Movie S14 完全同名的公开文件，因此此处作为相同分布外主题的官方片段。"
+    },
+    {
+      "title": "Movie S15｜Box Folding 总览",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/XkST3Eiy1L0?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=XkST3Eiy1L0",
+      "caption": "作者 RL-100 官方频道公开的 Box Folding 总览视频。"
+    },
+    {
+      "title": "Movie S16｜Box Folding 基线失败与连续成功",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/tj8HaL9dqY8?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=tj8HaL9dqY8",
+      "caption": "作者项目页嵌入的基线失败、连续成功与未见条件试验视频。"
+    },
+    {
+      "title": "Movie S17｜Box Folding 极端分布外测试",
+      "embedUrl": "https://lei-kun.github.io/RL-100/RL100_files/our_tasks/r1_video/compressed_revised-unseen.mp4",
+      "watchUrl": "https://lei-kun.github.io/RL-100/RL100_files/our_tasks/r1_video/compressed_revised-unseen.mp4",
+      "caption": "作者项目页公开的约 64.9 秒 H.264/AAC 极端分布外测试视频，远程嵌入播放。"
+    },
+    {
+      "title": "Movie S18｜Box Folding 人为扰动恢复",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Iaq3moDov1g?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=Iaq3moDov1g",
+      "caption": "作者官方完整结果汇编中包含 Box Folding 扰动恢复；作者站另有 HEVC 独立片段，但为保证常见浏览器可直接播放，此处使用官方 YouTube 嵌入版本。"
+    }
+  ],
+  "restrictedVideos": [
+    {
+      "title": "Movies S1-S18｜Science 官方补充视频包",
+      "duration": "18 段，单段时长待核验",
+      "resolution": "待本地取得后核验",
+      "summary": "Science 正式页面列出一个 547.06 MiB 的 Movies S1-S18 ZIP。该 ZIP 原文件仍没有独立公开再分发许可，因此本站不复制或重新托管。页面上方的 18 个播放器来自作者 RL-100 项目页和作者官方 YouTube，可在本站直接播放相应主题；项目页把部分正式复合影片拆分或重新剪辑，故不把这些公开播放器冒充为 ZIP 内逐文件副本。",
+      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aed6267/suppl_file/scirobotics.aed6267_movies_s1_to_s18.zip"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "2026-Advances-challenges-and-opportunities-for-legged-robots",
+  "title": "Advances, challenges, and opportunities for legged robots",
+  "titleZh": "足式机器人的进展、挑战与机遇",
+  "authors": [
+    "Jonas Frey",
+    "Matías Mattamala",
+    "Hae-Won Park",
+    "Mayank Mittal",
+    "Georg Martius",
+    "Maike Osborne",
+    "Robert Sparrow",
+    "Marco Hutter"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-07-29",
+  "doi": "10.1126/scirobotics.aee0787",
+  "status": "中文图文解析已完成；三张 GPT-Image 科研示意图已审查发布；论文正文仅本地归档",
+  "featured": true,
+  "cardImage": "figures/01-sense-act-stack.webp",
+  "cardImageAlt": "四足机器人与人形机器人周围连接足端接触、传感、环境表示、控制计算和关节执行器的六阶段闭环",
+  "cardImageCaption": "GPT-Image 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "这篇跨硬件、运动控制、自治、数据、应用、伦理与政策的综合综述认为，四足机器人已经把可靠运动推进到复杂地形，真正的下一道门槛是把语义理解、精细落脚、长时规划和安全保证统一起来；人形机器人则仍同时受制于动态稳定、数据稀缺与系统可靠性。",
+  "topics": [
+    "足式机器人",
+    "四足机器人",
+    "人形机器人",
+    "强化学习",
+    "具身智能",
+    "机器人伦理",
+    "机器人政策"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aee0787",
+  "rightsNote": "Science.org 页面显示 Full access，但页面元数据注明 Copyright © 2026 The Authors, some rights reserved; exclusive licensee AAAS，并链接 Science Journals Default License 与 Request permissions，未给出允许本站再分发的 Creative Commons 许可。通过机构权限取得的 17 页 PDF 带 National University of Defense Technology 下载标记，仅保存在 Git 忽略的 inbox/01-main-paper/。论文图 1 与图 5 还逐项列出 KAIST、Boston Dynamics、ETH Zurich、MIT、IIT、Agility Robotics、Unitree、Disney、NASA 等第三方图片来源，本站不复制正文或论文原图。官方页面和 PDF 未发现 Supplementary Materials、Supplementary Movie 或独立数据附件清单。公开页发布原创中文分析与三张经人工检查的 GPT-Image 生成式科研示意图；无损 PNG、提示词和生成记录保存在 Git 忽略的 inbox/06-local-only/generated-source/，网页仅使用优化 WebP 副本。第一张首次请求和第四张治理路线图请求都在提交后断流、可能已计费且无输出，均未自动重试；第一张在用户明确授权后重新提交成功，第四张未再次提交也未发布占位图。",
+  "downloads": [],
+  "videos": [],
+  "externalVideos": [],
+  "restrictedVideos": []
+}

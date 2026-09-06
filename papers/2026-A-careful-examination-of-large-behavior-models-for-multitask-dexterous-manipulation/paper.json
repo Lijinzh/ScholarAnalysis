@@ -1,0 +1,55 @@
+{
+  "slug": "2026-A-careful-examination-of-large-behavior-models-for-multitask-dexterous-manipulation",
+  "title": "A careful examination of large behavior models for multitask dexterous manipulation",
+  "titleZh": "审慎检验多任务灵巧操作的大行为模型",
+  "authors": [
+    "TRI LBM Team"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-04-15",
+  "doi": "10.1126/scirobotics.aea6201",
+  "status": "中文深度解析、三张 GPT-Image 2 科研示意图、两张来源数据可视化和两段 TRI 官方站内视频已完成；Science 补充视频因无独立公开许可只保留官方入口；正文和补充文件不公开",
+  "featured": false,
+  "cardImage": "figures/lbm-bimanual-platform-gpt-image-2.webp",
+  "cardImageAlt": "双臂桌面机器人工作站，上方两台固定场景相机且每只手腕安装两台相机",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "TRI 用同一扩散策略架构、约 1695 小时多源示范、1800 次盲法实体试验和超过 4.7 万次仿真试验，隔离检验了多任务预训练的真实贡献：微调后的 LBM 通常更稳健，并能用约 3-5 倍更少的任务数据达到从头训练基线的水平，但未微调模型、语言可控性、数据归一化和训练随机性仍留下明显边界。",
+  "topics": [
+    "大行为模型",
+    "机器人基础模型",
+    "扩散策略",
+    "双臂灵巧操作",
+    "模仿学习",
+    "统计评估",
+    "分布偏移"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aea6201",
+  "rightsNote": "Science Robotics 正式版由学校机构权限访问；Crossref 未返回开放许可，OpenAlex 将正式版标为 closed，期刊页提供权限入口而未显示允许本站再分发的 Creative Commons 许可。正文 PDF、补充方法 PDF、Data S1 ZIP 与 Movies S1-S2 ZIP 因 Edge 自动下载在刷新后的唯一重试仍失败，当前仅登记官方入口，未进入 publish。公开 arXiv 预印本采用 arXiv non-exclusive distribution license，而非允许本站再分发的明确 CC 许可，因此 39 页 PDF 只保存在 Git 忽略的 inbox。TRI 项目页公开可读但未给网页图片和本地 MP4 独立开放许可，本站不复制这些素材；Toyota Research Institute 在 YouTube 公开发布的 Overview Video 与 Seminar Talk 使用官方隐私增强播放器站内嵌入。",
+  "downloads": [],
+  "videos": [],
+  "videoSectionTitle": "作者团队官方视频与补充材料入口",
+  "externalVideos": [
+    {
+      "title": "Toyota Research Institute｜LBM 1.0: How Large Behavior Models Improve Robot Manipulation",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/DeLpnTgzJT4",
+      "watchUrl": "https://www.youtube.com/watch?v=DeLpnTgzJT4",
+      "caption": "TRI 官方概览视频，介绍 LBM 1.0 的数据规模、双臂长时序任务和评估结论。它是作者团队公开视频，不是 Science Supplementary Movie；本站仅调用官方播放器，不下载或重新托管。"
+    },
+    {
+      "title": "TRI LBM 1.0 Seminar Talk",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/TN1M6vg4CsQ",
+      "watchUrl": "https://www.youtube.com/watch?v=TN1M6vg4CsQ",
+      "caption": "TRI 官方项目页列出的 Seminar Talk，通过 YouTube 官方隐私增强播放器在本站直接播放；本站不下载或重新托管视频文件。"
+    }
+  ],
+  "restrictedVideos": [
+    {
+      "title": "Supplementary Movies S1-S2｜Science 官方补充视频包",
+      "duration": "待本地下载后核验",
+      "resolution": "待本地下载后核验",
+      "summary": "Science 页面列出 Movies S1-S2 ZIP。学校机构权限允许访问不等于允许本站再分发；当前自动下载在刷新后重试仍无响应，且未发现视频的独立开放许可，因此本站不复制或托管，只保留官方入口。",
+      "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aea6201#supplementary-materials"
+    }
+  ]
+}

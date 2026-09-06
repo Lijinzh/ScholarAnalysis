@@ -1,0 +1,84 @@
+{
+  "slug": "2026-Precise-aggressive-aerial-maneuvers-with-sensorimotor-policies",
+  "title": "Precise aggressive aerial maneuvers with sensorimotor policies",
+  "titleZh": "基于感觉运动策略的精准激进空中机动",
+  "authors": [
+    "Tianyue Wu",
+    "Guangtong Xu",
+    "Zihan Wang",
+    "Junxiao Lin",
+    "Tianyang Chen",
+    "Yuze Wu",
+    "Zhichao Han",
+    "Zhiyang Liu",
+    "Fei Gao"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-06-10",
+  "doi": "10.1126/scirobotics.aeb0180",
+  "status": "中文图文解析、Zenodo CC BY 4.0 数据归档及 Movies S1-S5 站内播放已完成；Science 正文、补充 PDF、Data S1 和论文原图不公开",
+  "featured": true,
+  "cardImage": "figures/sensorimotor-loop-gpt-image-2.webp",
+  "cardImageAlt": "窄缝视觉掩膜、姿态与历史动作经过卷积和循环记忆后输出四旋翼推力与体轴角速度的三阶段科研示意图",
+  "cardImageCaption": "GPT-Image 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "作者把二值缝隙视觉、滚转/俯仰和历史动作直接映射为总推力与三轴角速度，以规划轨迹引导的 informed reset 训练特权信息教师，再用 DAgger 蒸馏为循环视觉策略；实体四旋翼在仅 5 cm 短边余量下完成最高 90° 滚转穿缝，并展示动态缝隙、连续缝隙和多几何形状泛化。",
+  "topics": [
+    "四旋翼",
+    "激进飞行",
+    "感觉运动策略",
+    "强化学习",
+    "策略蒸馏",
+    "仿真到现实",
+    "窄缝穿越"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aeb0180",
+  "rightsNote": "Science 页面通过 National University of Defense Technology 机构权限显示 Full access，但正文版权区明确采用 Science Journals Default License，并提供 Request permissions，因此正文、论文图、补充 PDF 与 Data S1 没有可供本站再分发的 Creative Commons 许可，仍不公开托管。视频采用独立权利依据：用户于 2026-09-05 在本项目对话中明确声明自己是 Movies S1-S5 的权利人，并明确授权 ScholarAnalysis 将五段视频直接放入站内公开托管、播放和提供下载；该授权不扩展到其他 Science 材料。官方视频 ZIP 为 193,156,875 bytes，SHA-256 8b283ab2390f112887b2625d2fc7d60d2d9a899c5487225eb5116d53d8fa77c2，原 ZIP 与解压源文件保存在 Git 忽略的 inbox，公开副本采用 H.264/AAC 无损重封装并启用 fast-start。Data S1 仍未取得。作者另存于 Zenodo 的记录 10.5281/zenodo.20046846 明确标为 open access、CC BY 4.0；本站按该独立许可原样发布其中的数据与评估代码 ZIP，并附署名与校验说明。该 Zenodo 许可不自动扩展到 Science 托管材料。",
+  "downloads": [
+    {
+      "title": "Zenodo 数据与评估代码归档（CC BY 4.0）",
+      "src": "data/rl_precise_aggressive_maneuvers.zip",
+      "description": "作者 Tianyue Wu 发布于 Zenodo 10.5281/zenodo.20046846 的原始 ZIP，39,670,790 bytes，MD5 ed934733ebc81b72142d4343b4e8d58d；包含实验数据、ROS bag、CSV/JSON、绘图与评估脚本。本站未修改归档内容。"
+    },
+    {
+      "title": "Zenodo 许可、署名与校验说明",
+      "src": "data/zenodo-20046846-cc-by-4.0.txt",
+      "description": "记录 CC BY 4.0 来源、推荐署名、下载日期、文件大小和校验值。"
+    }
+  ],
+  "videos": [
+    {
+      "title": "Movie S1｜矩形窄缝与高倾角穿越",
+      "src": "media/aeb0180_movie_s1.mp4",
+      "caption": "约 1 分 31 秒，4400×2488。展示四旋翼穿越矩形窄缝及不同滚转、俯仰姿态条件。权利人已授权 ScholarAnalysis 公开托管、播放和提供下载。",
+      "download": true
+    },
+    {
+      "title": "Movie S2｜动态缝隙的反应式视觉伺服",
+      "src": "media/aeb0180_movie_s2.mp4",
+      "caption": "约 25 秒，4400×2488。展示策略面对旋转、升降或横向移动缝隙时的实时反应。权利人已授权 ScholarAnalysis 公开托管、播放和提供下载。",
+      "download": true
+    },
+    {
+      "title": "Movie S3｜连续窄缝轨道",
+      "src": "media/aeb0180_movie_s3.mp4",
+      "caption": "约 1 分 15 秒，4400×2488。展示四旋翼在两个或三个紧密排列缝隙之间连续纠偏、减速和重新调整姿态。权利人已授权 ScholarAnalysis 公开托管、播放和提供下载。",
+      "download": true
+    },
+    {
+      "title": "Movie S4｜多种几何开口",
+      "src": "media/aeb0180_movie_s4.mp4",
+      "caption": "约 1 分 3 秒，1920×1080。展示三角形、四边形等不同开口下，策略选择穿越姿态的实验。权利人已授权 ScholarAnalysis 公开托管、播放和提供下载。",
+      "download": true
+    },
+    {
+      "title": "Movie S5｜复杂背景下的学习分割",
+      "src": "media/aeb0180_movie_s5.mp4",
+      "caption": "约 58 秒，1920×1080。展示学习式缝隙分割在复杂背景、假阳性、边缘误差和掩膜缺失条件下的飞行实验。权利人已授权 ScholarAnalysis 公开托管、播放和提供下载。",
+      "download": true
+    }
+  ],
+  "videoSectionTitle": "Movies S1-S5｜权利人授权站内播放",
+  "externalVideos": [],
+  "restrictedVideos": []
+}

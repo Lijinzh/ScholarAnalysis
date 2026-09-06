@@ -1,0 +1,85 @@
+{
+  "slug": "2026-Allocentric-teleoperation-for-variable-perspective-multirobot-coordination",
+  "title": "Allocentric teleoperation for variable perspective multirobot coordination",
+  "titleZh": "面向可变视角多机器人协同的环境中心遥操作",
+  "authors": [
+    "Constantin Uhde",
+    "Nicolas Berberich",
+    "Simon Armleder",
+    "Florian Bergner",
+    "Gordon Cheng"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics 11(116)",
+  "publishedAt": "2026-07-15",
+  "doi": "10.1126/scirobotics.adz7130",
+  "status": "中文图文解析、四张原创图与 Movie S1-S9 站内播放已完成；用户已明确确认其具备视频公开再分发权并授权本站公开托管；Science 正文、补充 PDF、MDAR 和 Data S1 仍仅本地保存",
+  "featured": false,
+  "cardImage": "figures/perspective-contrast-gpt-image-2.webp",
+  "cardImageAlt": "同一多机器人工作空间中，自我中心视角从单台机器人相机观察，环境中心视角从可移动外部观察点同时俯瞰三台机器人及任务关系的科研示意图",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "这项工作把多机器人遥操作从“轮流进入每台机器人的眼睛”改成“站在共享数字孪生场景外统一观察和调度”。环境中心视角显著提高移动、情境总览与机器人利用率，自我中心视角则保留精细位姿匹配优势；真实任务表明最实用的答案不是二选一，而是让操作者按移动、交接和精细操作阶段即时切换视角。",
+  "topics": ["多机器人协同", "遥操作", "虚拟现实", "环境中心视角", "数字孪生", "人机交互"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adz7130",
+  "rightsNote": "Science 页面通过 National University of Defense Technology 显示 Full access，但同时采用 Science Journals Default License 并提供 Request permissions 与 Reprints and Permissions；OpenAlex 将正式版本标记为非开放获取，未发现允许本站再分发正文、论文原图、补充 PDF、MDAR checklist 或 Data S1 的 Creative Commons 许可。这些原件只保存在 Git 忽略的 inbox，主文 PDF 从原页面下载入口尝试后未完整取得，未循环重试。视频采用独立权利依据：用户于 2026-09-05 在本项目对话中明确确认其具备 Movie S1-S9 的公开再分发权，并授权 ScholarAnalysis 公开托管、转码、站内播放和提供下载；本站因此仅将其无损重封装、启用 fast-start 的 H.264 MP4 副本放入 publish/media。该确认不扩展到论文正文、论文原图、补充 PDF、MDAR checklist 或 Data S1。作者 GitHub 仓库 TUM-ICS/allocentric-telerobotics-dataset 与 Zenodo 软件记录 10.5281/zenodo.20671319 独立采用 MIT 许可，但该许可只覆盖软件。mediaTUM 数据集 10.14459/2026mp1841399 可公开访问且声明不含可识别个人信息，但 DataCite rightsList 为空，故本站不重新托管数据归档。公开页另包含原创中文分析、根据本地 Data S1 数值重新绘制的来源数据可视化，以及使用项目 GPT-Image CLI 生成并人工核验的原创科研示意图；无损生成源、提示词和请求记录仅存于 inbox。",
+  "downloads": [],
+  "videos": [
+    {
+      "title": "Movie S1｜双机器人移动任务：两种视角的速度比较",
+      "src": "media/movie-s1.mp4",
+      "caption": "1:45，1920×1080。两台仿真机器人分别前往目标位置，用总完成时间比较自我中心与环境中心控制。用户确认论文团队允许公开托管和再分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S2｜情境总览：同时发现并触发随机按钮",
+      "src": "media/movie-s2.mp4",
+      "caption": "0:54，1920×1080。参与者同时使用两台仿真机器人，尽快找到并按下五个随机亮起的按钮，用于检验跨机器人环境总览能力。用户确认论文团队允许公开托管和再分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S3｜无视觉机器人状态下的末端位姿匹配",
+      "src": "media/movie-s3.mp4",
+      "caption": "1:10，1920×1080。参与者在看不到仿真机器人状态表示时匹配目标末端位姿，以位置估计误差检验具身感和精细控制。用户确认论文团队允许公开托管和再分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S4｜真实餐厅式协作任务与动态视角切换",
+      "src": "media/movie-s4.mp4",
+      "caption": "3:46，1920×1080。参与者在混合模式中完成取餐具、机器人间交接、读取订单、送餐与上桌，并可随任务阶段即时切换视角。用户确认论文团队允许公开托管和再分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S5｜借助机器人皮肤力与接近信号完成无视觉托盘交接",
+      "src": "media/movie-s5.mp4",
+      "caption": "0:58，1920×1080。操作者不依赖视觉，仅根据机器人皮肤的接近与力反馈，把托盘放入另一台机器人的双臂。用户确认论文团队允许公开托管和再分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S6｜三机器人协同搬运白板穿过门口",
+      "src": "media/movie-s6.mp4",
+      "caption": "1:41，1920×1080。两台移动机器人协同搬运白板通过受限空间，第三台机器人提供额外观察视角，操作者按任务需要切换控制模式。用户确认论文团队允许公开托管和再分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S7｜双机器人搬桌与第三机器人视觉支持",
+      "src": "media/movie-s7.mp4",
+      "caption": "0:47，1920×1080。操作者用环境中心控制让两台移动机器人同时搬动桌子，第三台机器人提供视觉支持。用户确认论文团队允许公开托管和再分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S8｜分布式工业场景中的三机器人阀门操作",
+      "src": "media/movie-s8.mp4",
+      "caption": "2:01，1920×1080。物理屏障阻断直接路径，操作者利用三台机器人的位置和能力绕过受损阀门，并在两个位置同步操作。用户确认论文团队允许公开托管和再分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S9｜三机器人协同搬运并上架大型包裹",
+      "src": "media/movie-s9.mp4",
+      "caption": "2:55，1920×1080。两台机器人先把包裹装到第三台机器人的货台，最终通过单手接口同时控制三台机器人的六条机械臂完成上架。用户确认论文团队允许公开托管和再分发。",
+      "download": true
+    }
+  ],
+  "videoSectionTitle": "补充视频在线播放",
+  "externalVideos": [],
+  "restrictedVideos": []
+}

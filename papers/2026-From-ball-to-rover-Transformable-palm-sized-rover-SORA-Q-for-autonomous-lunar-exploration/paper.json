@@ -1,0 +1,50 @@
+{
+  "slug": "2026-From-ball-to-rover-Transformable-palm-sized-rover-SORA-Q-for-autonomous-lunar-exploration",
+  "title": "From ball to rover: Transformable palm-sized rover SORA-Q for autonomous lunar exploration",
+  "titleZh": "从球体到月球车：掌上型可变形 SORA-Q 的自主月面探索",
+  "authors": [
+    "D. Hirano",
+    "M. Inazawa",
+    "M. Sutoh",
+    "M. Nagata",
+    "Y. Yoneda",
+    "K. Watanabe",
+    "H. Sawada",
+    "G. Sakoda",
+    "S. Abe",
+    "S. Homma"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-06-10",
+  "doi": "10.1126/scirobotics.aec8039",
+  "status": "中文深度解析、两张 GPT-Image 2 科研示意图、Data S1 来源数据图及 Movie S1 站内播放已完成；第三张生成结果内容保真失败未发布；正文、补充 PDF 与 Data S1 仍仅本地保存",
+  "featured": false,
+  "cardImage": "figures/telemetry-from-data-s1.webp",
+  "cardImageAlt": "Data S1 前 30 分钟的左轮累计转数、右轮累计转数和 IMU 温度曲线，并标出 14.45 到 19.85 分钟没有记录的遥测缺口",
+  "cardImageCaption": "来源数据可视化：根据论文 Data S1 原始工作表重新绘制",
+  "summary": "SORA-Q 把 78 mm 球形收纳、两电机偏心半球轮、机上阈值视觉、状态机与 LEV-1 中继压进 228 g 平台，并在月面自主展开、离开着陆器、择优回传图像和执行故障恢复。任务证明了小型自主系统能在真实月面工作，但最终路程、总时长和连续轨迹因通信丢失无法直接确定。",
+  "topics": [
+    "月球机器人",
+    "微型探测车",
+    "可变形机构",
+    "机上自主",
+    "视觉定位",
+    "故障恢复",
+    "多机器人中继"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aec8039",
+  "rightsNote": "Science 页面在机构访问会话中显示 Full access，但这只证明可读。论文元数据未给出 Creative Commons 许可，页面链接到 Science Journals Default License 并提供 Request permissions；正文 PDF、补充 PDF、Data S1 ZIP 和工作表因此仍只保存在 Git 忽略的 inbox。视频采用独立权利依据：用户于 2026-09-05 在本项目对话中明确确认其具备 Movie S1 的公开再分发权，并授权 ScholarAnalysis 公开托管、转码、站内播放和提供下载；该确认不扩展到其他 Science 材料。公开区还包含原创中文分析、依据 Data S1 数值重绘的来源数据可视化，以及两张使用项目 GPT-Image CLI 生成并经人工核验的原创科研示意图；无损生成源、提示词、请求记录和一张内容保真失败的结果只保存在 Git 忽略的 inbox。",
+  "downloads": [],
+  "videos": [
+    {
+      "title": "Movie S1｜SORA-Q 展开与运动机构",
+      "src": "media/aec8039_movie_s1.mp4",
+      "caption": "约 1 分 07 秒，852×480。展示前后摄像头、两片半球轮和尾部稳定杆，中央转轴推动轮壳展开，偏心轮以 butterfly 与 crawl 两种相位关系行进，并通过两轮反向旋转转向。用户已确认可公开分发。",
+      "download": true
+    }
+  ],
+  "videoSectionTitle": "补充视频",
+  "externalVideos": [],
+  "restrictedVideos": []
+}

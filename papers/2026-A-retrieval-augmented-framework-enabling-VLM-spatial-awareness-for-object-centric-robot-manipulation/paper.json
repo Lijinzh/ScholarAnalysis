@@ -1,0 +1,52 @@
+{
+  "slug": "2026-A-retrieval-augmented-framework-enabling-VLM-spatial-awareness-for-object-centric-robot-manipulation",
+  "title": "A retrieval-augmented framework enabling VLM spatial awareness for object-centric robot manipulation",
+  "titleZh": "检索增强框架赋予视觉语言模型面向物体中心机器人操作的空间感知能力",
+  "authors": [
+    "Kai Chen",
+    "Chengkun Li",
+    "Chang Tu",
+    "Jiahui Pan",
+    "Yiyao Ma",
+    "Wei Chen",
+    "Zhongxiang Zhou",
+    "Xuecheng Xu",
+    "Stephen James",
+    "Chi-Wing Fu",
+    "Rong Xiong",
+    "Pieter Abbeel",
+    "Yun-Hui Liu",
+    "Qi Dou"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-04-29",
+  "doi": "10.1126/scirobotics.aea2092",
+  "status": "详细解析、GPT-Image 模板迁移图、来源数据图及 Movies S1-S2 站内播放已完成；其余生成请求失败后未重试；Science 正文、补充 PDF 与论文原图仍不公开托管",
+  "featured": false,
+  "cardImage": "figures/object-centric-grounding-gpt-image-2.webp",
+  "cardImageAlt": "类别级碗模板通过稠密三维对应，把位姿、尺寸、抓取点和功能平面迁移到三个不同真实碗实例的科研示意图",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "RAM 不把三维物理知识继续压进 VLM 参数，而是在推理时检索带有规范坐标、抓取点和功能平面的物体类别模板，将先验迁移到当前实例，再让 VLM 用显式空间约束规划、由体素代价场执行。真实机器人实验显示其在标准空间指令上表现较强，但复杂三维重排与桌面清扫仍暴露感知、动作顺序和运动学瓶颈。",
+  "topics": ["视觉语言模型", "机器人操作", "检索增强", "三维视觉定位", "空间推理", "任务与运动规划"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aea2092",
+  "rightsNote": "Science 页面通过 National University of Defense Technology 提供 Full access，但正文采用 Science Journals Default License并显示 Request permissions，因此正文、六张论文原图和补充 PDF 仍只保存在 Git 忽略的 inbox。视频采用独立权利依据：用户于 2026-09-05 在本项目对话中明确确认其具备 Movies S1-S2 的公开再分发权，并授权 ScholarAnalysis 公开托管、转码、站内播放和提供下载；该确认不扩展到其他 Science 材料。作者 Zenodo 软件记录 10.5281/zenodo.19325674 独立标注为 CC BY 4.0，但归档内容是代码，不作为视频授权依据。公开页还发布本站原创分析、来源数据可视化，以及使用项目 GPT-Image CLI 生成并人工核验的原创模板迁移科研示意图；无损 PNG、提示词和请求记录仅存于 Git 忽略的 inbox。",
+  "downloads": [],
+  "videos": [
+    {
+      "title": "Movie S1｜RAM 的三类核心真实机器人实验",
+      "src": "media/aea2092_movie_s1.mp4",
+      "caption": "约 5 分 44 秒，1920×1080。依次展示单物体和多物体空间指令、任意视角参考图引导的餐具三维重排，以及根据桌高、垃圾桶开口和工具尺寸自适应选择直接或间接清扫策略。用户已确认可公开分发。",
+      "download": true
+    },
+    {
+      "title": "Movie S2｜刚体之外的扩展：关节物体、衣物与触觉重抓",
+      "src": "media/aea2092_movie_s2.mp4",
+      "caption": "约 4 分 24 秒，1920×1080。展示笔记本开合与抽屉移动、不同衣物的分阶段折叠，以及 GelSight 检测滑移后由 VLM 改选稳定抓取点。用户已确认可公开分发。",
+      "download": true
+    }
+  ],
+  "videoSectionTitle": "补充视频",
+  "externalVideos": [],
+  "restrictedVideos": []
+}

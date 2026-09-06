@@ -1,0 +1,92 @@
+{
+  "slug": "2026-Cross-link-collective-Entangled-robotic-matter-with-cohesive-motion",
+  "title": "Cross-link collective: Entangled robotic matter with cohesive motion",
+  "titleZh": "交联集体：通过瞬态缠结形成具有凝聚运动的机器人材料",
+  "authors": [
+    "Danna Ma",
+    "Baxi Chong",
+    "Daniel I. Goldman",
+    "Kirstin H. Petersen"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-05-20",
+  "doi": "10.1126/scirobotics.aec6393",
+  "status": "中文图文解析与 Zenodo CC BY 4.0 全部七段补充视频已发布；论文正文和 Science 补充 PDF 不公开",
+  "featured": true,
+  "cardImage": "figures/module-to-collective-gpt-image-2.webp",
+  "cardImageAlt": "三连杆绿色电路板机器人从 I 形变为 U 形，并通过外翼可逆粘连形成短链的科研概念图",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "三连杆模块以 I/U 形变、几何缠结和弱 VELCRO 交联自发形成短链；有利构型与相位差由机械扭矩筛选，障碍促成局部屈服和重组，本地加速度与声音控制进一步减少掉队。",
+  "topics": [
+    "机器人材料",
+    "集体机器人",
+    "机械智能",
+    "主动凝胶",
+    "瞬态缠结",
+    "分布式控制"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aec6393",
+  "rightsNote": "Science Robotics 正文由 OpenAlex 标记为 closed access；作者实验室虽提供可读 PDF，但文件页脚为 The Authors, some rights reserved; exclusive licensee AAAS，并指向 Permissions，未见允许本站再分发的 Creative Commons 许可，因此正文和 Science 补充 PDF 只保存在 Git 忽略的 inbox 或保留官方入口。作者 Zenodo 数据记录 10.5281/zenodo.18271890 明确采用 CC BY 4.0，范围包括开放数据、代码和 Supplementary Material Videos.zip；本站发布其中全部七段补充视频的网页兼容转码副本及数据说明文本，注明作者、来源和处理变化。该数据许可不自动扩展到 Science 正文或论文原图。",
+  "downloads": [
+    {
+      "title": "作者数据集说明（CC BY 4.0）",
+      "src": "data/Ma_2026_readme.txt",
+      "description": "Zenodo 10.5281/zenodo.18271890 的数据与代码清单、处理流程和推荐引用；本站仅复制说明文本，完整数据请从 Zenodo 获取。"
+    }
+  ],
+  "videoSectionTitle": "CC BY 4.0 补充实验视频",
+  "videos": [
+    {
+      "title": "Movie S1｜曲柄滑块机构与标准形变周期",
+      "src": "media/movie-s1-crank-slider-cycle.mp4",
+      "poster": "figures/movie-s1-poster.webp",
+      "caption": "约 20.01 秒。近距离展示单模块的曲柄滑块机构，以及从 I 形到 U 形再返回的标准振荡周期。源自 Ma et al. Zenodo 数据集 10.5281/zenodo.18271890，CC BY 4.0；本站转为 1280×720 H.264/AAC MP4 并启用 fast-start。",
+      "download": true
+    },
+    {
+      "title": "Movie S2｜漏斗通过、堵塞与解堵",
+      "src": "media/movie-s2-funnel-jamming.mp4",
+      "poster": "figures/movie-s2-poster.webp",
+      "caption": "约 57.93 秒。展示交联集体在斜面通过漏斗，以及从堵塞状态转为可流动状态。源自 Ma et al. Zenodo 数据集 10.5281/zenodo.18271890，CC BY 4.0；本站转为 1280×720 H.264/AAC MP4 并启用 fast-start。",
+      "download": true
+    },
+    {
+      "title": "Movie S3｜水平面上有无 VELCRO 的集体运动",
+      "src": "media/movie-s3-velcro-comparison.mp4",
+      "poster": "figures/movie-s3-poster.webp",
+      "caption": "约 29.30 秒。对比十台模块在带与不带 VELCRO 时的凝聚、成链和扩散行为。源自 Ma et al. Zenodo 数据集 10.5281/zenodo.18271890，CC BY 4.0；本站转为 1280×720 H.264/AAC MP4 并启用 fast-start。",
+      "download": true
+    },
+    {
+      "title": "Movie S4｜两模块 S、W、G、C 构型运动",
+      "src": "media/movie-s4-two-module-configurations.mp4",
+      "poster": "figures/movie-s4-poster.webp",
+      "caption": "约 29.01 秒。并列展示两模块在 S、W、G 和 C 构型下的运动，用于比较构型稳定性、方向性和自发断开行为。源自 Ma et al. Zenodo 数据集 10.5281/zenodo.18271890，CC BY 4.0；本站转为 1280×720 H.264/AAC MP4 并启用 fast-start。",
+      "download": true
+    },
+    {
+      "title": "Movie S5｜不同群体规模在外力下的运动",
+      "src": "media/movie-s5-collective-size-external-force.mp4",
+      "poster": "figures/movie-s5-poster.webp",
+      "caption": "约 30.40 秒。对比 5、10、15 和 20 台模块在 5° 斜面外力下的集体运动、成链与拥堵。源自 Ma et al. Zenodo 数据集 10.5281/zenodo.18271890，CC BY 4.0；本站转为 1280×720 H.264/AAC MP4 并启用 fast-start。",
+      "download": true
+    },
+    {
+      "title": "Movie S6｜单模块运动的初始朝向依赖",
+      "src": "media/movie-s6-orientation-dependence.mp4",
+      "poster": "figures/movie-s6-poster.webp",
+      "caption": "约 29.25 秒。比较单模块以不同初始朝向放置在 5° 斜面时的运动进展，展示外力方向与模块姿态的耦合。源自 Ma et al. Zenodo 数据集 10.5281/zenodo.18271890，CC BY 4.0；本站转为 1280×720 H.264/AAC MP4 并启用 fast-start。",
+      "download": true
+    },
+    {
+      "title": "Movie S7｜本地控制器如何帮助孤立模块重新成链",
+      "src": "media/movie-s7-local-controller.mp4",
+      "poster": "figures/movie-s7-poster.webp",
+      "caption": "约 65.47 秒。展示单体与双体控制状态，以及斜面上有无本地控制时的集体行为。源自 Ma et al. Zenodo 数据集 10.5281/zenodo.18271890，CC BY 4.0；本站转为 1280×720 H.264/AAC MP4 并启用 fast-start。",
+      "download": true
+    }
+  ],
+  "externalVideos": [],
+  "restrictedVideos": []
+}

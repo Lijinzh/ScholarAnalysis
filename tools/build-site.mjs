@@ -26,6 +26,13 @@ const escapeHtml = (value = '') => String(value)
 const url = (value = '') => `${base}/${value}`.replace(/\/{2,}/g, '/');
 const absoluteUrl = (value = '') => `${siteOrigin}${url(value)}`;
 
+const directVideoType = (value = '') => {
+  const pathname = String(value).split(/[?#]/, 1)[0].toLowerCase();
+  if (pathname.endsWith('.mp4')) return 'video/mp4';
+  if (pathname.endsWith('.webm')) return 'video/webm';
+  return '';
+};
+
 await rm(distRoot, { recursive: true, force: true });
 await mkdir(distRoot, { recursive: true });
 await cp(path.join(root, 'site', 'assets'), path.join(distRoot, 'assets'), { recursive: true });
@@ -148,20 +155,29 @@ for (const paper of papers) {
         <figcaption class="media-caption"><strong>${escapeHtml(item.title)}</strong>${escapeHtml(item.caption || '')}${item.download !== false ? ` · <a href="${url(`papers/${paper.slug}/files/${item.src}`)}" download>下载原视频</a>` : ''}</figcaption>
       </figure>`).join('');
 
-  const externalVideoItems = (paper.externalVideos || []).map((item) => `
-      <figure class="media-item external-media-item">
-        <div class="external-video-frame">
+  const externalVideoItems = (paper.externalVideos || []).map((item) => {
+    const mediaType = directVideoType(item.embedUrl);
+    const player = mediaType
+      ? `<video controls playsinline preload="metadata">
+          <source src="${escapeHtml(item.embedUrl)}" type="${mediaType}">
+          你的浏览器不支持 HTML5 视频。<a href="${escapeHtml(item.watchUrl || item.embedUrl)}">在来源站观看</a>
+        </video>`
+      : `<div class="external-video-frame">
           <iframe src="${escapeHtml(item.embedUrl)}" title="${escapeHtml(item.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <figcaption class="media-caption"><strong>${escapeHtml(item.title)}</strong>${escapeHtml(item.caption || '')}${item.watchUrl ? ` · <a href="${escapeHtml(item.watchUrl)}">在原平台观看</a>` : ''}</figcaption>
-      </figure>`).join('');
+        </div>`;
+    return `
+      <figure class="media-item external-media-item">
+        ${player}
+        <figcaption class="media-caption"><strong>${escapeHtml(item.title)}</strong>${escapeHtml(item.caption || '')}${item.watchUrl ? ` · <a href="${escapeHtml(item.watchUrl)}">在来源站观看</a>` : ''}</figcaption>
+      </figure>`;
+  }).join('');
 
   const playableVideos = hostedVideoItems || externalVideoItems
     ? `<div class="media-grid">${hostedVideoItems}${externalVideoItems}</div>`
     : '';
 
   const restrictedVideos = paper.restrictedVideos?.length
-    ? `<div class="restricted-media-notice">这些视频已逐段核验，但出版社未提供允许本站再分发的独立开放许可。因此下面展示内容索引和官方入口，不复制视频文件，也不伪装成站内播放器。</div>
+    ? `<div class="restricted-media-notice">以下补充视频没有确认可供本站再分发的独立开放许可。因此只展示已知信息和官方入口，不复制视频文件，也不伪装成站内播放器。</div>
       <div class="restricted-media-grid">${paper.restrictedVideos.map((item) => `
         <article class="restricted-video-card">
           ${item.poster ? `<div class="restricted-video-poster"><img src="${url(`papers/${paper.slug}/files/${item.poster}`)}" alt="${escapeHtml(item.posterAlt || '')}"><span>科研示意图 · 非视频画面</span></div>` : ''}
@@ -174,7 +190,8 @@ for (const paper of papers) {
         </article>`).join('')}</div>`
     : '';
 
-  const videos = playableVideos || restrictedVideos || '<div class="empty-state">论文补充视频没有完整公开再分发许可，因此本站不托管或播放。后续获得授权或官方可嵌入地址后，可直接接入 HTML5 播放器。</div>';
+  const videos = [playableVideos, restrictedVideos].filter(Boolean).join('')
+    || '<div class="empty-state">论文补充视频没有完整公开再分发许可，因此本站不托管或播放。后续获得授权或官方可嵌入地址后，可直接接入 HTML5 播放器。</div>';
 
   const topics = paper.topics.map((topic) => `<li>${escapeHtml(topic)}</li>`).join('');
   const analysisBody = paper.analysis.replace(/^#\s+.*(?:\r?\n)+/, '');
