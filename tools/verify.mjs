@@ -1,4 +1,4 @@
-import { access, readFile, readdir, stat } from 'node:fs/promises';
+import { access, open, readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -26,6 +26,19 @@ const directVideoType = (value = '') => {
   return '';
 };
 
+const isSupportedVideoEmbed = (value = '') => {
+  try {
+    const target = new URL(value);
+    const hostname = target.hostname.toLowerCase();
+    if (['www.youtube-nocookie.com', 'youtube-nocookie.com', 'www.youtube.com', 'youtube.com'].includes(hostname)) {
+      return target.pathname.startsWith('/embed/');
+    }
+    return hostname === 'player.vimeo.com' && target.pathname.startsWith('/video/');
+  } catch {
+    return false;
+  }
+};
+
 async function walk(directory) {
   const items = await readdir(directory, { withFileTypes: true });
   const files = [];
@@ -35,6 +48,32 @@ async function walk(directory) {
     else files.push(full);
   }
   return files;
+}
+
+async function hasFastStart(file) {
+  const handle = await open(file, 'r');
+  try {
+    const header = Buffer.alloc(16);
+    let offset = 0;
+    while (true) {
+      const { bytesRead } = await handle.read(header, 0, header.length, offset);
+      if (bytesRead < 8) return false;
+      let boxSize = BigInt(header.readUInt32BE(0));
+      const boxType = header.toString('ascii', 4, 8);
+      let headerSize = 8n;
+      if (boxSize === 1n) {
+        if (bytesRead < 16) return false;
+        boxSize = header.readBigUInt64BE(8);
+        headerSize = 16n;
+      }
+      if (boxType === 'moov') return true;
+      if (boxType === 'mdat') return false;
+      if (boxSize === 0n || boxSize < headerSize || boxSize > BigInt(Number.MAX_SAFE_INTEGER)) return false;
+      offset += Number(boxSize);
+    }
+  } finally {
+    await handle.close();
+  }
 }
 
 const htmlFiles = (await walk(dist)).filter((file) => file.endsWith('.html'));
@@ -88,6 +127,7 @@ for (const dir of (await readdir(papersDir, { withFileTypes: true })).filter((it
     const audioCodec = streams.find((stream) => stream.codec_type === 'audio')?.codec_name;
     if (videoCodec !== 'h264') errors.push(`${dir.name}: ${video.src} uses ${videoCodec || 'no video codec'}; expected H.264`);
     if (audioCodec && audioCodec !== 'aac') errors.push(`${dir.name}: ${video.src} uses ${audioCodec} audio; expected AAC or no audio`);
+    if (!await hasFastStart(target)) errors.push(`${dir.name}: ${video.src} is not fast-start optimized (moov must precede mdat)`);
   }
   for (const video of paper.externalVideos || []) {
     if (!video.embedUrl) {
@@ -103,8 +143,13 @@ for (const dir of (await readdir(papersDir, { withFileTypes: true })).filter((it
       if (paperHtml.includes(`<iframe src="${escapedUrl}"`)) {
         errors.push(`${dir.name}: direct external video ${video.embedUrl} must not be rendered as an iframe`);
       }
-    } else if (!paperHtml.includes(`<iframe src="${escapedUrl}"`)) {
-      errors.push(`${dir.name}: external embed ${video.embedUrl} is not rendered as an iframe`);
+    } else {
+      if (!isSupportedVideoEmbed(video.embedUrl)) {
+        errors.push(`${dir.name}: external video ${video.embedUrl} is not a supported embeddable player URL`);
+      }
+      if (!paperHtml.includes(`<iframe src="${escapedUrl}"`)) {
+        errors.push(`${dir.name}: external embed ${video.embedUrl} is not rendered as an iframe`);
+      }
     }
   }
   for (const video of paper.restrictedVideos || []) {
