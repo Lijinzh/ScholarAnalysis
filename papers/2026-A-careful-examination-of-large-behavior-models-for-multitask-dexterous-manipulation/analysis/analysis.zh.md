@@ -202,9 +202,8 @@ SetBreakfastTable 是最直观的例子：全数据训练的单任务策略经�
 - [arXiv 摘要页](https://arxiv.org/abs/2507.05331)
 - [TRI LBM 1.0 官方项目页](https://toyotaresearchinstitute.github.io/lbm1/)
 - [Toyota Research Institute 官方概览视频](https://www.youtube.com/watch?v=DeLpnTgzJT4)
-- [作者团队演讲视频](https://www.youtube.com/watch?v=TN1M6vg4CsQ)
 - Science Robotics Supplementary Movie S1（本站下方 HTML5 播放器）
 - Science Robotics Supplementary Movie S2（本站下方 HTML5 播放器）
 - [Science Journals 许可与文章再利用说明](https://www.science.org/about/science-licenses-journal-article-reuse)
 
-学校机构权限与再分发许可仍分开判断。Science 正式版、补充 PDF 和 Data S1 没有发现允许本站公开托管的明确开放许可；arXiv PDF 使用的是 arXiv non-exclusive distribution license，因此这些文件仍只保存在 Git 忽略的 `inbox/` 或保留官方入口。Movies S1-S2 则具有独立的作者授权：用户于 2026-09-08 明确确认自己是论文作者之一，并授权 ScholarAnalysis 公开托管、无损重封装、站内播放和提供下载这两段补充视频；授权范围不扩展到正文、补充 PDF、Data S1、论文原图或第三方素材。
+学校机构权限与再分发许可仍分开判断。Science 正式版、补充 PDF 和 Data S1 没有发现允许本站公开托管的明确开放许可；arXiv PDF 使用的是 arXiv non-exclusive distribution license，因此这些文件仍只保存在 Git 忽略的 `inbox/` 或保留官方入口。Movies S1-S2 则具有独立的用户确认授权：用户于 2026-09-05 在本项目对话中明确确认其具备视频公开再分发权，并授权 ScholarAnalysis 公开托管、无损重封装、站内播放和提供下载这两段补充视频；授权范围不扩展到正文、补充 PDF、Data S1、论文原图或第三方素材。TRI Seminar Talk 被视频所有者禁止站外嵌入，因此公开页不把它列为站内播放器。

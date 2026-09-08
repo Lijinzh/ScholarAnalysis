@@ -9,7 +9,7 @@
   "venue": "Science Robotics",
   "publishedAt": "2026-04-15",
   "doi": "10.1126/scirobotics.aea6201",
-  "status": "中文深度解析、三张 GPT-Image 2 科研示意图、两张来源数据可视化、Movies S1-S2 HTML5 播放器和两段 TRI 官方嵌入视频已接入；媒体编码、解码与 HTTP Range 验证通过，Edge 实际点击播放验收待浏览器扩展恢复；Science 正文、补充 PDF 与 Data S1 仍不公开",
+  "status": "中文深度解析、三张 GPT-Image 2 科研示意图、两张来源数据可视化、Movies S1-S2 HTML5 播放器和一段可嵌入的 TRI 官方概览视频已接入；Science 正文、补充 PDF 与 Data S1 仍不公开",
   "featured": false,
   "cardImage": "figures/lbm-bimanual-platform-gpt-image-2.webp",
   "cardImageAlt": "双臂桌面机器人工作站，上方两台固定场景相机且每只手腕安装两台相机",
@@ -25,19 +25,19 @@
     "分布偏移"
   ],
   "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aea6201",
-  "rightsNote": "Science Robotics 正式版由学校机构权限访问；Crossref 未返回开放许可，OpenAlex 将正式版标为 closed，期刊页未显示允许本站再分发正文、补充 PDF 或 Data S1 的 Creative Commons 许可，因此这些材料仍只保存在 Git 忽略的 inbox 或保留官方入口。Movies S1-S2 使用独立权利依据：用户于 2026-09-08 在本项目对话中明确确认自己是论文作者之一，并授权 ScholarAnalysis 公开托管、无损重封装、站内播放和提供下载这两段补充视频；许可名称记为“作者直接再分发授权”，来源 URL 为本条目的 Science DOI 页面，该授权不扩展到论文正文、补充 PDF、Data S1、论文原图或其他第三方素材。公开 arXiv 预印本采用 arXiv non-exclusive distribution license，因此 39 页 PDF 仍只保存在 Git 忽略的 inbox。TRI 官方 YouTube Overview Video 与 Seminar Talk 继续使用官方隐私增强播放器站内嵌入。",
+  "rightsNote": "Science Robotics 正式版由学校机构权限访问；Crossref 未返回开放许可，OpenAlex 将正式版标为 closed，期刊页未显示允许本站再分发正文、补充 PDF 或 Data S1 的 Creative Commons 许可，因此这些材料仍只保存在 Git 忽略的 inbox 或保留官方入口。Movies S1-S2 使用独立权利依据：用户于 2026-09-05 在本项目对话中明确确认其具备视频公开再分发权，并授权 ScholarAnalysis 公开托管、无损重封装、站内播放和提供下载这两段补充视频；授权证据来源为本项目对话记录，材料来源 URL 为本条目的 Science DOI 页面，该授权不扩展到论文正文、补充 PDF、Data S1、论文原图或其他第三方素材。公开 arXiv 预印本采用 arXiv non-exclusive distribution license，因此 39 页 PDF 仍只保存在 Git 忽略的 inbox。TRI 官方 YouTube Overview Video 使用官方隐私增强播放器站内嵌入；因 Seminar Talk 被视频所有者禁止站外嵌入，公开页不再把它登记为站内播放器。",
   "downloads": [],
   "videos": [
     {
       "title": "Movie S1｜双臂机器人执行苹果处理长时序任务",
       "src": "media/aea6201_movie_s1.mp4",
-      "caption": "约 3 分 03 秒，320×226，H.264。展示双臂系统围绕苹果、刀具和容器执行多阶段操作，包括取放、切分和任务状态推进。视频来自 Science Robotics 补充材料；论文作者之一已明确授权本站公开分发。",
+      "caption": "约 3 分 03 秒，320×226，H.264。展示双臂系统围绕苹果、刀具和容器执行多阶段操作，包括取放、切分和任务状态推进。视频来自 Science Robotics 补充材料；用户已明确确认具备该视频的公开再分发权，并授权本站公开分发。",
       "download": true
     },
     {
       "title": "Movie S2｜双臂机器人完成早餐托盘布置",
       "src": "media/aea6201_movie_s2.mp4",
-      "caption": "约 1 分 26 秒，320×226，H.264。展示双臂系统依次放置饮料、餐盘、水果、面包和谷物，体现长时序任务中的物体顺序、空间约束和双臂协作。视频来自 Science Robotics 补充材料；论文作者之一已明确授权本站公开分发。",
+      "caption": "约 1 分 26 秒，320×226，H.264。展示双臂系统依次放置饮料、餐盘、水果、面包和谷物，体现长时序任务中的物体顺序、空间约束和双臂协作。视频来自 Science Robotics 补充材料；用户已明确确认具备该视频的公开再分发权，并授权本站公开分发。",
       "download": true
     }
   ],
@@ -48,12 +48,6 @@
       "embedUrl": "https://www.youtube-nocookie.com/embed/DeLpnTgzJT4",
       "watchUrl": "https://www.youtube.com/watch?v=DeLpnTgzJT4",
       "caption": "TRI 官方概览视频，介绍 LBM 1.0 的数据规模、双臂长时序任务和评估结论。它是作者团队公开视频，不是 Science Supplementary Movie；本站仅调用官方播放器，不下载或重新托管。"
-    },
-    {
-      "title": "TRI LBM 1.0 Seminar Talk",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/TN1M6vg4CsQ",
-      "watchUrl": "https://www.youtube.com/watch?v=TN1M6vg4CsQ",
-      "caption": "TRI 官方项目页列出的 Seminar Talk，通过 YouTube 官方隐私增强播放器在本站直接播放；本站不下载或重新托管视频文件。"
     }
   ],
   "restrictedVideos": []
