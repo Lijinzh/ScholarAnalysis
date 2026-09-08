@@ -9,17 +9,18 @@
 
 ## 权利边界
 
-Science 页面在机构会话中显示 `Full access`，但 Crossref 未返回开放许可，OpenAlex 将正式版本记录为非 OA，论文页链接到 Science Journals Default License 并提供 `Request permissions`。默认许可没有授予本站复制正式出版版、补充 PDF、Movie S1 或 Data S1 的公开再分发权。
+Science 页面在机构会话中显示 `Full access`，但 Crossref 未返回开放许可，OpenAlex 将正式版本记录为非 OA，论文页链接到 Science Journals Default License 并提供 `Request permissions`。默认许可没有授予本站复制正式出版版、补充 PDF、Movie S1 或 Data S1 的公开再分发权。Movie S1 另有独立权利依据：用户于 2026-09-05 明确确认其具备该视频的公开再分发权，并授权 ScholarAnalysis 公开托管、站内播放和提供下载；这项授权不扩展到其他 Science 材料。
 
 因此：
 
 - `inbox/01-main-paper/scirobotics.aec8039.pdf`：仅本地；
 - `inbox/02-supplementary/scirobotics.aec8039_sm.pdf`：仅本地；
-- `inbox/03-videos/scirobotics.aec8039_movie_s1.zip` 及解压 MP4：仅本地；
+- `inbox/03-videos/scirobotics.aec8039_movie_s1.zip` 及原始解压 MP4：本地原件；经上述独立授权发布的网页兼容副本为 `publish/media/aec8039_movie_s1.mp4`；
 - `inbox/04-data/scirobotics.aec8039_data_s1.zip` 及解压 XLSX：仅本地；
 - `publish/figures/telemetry-from-data-s1.webp`：本站依据受限 Data S1 中的数值原创重绘，只表达分析结果，不分发原工作簿。
 - `publish/figures/soraq-transform-deploy-gpt-image-2.webp`：GPT-Image 2 原创展开机构示意图，不是论文原图或实验照片。
 - `publish/figures/soraq-onboard-autonomy-gpt-image-2.webp`：GPT-Image 2 原创自主链示意图，不是论文原图或实验照片。
+- `publish/media/aec8039_movie_s1.mp4`：依据用户独立权利确认公开托管的 Movie S1 网页兼容副本；该授权仅覆盖此视频。
 
 ## 本地原件校验值
 
