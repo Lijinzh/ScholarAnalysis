@@ -26,6 +26,14 @@ const directVideoType = (value = '') => {
   return '';
 };
 
+const formatPublishedMonth = (value = '') => {
+  const match = String(value).match(/^(\d{4})-(\d{2})(?:-\d{2})?$/);
+  if (!match) return '';
+  const month = Number(match[2]);
+  if (month < 1 || month > 12) return '';
+  return `${match[1]}年${month}月`;
+};
+
 const isSupportedVideoEmbed = (value = '') => {
   try {
     const target = new URL(value);
@@ -99,10 +107,20 @@ for (const file of htmlFiles) {
 }
 
 const papersDir = path.join(root, 'papers');
+const homeHtml = await readFile(path.join(dist, 'index.html'), 'utf8');
 for (const dir of (await readdir(papersDir, { withFileTypes: true })).filter((item) => item.isDirectory())) {
   const paperDir = path.join(papersDir, dir.name);
   const paper = JSON.parse(await readFile(path.join(paperDir, 'paper.json'), 'utf8'));
   const paperHtml = await readFile(path.join(dist, 'papers', dir.name, 'index.html'), 'utf8');
+  const publishedMonth = formatPublishedMonth(paper.publishedAt);
+  if (!publishedMonth) {
+    errors.push(`${dir.name}: invalid publishedAt date ${paper.publishedAt || '(empty)'}`);
+  } else {
+    const expectedDate = `<time datetime="${escapeHtmlAttribute(paper.publishedAt)}">${publishedMonth}</time>`;
+    if (!homeHtml.includes(expectedDate)) {
+      errors.push(`${dir.name}: paper card does not show publication month ${publishedMonth}`);
+    }
+  }
   for (const item of [...paper.downloads, ...paper.videos]) {
     const target = path.join(paperDir, 'publish', item.src);
     try { await access(target); } catch { errors.push(`${dir.name}: metadata references missing file ${item.src}`); }

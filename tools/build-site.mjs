@@ -26,6 +26,14 @@ const escapeHtml = (value = '') => String(value)
 const url = (value = '') => `${base}/${value}`.replace(/\/{2,}/g, '/');
 const absoluteUrl = (value = '') => `${siteOrigin}${url(value)}`;
 
+const formatPublishedMonth = (value = '') => {
+  const match = String(value).match(/^(\d{4})-(\d{2})(?:-\d{2})?$/);
+  if (!match) throw new Error(`invalid publishedAt date: ${value || '(empty)'}`);
+  const month = Number(match[2]);
+  if (month < 1 || month > 12) throw new Error(`invalid publishedAt month: ${value}`);
+  return `${match[1]}年${month}月`;
+};
+
 const directVideoType = (value = '') => {
   const pathname = String(value).split(/[?#]/, 1)[0].toLowerCase();
   if (pathname.endsWith('.mp4')) return 'video/mp4';
@@ -97,7 +105,7 @@ const cards = papers.map((paper) => {
       <div class="paper-title-en" lang="en">${escapeHtml(paper.title)}</div>
       <p>${escapeHtml(paper.summary)}</p>
     </div>
-    <div class="paper-meta">${escapeHtml(paper.year)} · ${escapeHtml(paper.venue)}</div>
+    <div class="paper-meta"><time datetime="${escapeHtml(paper.publishedAt)}">${escapeHtml(formatPublishedMonth(paper.publishedAt))}</time> · ${escapeHtml(paper.venue)}</div>
   </a>`;
 }).join('');
 
