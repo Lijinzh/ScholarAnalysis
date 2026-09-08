@@ -85,7 +85,7 @@ h1 { margin: 0 0 22px; font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 12ch; }
 .paper-summary { font-size: 1.12rem; max-width: 76ch; color: var(--muted); }
 .meta-row { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; color: var(--muted); font-size: .92rem; }
 
-.paper-layout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 70px; align-items: start; }
+.paper-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 280px); gap: 70px; align-items: start; }
 .prose { min-width: 0; font-family: "Noto Serif SC", "Songti SC", SimSun, serif; font-size: 1.04rem; }
 .prose h2 { margin-top: 2.6em; font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 2rem; }
 .prose h3 { margin-top: 2em; font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; }
@@ -128,8 +128,8 @@ h1 { margin: 0 0 22px; font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 12ch; }
 .paragraph-comment-form .feedback-status { margin-top: 0; }
 .feedback-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
 .feedback-turnstile { min-height: 1px; }
-.rights-note { margin: 18px 0; padding: 12px 14px; border-radius: 12px; background: var(--wash); color: var(--muted); font-size: .86rem; }
-.side-panel { position: sticky; top: 96px; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: 0 12px 32px rgba(18,50,40,.06); }
+.rights-note { margin: 18px 0; padding: 12px 14px; overflow-wrap: anywhere; border-radius: 12px; background: var(--wash); color: var(--muted); font-size: .86rem; }
+.side-panel { position: sticky; top: 96px; min-width: 0; padding: 22px; overflow-wrap: anywhere; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: 0 12px 32px rgba(18,50,40,.06); }
 .side-panel h2 { font-size: 1rem; margin: 0 0 14px; letter-spacing: 0; }
 .side-panel ul { margin: 0; padding-left: 18px; color: var(--muted); }
 .button {
@@ -186,7 +186,7 @@ h1 { margin: 0 0 22px; font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 12ch; }
   .shell { width: min(100% - 28px, 1160px); }
   .nav-links { gap: 12px; font-size: .84rem; }
   .hero { padding-top: 58px; }
-  .hero-grid, .paper-layout { grid-template-columns: 1fr; }
+  .hero-grid, .paper-layout { grid-template-columns: minmax(0, 1fr); }
   .hero-visual { min-height: 300px; order: -1; }
   .hero-visual img { height: 300px; }
   .side-panel { position: static; }
