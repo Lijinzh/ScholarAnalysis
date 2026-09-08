@@ -8,7 +8,8 @@
 
 - 学校机构访问权限用于本地下载和研究，不作为公开再分发许可。
 - arXiv v1 PDF、项目页快照、版面文本和 GPT-Image 无损源保存在 Git 忽略的 `inbox/`。
-- Science 正文、补充 PDF、Data S1 和 Movies S1-S2 未发现明确 CC 许可，不进入 `publish/`。
+- Science 正文、补充 PDF 和 Data S1 未发现明确开放许可，不进入 `publish/`。
+- Movies S1-S2 采用独立的作者直接再分发授权：用户于 2026-09-08 明确确认自己是论文作者之一，并授权本站公开托管、重封装、播放和下载这两段视频；授权不扩展到其他 Science 材料。
 - `publish/figures/` 包含三张 GPT-Image 2 原创科研示意图和两张根据论文公开报告数值原创绘制的来源数据可视化。
 - TRI 官方 YouTube Overview Video 与 Seminar Talk 均通过官方隐私增强播放器站内播放，不下载或重新托管。
 
@@ -18,4 +19,4 @@
 
 ## 发布前状态
 
-中文解析及公开图片已经写入发布清单。Science Movies S1-S2 仍缺少独立公开再分发许可，因此只显示受限材料卡片和期刊官方入口；若取得可核验授权，再转换为 H.264/AAC MP4 并登记到 `paper.json.videos`。
+中文解析、公开图片与视频已经写入发布清单。Movies S1-S2 保留原 H.264 画面并完成 fast-start 无损重封装，登记到 `paper.json.videos`，提供 HTML5 站内播放器和原视频下载；编码、完整解码与 HTTP Range 验证已经通过，Edge 实际点击播放与移动端视觉验收仍待浏览器扩展恢复。论文正文、补充 PDF 与 Data S1 继续保持受限。
