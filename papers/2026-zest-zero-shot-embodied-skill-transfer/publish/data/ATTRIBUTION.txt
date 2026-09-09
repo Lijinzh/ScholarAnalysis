@@ -1,0 +1,8 @@
+ZEST: Unitree G1 Data
+Jean Pierre Sleiman et al.
+Source: https://zenodo.org/records/21135719
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Data_S1_G1.xlsx extracted without changes from ZEST_G1_Data_Zenodo.zip.
+Paper: https://doi.org/10.1126/scirobotics.aec7695
+No endorsement by the authors is implied.

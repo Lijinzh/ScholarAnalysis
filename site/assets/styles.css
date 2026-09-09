@@ -93,7 +93,7 @@ h1 { margin: 0 0 22px; font-size: clamp(2.6rem, 6vw, 5.5rem); max-width: 12ch; }
 .prose code { padding: .12em .38em; overflow-wrap: anywhere; border-radius: 5px; background: #edf2ef; font-family: Consolas, monospace; word-break: break-word; }
 .prose pre { max-width: 100%; margin: 24px 0; overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: #edf2ef; }
 .prose pre code { display: block; width: max-content; min-width: 100%; box-sizing: border-box; padding: 16px 18px; overflow-wrap: normal; border-radius: 0; background: transparent; line-height: 1.65; word-break: normal; }
-.prose img { display: block; width: 100%; margin: 34px 0; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: var(--shadow); }
+.prose img { display: block; width: 100%; height: auto; margin: 34px 0; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: var(--shadow); }
 .prose .analysis-figure { margin: 34px 0 42px; }
 .prose .analysis-figure img { margin: 0; }
 .prose .analysis-figure figcaption { padding: 14px 4px 0; color: var(--muted); font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: .92rem; line-height: 1.75; }

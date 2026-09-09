@@ -190,16 +190,15 @@ for (const paper of papers) {
         <article class="restricted-video-card">
           ${item.poster ? `<div class="restricted-video-poster"><img src="${url(`papers/${paper.slug}/files/${item.poster}`)}" alt="${escapeHtml(item.posterAlt || '')}"><span>科研示意图 · 非视频画面</span></div>` : ''}
           <div class="restricted-video-body">
-            <div class="restricted-video-meta"><span>${escapeHtml(item.duration || '')}</span><span>${escapeHtml(item.resolution || '')}</span><span>机构权限材料</span></div>
+            <div class="restricted-video-meta">${item.duration ? `<span>${escapeHtml(item.duration)}</span>` : ''}${item.resolution ? `<span>${escapeHtml(item.resolution)}</span>` : ''}<span>${escapeHtml(item.rightsLabel || '机构权限材料')}</span></div>
             <h3>${escapeHtml(item.title)}</h3>
             <p>${escapeHtml(item.summary || '')}</p>
-            <a class="button secondary" href="${escapeHtml(item.officialUrl)}">前往 Science 官方视频包</a>
+            <a class="button secondary" href="${escapeHtml(item.officialUrl)}">${escapeHtml(item.linkLabel || '前往 Science 官方视频包')}</a>
           </div>
         </article>`).join('')}</div>`
     : '';
 
-  const videos = [playableVideos, restrictedVideos].filter(Boolean).join('')
-    || '<div class="empty-state">论文补充视频没有完整公开再分发许可，因此本站不托管或播放。后续获得授权或官方可嵌入地址后，可直接接入 HTML5 播放器。</div>';
+  const videos = [playableVideos, restrictedVideos].filter(Boolean).join('');
 
   const topics = paper.topics.map((topic) => `<li>${escapeHtml(topic)}</li>`).join('');
   const analysisBody = paper.analysis.replace(/^#\s+.*(?:\r?\n)+/, '');
@@ -236,12 +235,12 @@ for (const paper of papers) {
           </aside>
         </div>
       </section>
-      <section class="section" id="videos">
+      ${videos ? `<section class="section" id="videos">
         <div class="shell">
           <div class="section-head"><h2>${escapeHtml(paper.videoSectionTitle || '补充视频')}</h2></div>
           ${videos}
         </div>
-      </section>
+      </section>` : ''}
       <section class="section">
         <div class="shell question-box">
           <h2>对整篇论文有综合意见？</h2>

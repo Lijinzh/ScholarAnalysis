@@ -1,0 +1,111 @@
+{
+  "slug": "2026-zest-zero-shot-embodied-skill-transfer",
+  "title": "ZEST: Zero-shot embodied skill transfer for athletic robot control",
+  "titleZh": "ZEST：从动作捕捉、视频和动画到机器人运动技能",
+  "authors": [
+    "Jean Pierre Sleiman",
+    "He Li",
+    "Alphonsus Adu-Bredu",
+    "Robin Deits",
+    "Arun Kumar",
+    "Kevin Bergamin",
+    "Mohak Bhardwaj",
+    "Scott Biddlestone",
+    "Nicola Burger",
+    "Matthew A. Estrada",
+    "Francesco Iacobelli",
+    "Twan Koolen",
+    "Alexander Lambert",
+    "Erica Lin",
+    "M. Eva Mungai",
+    "Zach Nobles",
+    "Shane Rozen-Levy",
+    "Yuyao Shi",
+    "Jiashun Wang",
+    "Jakob Welner",
+    "Fangzhou Yu",
+    "Mike Zhang",
+    "Alfred Rizzi",
+    "Jessica Hodgins",
+    "Sylvain Bertrand",
+    "Yeuhi Abe",
+    "Scott Kuindersma",
+    "Farbod Farshidian"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-08-12",
+  "doi": "10.1126/scirobotics.aec7695",
+  "status": "中文图文解析；视频提供官方入口",
+  "featured": false,
+  "cardImage": "figures/reference-transfer.webp",
+  "cardImageAlt": "三类运动数据通过离线重定向形成机器人参考动作的概念图",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "解析参考重定向、残差关节控制、自适应采样与虚拟辅助课程，核查 Atlas、G1 和 Spot 的实机证据，以及零样本迁移的训练与数据边界。",
+  "topics": [
+    "运动模仿",
+    "人形机器人",
+    "强化学习",
+    "仿真到实机",
+    "执行器建模"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aec7695",
+  "rightsNote": "2026-09-09 核查：期刊正文及23页补充PDF仅保存在忽略的inbox/；正文版权页为作者保留部分权利、AAAS独家被许可，未取得可供本站复制的明确开放许可。官方入口：https://www.science.org/doi/10.1126/scirobotics.aec7695 。独立作者仓储 https://zenodo.org/records/21135719 明确标注CC BY 4.0；本站仅从该来源提取未经修改的Data_S1_G1.xlsx公开，署名Jean Pierre Sleiman等，附ATTRIBUTION.txt及许可链接。其与期刊Data S1工作簿哈希一致不改变独立许可来源的记录。部署软件记录 https://zenodo.org/records/21729371 及包内LICENSE为MIT；仅提供官方链接，软件归档留在inbox/。Movies S1–S8及正文Movie 1没有独立再分发许可证据，视频包尚未取得，保留官方入口。三张GPT-Image 2原创概念图已检查并标注来源；无损原图、提示词与记录不公开。公开范围为本页原创解析、已审查的生成式示意图及下载清单中逐项获准的材料。",
+  "downloads": [
+    {
+      "title": "G1 开放数据工作簿（CC BY 4.0）",
+      "src": "data/Data_S1_G1.xlsx"
+    },
+    {
+      "title": "数据来源、署名与许可说明",
+      "src": "data/ATTRIBUTION.txt"
+    }
+  ],
+  "videos": [],
+  "externalVideos": [],
+  "restrictedVideos": [
+    {
+      "title": "Movie 1｜方法与实机总览",
+      "summary": "正文嵌入视频；展示ZEST方法及机器人实机结果。尚未逐段播放核验。",
+      "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aec7695",
+      "poster": "figures/reference-transfer.webp",
+      "posterAlt": "GPT-Image生成式科研示意海报，非视频画面",
+      "rightsLabel": "再分发许可待核实",
+      "linkLabel": "前往论文官方页"
+    },
+    {
+      "title": "Movies S1–S3｜三类动作来源",
+      "summary": "正文分别指向MoCap、ViCap和动画参考及相关动作展示；官方补充视频包尚未取得。",
+      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aec7695",
+      "poster": "figures/reference-transfer.webp",
+      "posterAlt": "GPT-Image生成式科研示意海报，非视频画面",
+      "rightsLabel": "再分发许可待核实",
+      "linkLabel": "前往官方补充材料页"
+    },
+    {
+      "title": "Movies S4–S5｜仿真与MPC比较",
+      "summary": "S4为多技能策略仿真，S5为接触标签参考与MPC/RL比较；不能当作新增实机泛化验证。",
+      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aec7695",
+      "poster": "figures/training-assistance.webp",
+      "posterAlt": "GPT-Image生成式科研示意海报，非视频画面",
+      "rightsLabel": "再分发许可待核实",
+      "linkLabel": "前往官方补充材料页"
+    },
+    {
+      "title": "Movies S6–S7｜爬箱重复与压力测试",
+      "summary": "S6对应名义重复试验，S7对应初始机器人—箱子位姿变化；正文结果已在分析中区分。",
+      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aec7695",
+      "poster": "figures/residual-control.webp",
+      "posterAlt": "GPT-Image生成式科研示意海报，非视频画面",
+      "rightsLabel": "再分发许可待核实",
+      "linkLabel": "前往官方补充材料页"
+    },
+    {
+      "title": "Movie S8｜内容待核实",
+      "summary": "补充清单列有S8，目前没有视频原件或足够的内容说明；不猜测实验内容。",
+      "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aec7695",
+      "rightsLabel": "再分发许可待核实",
+      "linkLabel": "前往官方补充材料页"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "2026-convergent-binocular-stereo",
+  "title": "Convergent binocular stereo: Depth perception for humanoid robot vision",
+  "titleZh": "会聚双目立体视觉：让人形机器人的双眼在注视中感知深度",
+  "authors": [
+    "Mingshi Chi",
+    "John K. Tsotsos"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-08-26",
+  "doi": "10.1126/scirobotics.aec7205",
+  "status": "中文图文解析；多尺度补充图待补",
+  "featured": false,
+  "cardImage": "figures/hardware-geometry.webp",
+  "cardImageAlt": "两台相机在固定基座上转动并共同注视目标的科研示意图",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "从双眼转动与姿态标定，到 Gabor 匹配、二维视差和三角化，解读 CBS 的完整技术链；结合 49 个场景的评测，辨析近距离、重复纹理优势与远距离误差。",
+  "topics": [
+    "人形机器人",
+    "主动视觉",
+    "双目立体匹配",
+    "相机标定"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aec7205",
+  "rightsNote": "2026-09-09 核查：正文 PDF、35 页补充 PDF、Data S1 ZIP/XLSX 已取得并保存在 Git 忽略的 inbox/。正文版权页标注作者保留部分权利、AAAS 为独家被许可方；未找到允许本站再分发期刊正文、补充材料及原图的明确开放许可，因此 publish/ 不含这些原件。证据入口：https://www.science.org/doi/10.1126/scirobotics.aec7205 。独立 Zenodo 记录 https://zenodo.org/records/21053380 标注 MIT，适用范围需结合包内声明，不能扩展到期刊 PDF；本页仅链接该仓储。官方补充清单未列视频。公开内容仅为原创中文分析及经检查的 GPT-Image 2 示意图，明确标注非论文原图；无损源和生成记录保留在 inbox/。公开范围为本页原创解析、已审查的生成式示意图及下载清单中逐项获准的材料。",
+  "downloads": [],
+  "videos": [],
+  "externalVideos": [],
+  "restrictedVideos": []
+}
