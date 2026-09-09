@@ -1,0 +1,61 @@
+{
+  "slug": "2026-BeyondMimic-From-motion-tracking-to-versatile-humanoid-control-via-guided-diffusion",
+  "title": "BeyondMimic: From motion tracking to versatile humanoid control via guided diffusion",
+  "titleZh": "BeyondMimic：从动作跟踪到引导扩散驱动的通用人形机器人控制",
+  "authors": [
+    "Qiayuan Liao",
+    "Takara E. Truong",
+    "Xiaoyu Huang",
+    "Yuman Gao",
+    "Guy Tevet",
+    "Koushil Sreenath",
+    "C. Karen Liu"
+  ],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-08-26",
+  "doi": "10.1126/scirobotics.adx8924",
+  "status": "详细图文解析、四张 GPT-Image 科研示意图、来源数据图和两路作者官方视频播放区域已配置；Science 正文、论文原图及 Movies S1-S6 不在本站复制",
+  "featured": false,
+  "cardImage": "figures/hardware-control-stack-gpt-image-2.webp",
+  "cardImageAlt": "一台人形机器人周围以编号展示 500 赫兹状态估计、50 赫兹动作跟踪、25 赫兹扩散控制、20 毫秒异步去噪与关节执行链路",
+  "cardImageCaption": "GPT-Image 2 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "BeyondMimic 先用一套共享强化学习配方把约 2.5 小时人体动作变成可上真机的动作跟踪策略，再以 DAgger-VAE 将动作意图压缩到 32 维潜空间，并训练状态—潜变量扩散模型。部署时通过可微代价引导去噪，在不重新训练的情况下组合摇杆、航点、关键帧补全和障碍规避任务。",
+  "topics": [
+    "人形机器人",
+    "全身控制",
+    "动作跟踪",
+    "强化学习",
+    "潜扩散模型",
+    "分类器引导",
+    "Sim-to-Real"
+  ],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adx8924",
+  "rightsNote": "Science Robotics 正式版本的 Crossref 许可记录指向 Science Journals 文章再利用页面，并设置 365 天延迟，未给出允许本站即时再分发正文、论文原图或 Movies S1-S6 文件的 Creative Commons 许可；学校机构访问与再分发权分开判断，因此 Science 文件不进入 publish。作者 arXiv v4 预印本仅作为本地研究材料保存在 Git 忽略的 inbox，未把 arXiv 分发许可当成本站重托管许可。BeyondMimic 项目页仓库没有独立许可证，项目页 MP4 本地副本也只留在 inbox；公开页通过原始作者站点直接流式播放 61 秒 teaser，并嵌入 Hybrid Robotics 官方 YouTube 视频，不复制这些视频到仓库。官方训练代码 HybridRobotics/whole_body_tracking 独立采用 MIT License，该许可只覆盖代码仓库，不扩展到论文、图像或视频。公开页仅发布原创中文分析、四张经逐张 dry-run 和人工检查的 GPT-Image 2 科研示意图，以及按论文报告值重绘的统计图。两张存在时间关系或文字错误的早期生成图只保存在忽略目录，未发布。",
+  "downloads": [],
+  "videos": [],
+  "videoSectionTitle": "作者公开视频与 Science 补充视频边界",
+  "externalVideos": [
+    {
+      "title": "作者项目页 teaser｜任务引导与障碍规避",
+      "embedUrl": "https://beyondmimic.github.io/static/videos/teaser.mp4",
+      "watchUrl": "https://beyondmimic.github.io/",
+      "caption": "约 61 秒，作者项目页原始 MP4 直接流式播放，展示目标跟随、外力扰动、运动补全与障碍规避片段。本站不复制该文件到公开仓库；本地审计副本保存在 Git 忽略的 inbox。"
+    },
+    {
+      "title": "作者完整公开视频｜BeyondMimic",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/RS_MtKVIAzY?rel=0",
+      "watchUrl": "https://www.youtube.com/watch?v=RS_MtKVIAzY",
+      "caption": "Hybrid Robotics 官方频道发布的 3 分 21 秒公开视频，站内使用 YouTube 官方嵌入播放器。它是作者公开视频，不宣称等同于 Science Movies S1-S6 的逐文件副本。"
+    }
+  ],
+  "restrictedVideos": [
+    {
+      "title": "Science Robotics Movies S1-S6",
+      "duration": "6 段",
+      "resolution": "待官方包核验",
+      "summary": "论文与补充材料清单明确列出 Movie S1 至 S6。正文将 S1 用于总体与户外部署、S2 用于 30 段真机动作全集，并将 S5-S6 与命令运动、关键帧补全和任务组合相联系；本站尚未取得这六个 Science 原始文件的独立公开再分发许可，因此不复制或伪装为本站托管视频。上方作者公开视频可直接播放，但不是这六个文件的替代授权。",
+      "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.adx8924"
+    }
+  ]
+}
