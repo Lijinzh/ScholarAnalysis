@@ -65,7 +65,7 @@
 - **装配线实验**：机器人依次完成把木块从传送带推到工作台、抓取与放置、抬起以及投进篮筐。相同技能在不同机械臂上会形成不同关节姿态。
 
 <figure class="analysis-figure">
-  <img src="files/figures/epfl-kuka-transfer-cc-by-sa.webp" alt="EPFL 实验中两台 KUKA 机械臂在传送带和工作台之间操纵木块">
+  <img src="files/figures/epfl-kuka-transfer-cc-by-sa.webp" alt="EPFL 实验中前景 KUKA 机械臂抓住木块，后景另一种机械臂位于传送带旁">
   <figcaption><span class="figure-source authorized">已获授权材料 · 论文团队实验原图</span><strong>图 4｜相同“拿起木块”目标对应不同关节姿态。</strong> 前后两台机械臂的身体位置和可用姿态不同，迁移的应是任务行为，而不是一串固定关节角。来源与许可：2026 LASA EPFL，CC BY-SA 4.0。</figcaption>
 </figure>
 
