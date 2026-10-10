@@ -46,40 +46,48 @@ async function getTurnstileProof(form) {
 
   let widgetId;
   let timer;
-  const token = await new Promise((resolve, reject) => {
-    timer = setTimeout(() => reject(new Error('安全验证超时，请重试。')), 30000);
-    widgetId = turnstile.render(container, {
-      sitekey: turnstileSiteKey,
-      action: 'paper-feedback',
-      execution: 'execute',
-      appearance: 'interaction-only',
-      callback(value) {
-        clearTimeout(timer);
-        resolve(value);
-      },
-      'error-callback'() {
-        clearTimeout(timer);
-        reject(new Error('安全验证失败，请重试。'));
-      },
-      'expired-callback'() {
-        clearTimeout(timer);
-        reject(new Error('安全验证已过期，请重新提交。'));
-      },
-    });
-    turnstile.execute(widgetId);
-  });
-
-  return {
-    token,
-    cleanup() {
-      clearTimeout(timer);
+  function cleanup() {
+    clearTimeout(timer);
+    try {
       if (widgetId !== undefined) turnstile.remove(widgetId);
-      else container.remove();
-    },
-  };
+    } finally {
+      container.remove();
+    }
+  }
+
+  try {
+    const token = await new Promise((resolve, reject) => {
+      timer = setTimeout(() => reject(new Error('安全验证超时，请重试。')), 120000);
+      widgetId = turnstile.render(container, {
+        sitekey: turnstileSiteKey,
+        action: 'paper-feedback',
+        execution: 'execute',
+        appearance: 'interaction-only',
+        callback(value) {
+          clearTimeout(timer);
+          resolve(value);
+        },
+        'error-callback'() {
+          clearTimeout(timer);
+          reject(new Error('安全验证失败，请重试。'));
+          return true;
+        },
+        'expired-callback'() {
+          clearTimeout(timer);
+          reject(new Error('安全验证已过期，请重新提交。'));
+        },
+      });
+      turnstile.execute(widgetId);
+    });
+    return { token, cleanup };
+  } catch (error) {
+    cleanup();
+    throw error;
+  }
 }
 
 async function submitFeedback({ form, button, status, payload }) {
+  if (button.disabled) return false;
   if (!feedbackEndpoint) {
     setFeedbackStatus(status, '自动提交服务尚未完成线上配置，本次内容没有保存。', 'error');
     return false;
@@ -94,14 +102,16 @@ async function submitFeedback({ form, button, status, payload }) {
   const originalLabel = button.textContent;
   button.disabled = true;
   button.textContent = '正在自动保存…';
-  setFeedbackStatus(status, '正在验证并写入 GitHub Issue…');
+  setFeedbackStatus(status, '正在进行安全验证；如出现验证框，请完成验证…');
 
   let proof = { token: '', cleanup() {} };
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 25000);
+  let timeout;
 
   try {
     proof = await getTurnstileProof(form);
+    setFeedbackStatus(status, '安全验证已通过，正在保存问题…');
+    timeout = setTimeout(() => controller.abort(), 25000);
     const response = await fetch(feedbackEndpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
