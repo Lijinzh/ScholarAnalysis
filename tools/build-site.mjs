@@ -185,10 +185,10 @@ for (const paper of papers) {
     : '';
 
   const restrictedVideos = paper.restrictedVideos?.length
-    ? `<div class="restricted-media-notice">以下补充视频没有确认可供本站再分发的独立开放许可。因此只展示已知信息和官方入口，不复制视频文件，也不伪装成站内播放器。</div>
+    ? `<div class="restricted-media-notice">${escapeHtml(paper.restrictedVideoNotice || '以下补充视频没有确认可供本站再分发的独立开放许可。因此只展示已知信息和官方入口，不复制视频文件，也不伪装成站内播放器。')}</div>
       <div class="restricted-media-grid">${paper.restrictedVideos.map((item) => `
         <article class="restricted-video-card">
-          ${item.poster ? `<div class="restricted-video-poster"><img src="${url(`papers/${paper.slug}/files/${item.poster}`)}" alt="${escapeHtml(item.posterAlt || '')}"><span>科研示意图 · 非视频画面</span></div>` : ''}
+          ${item.poster ? `<div class="restricted-video-poster"><img src="${url(`papers/${paper.slug}/files/${item.poster}`)}" alt="${escapeHtml(item.posterAlt || '')}"><span>${escapeHtml(item.posterLabel || '科研示意图 · 非视频画面')}</span></div>` : ''}
           <div class="restricted-video-body">
             <div class="restricted-video-meta">${item.duration ? `<span>${escapeHtml(item.duration)}</span>` : ''}${item.resolution ? `<span>${escapeHtml(item.resolution)}</span>` : ''}<span>${escapeHtml(item.rightsLabel || '机构权限材料')}</span></div>
             <h3>${escapeHtml(item.title)}</h3>

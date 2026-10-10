@@ -1,0 +1,31 @@
+{
+  "slug": "2026-Demonstrate-once-execute-on-many-Kinematic-intelligence-for-cross-robot-skill-transfer",
+  "title": "Demonstrate once, execute on many: Kinematic intelligence for cross-robot skill transfer",
+  "titleZh": "只演示一次，让不同机器人都会做：用于跨机器人技能迁移的运动学智能",
+  "authors": ["Sthithpragya Gupta", "Durgesh Haribhau Salunkhe", "Aude Billard"],
+  "year": 2026,
+  "venue": "Science Robotics",
+  "publishedAt": "2026-04-15",
+  "doi": "10.1126/scirobotics.aea1995",
+  "status": "中文图文解析、EPFL CC BY-SA 4.0 实验原图与 Zenodo CC BY 4.0 数据图已完成；Science 图表和 Movie S1-S6 仍按受限材料处理",
+  "featured": true,
+  "cardImage": "figures/kinematic-intelligence-overview-gpt-image-2.webp",
+  "cardImageAlt": "一次人类演示被转换为三种不同机械臂各自可行运动的科研概念图",
+  "cardImageCaption": "GPT-Image 生成式科研示意图，不是论文原图或实验照片",
+  "summary": "这项工作不要求不同机器人照抄同一条关节轨迹，而是先理解每台机器人的关节极限、奇异边界和可达区域，再把同一技能改写成各自安全可行的运动。",
+  "topics": ["跨机器人技能迁移", "运动学智能", "动力系统控制", "关节奇异性", "冗余机械臂"],
+  "officialUrl": "https://www.science.org/doi/10.1126/scirobotics.aea1995",
+  "rightsNote": "Science 页面显示机构 Full access、Science Journals 默认版权和 Request permissions，但没有显示允许本站再分发论文正文、图表、补充 PDF 或 Movie S1-S6 的 Creative Commons 许可；因此这些原件只保存在 Git 忽略的 inbox/，公开页仅给出官方入口。三张装配线实验照片来自 EPFL 官方新闻页 https://actu.epfl.ch/news/how-to-teach-the-same-skill-to-different-robots/，页面明确说明其文字、视频和图片采用 CC BY-SA 4.0，图片署名为 2026 LASA EPFL；本站优化副本继续按 CC BY-SA 4.0 标注。两张科研概念图由 GPT-Image 2 原创生成并明确标注，不是论文原图。统计图依据 Zenodo 记录 18992244 中 CC BY 4.0 的 kinematic_benchmarks.csv 与 reactive_benchmarks.csv 绘制。上述许可互不扩张。",
+  "downloads": [],
+  "videos": [],
+  "externalVideos": [],
+  "restrictedVideoNotice": "Movie S1-S6 已依据 Supplementary Materials PDF 的官方图注建立逐段内容索引，但本站尚未取得视频原包和允许再分发的独立开放许可。因此下面提供说明与 Science 官方入口，不复制视频文件，也不伪装成站内播放器。",
+  "restrictedVideos": [
+    {"title": "Movie S1｜不同非尖点 3R 机器人的奇异结构", "summary": "展示不同 D-H 参数下，非尖点三转动关节机器人的关节空间奇异性如何变化。本站已核对补充 PDF 图注，但未取得视频独立再分发许可。", "duration": "S1", "resolution": "官方 ZIP", "poster": "figures/joint-space-boundary-track-cycle-gpt-image-2.webp", "posterAlt": "三关节机械臂在关节空间中接近奇异边界并沿边界绕行的生成式科研示意图", "posterLabel": "生成式科研示意图 · 非视频画面", "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aea1995/suppl_file/scirobotics.aea1995_movies_s1_to_s6.zip"},
+    {"title": "Movie S2｜KUKA IIWA 复现 SCIENCE 字样", "summary": "用演示得到的字母轨迹为 KUKA IIWA 学习控制策略，展示同一书写行为如何落到这台机器人的可行关节运动上。", "duration": "S2", "resolution": "官方 ZIP", "poster": "figures/epfl-kuka-transfer-cc-by-sa.webp", "posterAlt": "EPFL 装配线实验中 KUKA 机械臂抓取木块的已授权原图", "posterLabel": "已授权实验原图 · 非视频画面", "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aea1995/suppl_file/scirobotics.aea1995_movies_s1_to_s6.zip"},
+    {"title": "Movie S3｜NEURA MAiRA 复现 SCIENCE 字样", "summary": "把同一组示范字母迁移到 MAiRA 机器人，重点是目标行为相同，但实际关节姿态不必相同。", "duration": "S3", "resolution": "官方 ZIP", "poster": "figures/kinematic-intelligence-overview-gpt-image-2.webp", "posterAlt": "一次演示分配给多种机械臂并由各机器人选择可行关节运动的生成式科研示意图", "posterLabel": "生成式科研示意图 · 非视频画面", "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aea1995/suppl_file/scirobotics.aea1995_movies_s1_to_s6.zip"},
+    {"title": "Movie S4｜三种机械臂完成装配线技能迁移", "summary": "展示推木块、抓取与放置、抬起和投掷等任务，以及同一个基于动力系统的策略如何在三种机器人上尊重各自工作空间和运动学约束。", "duration": "S4", "resolution": "官方 ZIP", "poster": "figures/epfl-three-robot-line-cc-by-sa.webp", "posterAlt": "EPFL 实验装配线上的三种机械臂已授权原图", "posterLabel": "已授权实验原图 · 非视频画面", "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aea1995/suppl_file/scirobotics.aea1995_movies_s1_to_s6.zip"},
+    {"title": "Movie S5｜向类人机械臂迁移行为的整体介绍", "summary": "概览跨机器人迁移的困难、7R 机器人的冗余参数化、3R 机器人的运动学性质，以及不同商用机器人最后得到的动作。", "duration": "S5", "resolution": "官方 ZIP", "poster": "figures/epfl-assembly-line-overview-cc-by-sa.webp", "posterAlt": "EPFL 多机器人装配线整体实验环境的已授权原图", "posterLabel": "已授权实验原图 · 非视频画面", "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aea1995/suppl_file/scirobotics.aea1995_movies_s1_to_s6.zip"},
+    {"title": "Movie S6｜从多次演示学习控制策略", "summary": "用一个 2R 机器人展示三种演示数量不同的学习情形，帮助理解多条示范如何共同塑造稳定的行为策略。", "duration": "S6", "resolution": "官方 ZIP", "poster": "figures/zenodo-reactive-timing-source-data.webp", "posterAlt": "根据开放基准数据绘制的在线决策和离线学习耗时对比图", "posterLabel": "来源数据图 · 非视频画面", "officialUrl": "https://www.science.org/doi/suppl/10.1126/scirobotics.aea1995/suppl_file/scirobotics.aea1995_movies_s1_to_s6.zip"}
+  ]
+}
